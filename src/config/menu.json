@@ -1,23 +1,23 @@
 {
   "main": [
     {
-      "name": "Home",
-      "url": "/"
+      "name": "Nosotros",
+      "url": "/#nosotros"
     },
     {
-      "name": "About",
+      "name": "Características",
       "url": "/about"
     },
     {
-      "name": "Blog",
+      "name": "Beneficios",
       "url": "/blog"
     },
     {
-      "name": "Features",
+      "name": "Compromiso",
       "url": "/features"
     },
     {
-      "name": "How It Works",
+      "name": "Aplicación",
       "url": "/how-it-works"
     },
     {
@@ -59,14 +59,14 @@
       ]
     },
     {
-      "name": "Contact",
+      "name": "Contacto",
       "url": "/contact"
     }
   ],
 
   "footer": [
     {
-      "name": "About",
+      "name": "Inicio",
       "url": "/about"
     },
     {
@@ -74,11 +74,18 @@
       "url": "/contact"
     },
     {
-      "name": "Elements",
+      "name": "Beneficios",
       "url": "/elements"
     },
     {
-      "name": "Changelog",
+      "name": "Compromiso",
+      "url": "/changelog"
+    },
+    {
+      "name": "Aplicación",
+      "url": "/changelog"
+    }, {
+      "name": "Contacto",
       "url": "/changelog"
     }
   ]

@@ -1,14 +1,14 @@
 ---
-title: "About"
-page_title: "About our company"
+title: "Nosotros"
+page_title: "Sobre nosotros"
 buttons:
   - label: Download The Theme
     link: "https://themefisher.com/astro-themes/pinwheel-astro"
-    enable: true
+    enable: false
   - label: Learn More
     link: "#"
     outline: true
-    enable: true
+    enable: false
 
 # counter
 counter:
