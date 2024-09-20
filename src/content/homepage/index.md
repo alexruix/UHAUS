@@ -1,131 +1,171 @@
 ---
+hero:
+  title: "AÍSLA PROTEGE AHORRA"
+  image: "/images/banner.png"
+  buttons:
+    - label: "Solicitar presupuesto"
+      link: "https://themefisher.com/astro-themes/pinwheel-astro"
+      icon: "WhatsappLogo"
+      enable: true
+
+
+perfomance:
+   - title: Aisla
+     subtitle: Aislamiento ecológico, sustentable y efectivo que puede mantener tu hogar confortable durante todo el año.
+     icon: Heart  #icon package react-feather-icon [https://feathericons.com/]
+   - title: Protege
+     subtitle: Regula la humedad ambiente y previene las humedad por condensación evitando asi, la aparición de hongos y moho.
+     icon: Heart  #icon package react-feather-icon [https://feathericons.com/]
+   - title: Ahorra
+     subtitle: Se reduce hasta un 40% la demanda energética ahorrando en facturas de luz y gas.
+     icon: Heart  #icon package react-feather-icon [https://feathericons.com/]
+
 banner:
-  title: "Scale design & dev operations with Avocode Enterprise"
-  content: "A fully integrated suite of authentication & authoriz products, Stytch’s platform removes the headache of."
+  title: "Sobre nosotros"
+  content: "Somos una empresa líder en el sector de aislamiento termo
+acústico, dedicada a proporcionar soluciones avanzadas que
+maximizan el <b>confort y la eficiencia energética</b> en proyectos de
+construcción. Utilizamos la materia prima de <b>Celulosa.pro®</b>, con
+más de una década de experiencia en el mercado, aseguramos que
+la celulosa es el aislante que brinda un mayor valor agregado desde
+el punto de vista técnico y económico.
+<br/>
+Utilizando tecnología avanzada para aplicar el material más
+ecológico y resistente disponible, te ofrecemos un aislamiento
+térmico y acústico efectivo que puede mantener tu hogar 5ºC más
+fresco o cálido durante todo el año. Esto se traduce en un <b>ahorro
+de al menos el 40% en sus facturas de luz por aire
+acondicionado y calefacción. </b>
+<br/>
+Ofrecemos servicios integrales que abarcan desde el
+asesoramiento técnico hasta la implementación de sistemas de
+aislamiento en edificaciones residenciales, comerciales e
+industriales. La celulosa es un material suave y cálido al tacto, que
+no irrita la piel, por lo que se utiliza como aislante seguro."
   image: /images/banner-img.png
   button:
     label: Download The Theme
     link: "https://themefisher.com/astro-themes/pinwheel-astro"
-    enable: true
+    enable: false
 
 ##key features
 key_features:
-  title: "The Highlighting Part Of Our Solution"
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
+  title: "¿Dónde podemos aplicar?"
+  
   feature_list:
     - icon: "map"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Live Caption
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      title: Industrial
+      content: Galpones, fábricas, producción avícola y porcina
+
     - icon: "lock"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Smart Reply
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - icon: "link"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Sound Amplifier
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - icon: "bell"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Sound Amplifier
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - icon: "monitor"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Smart Reply
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - icon: "map"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Live Caption
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - icon: "link"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Sound Amplifier
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - icon: "bell"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Sound Amplifier
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - icon: "map"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Smart Reply
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - icon: "monitor"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Live Caption
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      title: Comercial
+      content: Salones de fiestas, bares, locales que generen ruidos, coworking, oficinas, hotelería
 
-#service
-service:
-  homepage_tab:
-    title: Prevent failure from to impacting your reputation
-    description: Our platform helps you build secure onboarding authentication experiences that retain and engage your users. We build the infrastructure, you can.
-    tab_list:
-        - title: Habit building essential choose habit
-          icon: "lock"  #icon package react-feather-icon [https://feathericons.com/]
-          image: "/images/sells-by-country.png"
-        - title: Get an overview of Habit Calendars.
-          icon: "clock"  #icon package react-feather-icon [https://feathericons.com/]
-          image: "/images/collaboration.png"
-        - title: Start building with Habitify platform
-          icon: "bell"  #icon package react-feather-icon [https://feathericons.com/]
-          image: "/images/sells-by-country.png"
+    - icon: "link"  #icon package react-feather-icon [https://feathericons.com/]
+      title: Residencial
+      content: Casas, Departamentos y Rehabilitación de construcciones
+    
 
-  our_service:
-    - title: Accept payments any country in this whole universe
-      desctiption: Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. Mauris pellentesque nec, egestas non nisi. Cras ultricies ligula sed
-      image: "/images/collaboration.png"
-      list:
-        - Supporting more than 119 country world
-        - Open transaction with more than currencies
-        - Customer Service with 79 languages
-    - title: Accountability that works for you
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-      video:
-        thumbnail: "/images/intro-thumbnail.png"
-        video_id: "g3-VxLQO7do"
-      button:
-        label: Know About Us
-        link: "#"
-        enable: true
 
 #testimonial
 testimonial:
-  title: Our customers have nice things to say about us
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
+  title: ¿Por qué elegirnos?
+  description: 
   testimonial_list:
-    - author: David Cameron
-      avatar: "/images/users/user-5.png"
-      organization: meta limited
-      rating: four
-      content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
-    - author: David Cameron
-      avatar: "/images/users/user-6.png"
-      organization: meta limited
-      rating: four
-      content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
-    - author: David Cameron
-      avatar: "/images/users/user-2.png"
-      organization: meta limited
-      rating: three
-      content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
-    - author: David Cameron
-      avatar: "/images/users/user-3.png"
-      organization: meta limited
-      rating: five
-      content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
-    - author: David Cameron
-      avatar: "/images/users/user-4.png"
-      organization: meta limited
-      rating: five
-      content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
-    - author: David Cameron
-      avatar: "/images/users/user-1.png"
-      organization: meta limited
-      rating: three
-      content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
-    - author: David Cameron
-      avatar: "/images/users/user-5.png"
-      organization: meta limited
-      rating: five
-      content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
-    - author: David Cameron
-      avatar: "/images/users/user-5.png"
-      organization: meta limited
-      rating: five
-      content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
-    - author: David Cameron
-      avatar: "/images/users/user-5.png"
-      organization: meta limited
-      rating: five
-      content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
+    - author: 1
+      avatar: 
+      organization: Consultoría técnica especializada 
+      content: Entendemos que cada proyecto de construcción es único, por lo que ofrecemos un servicio de consultoría personalizado. Nuestros  técnicos altamente calificados trabajan en estrecha colaboración con arquitectos, contratistas y propietarios para analizar las características del entorno, las normativas locales y los requisitos específicos de confort. Esto nos permite diseñar soluciones a medida que garantizan un aislamiento térmico y acústico óptimo.
+    - author: 2
+      
+      organization: Instalación experta con Garantía de Calidad
+      
+      content: Nuestro equipo de instaladores certificados asegura que cada material sea aplicado con precisión, siguiendo estrictos protocolos de calidad. La atención al detalle en cada etapa del proceso garantiza que nuestros sistemas de aislamiento funcionen de manera óptima, evitando puentes térmicos y minimizando la propagación de vibraciones y ruidos estructurales.
+    - author: 3
+      
+      organization: Mantenimiento proactivo y auditorías de rendimiento
+      
+      content: Sabemos que un aislamiento efectivo requiere de un mantenimiento adecuado. Ofrecemos programas de mantenimiento preventivo y auditorías regulares para asegurar que los sistemas de aislamiento mantengan su eficiencia a lo largo del tiempo. Nuestro servicio incluye la evaluación continua del rendimiento térmico y acústico, con recomendaciones para optimizar o actualizar los sistemas según sea necesario.
+    - author: 4
+      
+      organization: Soluciones sostenibles y eficiencia energética
+      
+      content: Comprometidos con la sostenibilidad, promovemos el uso de materiales reciclados y técnicas de instalación que contribuyen a la reducción de la huella de carbono. Nuestras soluciones no solo mejoran el confort interior, sino que también permiten una significativa reducción en el consumo energético, reflejándose en menores costos operativos y un impacto positivo en el medio ambiente.
+    - author: 5
+      
+      organization: Amplia gama de materiales de alta tecnología
+      
+      content: Utilizamos materiales de vanguardia, seleccionados meticulosamente para ofrecer el mejor rendimiento en cada aplicación. Como la celulosa proyectada y  fibras minerales.    
+
+
+
+
+beneficios: 
+  head: Beneficios del aislamiento
+  items:
+    - title: "Sellador"
+      description: "Evita puentes térmicos y acústicos"
+      video:
+        thumbnail: "/images/banner.png"
+        video_id: "g3-VxLQO7do"
+
+    - title: "Resistente al fuego"
+      description: "Evita puentes térmicos y acústicos"
+      video:
+        thumbnail: "/images/intro-thumbnail.png"
+        video_id: "g3-VxLQO7do"
+
+    - title: "Doble aislación"
+      description: "Evita puentes térmicos y acústicos"
+      video:
+        thumbnail: "/images/intro-thumbnail.png"
+        video_id: "g3-VxLQO7do"
+
+    - title: "Evita condensación"
+      description: "Evita puentes térmicos y acústicos"
+      video:
+        thumbnail: "/images/intro-thumbnail.png"
+        video_id: "g3-VxLQO7do"
+
+    - title: "Rápida instalación"
+      description: "Evita puentes térmicos y acústicos"
+      video:
+        thumbnail: "/images/intro-thumbnail.png"
+        video_id: "g3-VxLQO7do"
+
+    - title: "Evita plagas"
+      description: "Evita puentes térmicos y acústicos"
+      video:
+        thumbnail: "/images/intro-thumbnail.png"
+        video_id: "g3-VxLQO8do"
+
+
+application_types:
+  - title: Proyectado
+    image: "/images/application_types/proyectado.jpg"
+    content: <strong>Densidad media:</strong> 45-50 kg/m3<br>
+      <br>
+      Proyectado con humedad y adhesivo<br>
+      sobre muros, losas y cubiertas inclinadas<br>
+      para asegurar adherencia el tiempo.<br>
+      <br>
+      <strong>Avance:</strong> 150m2 x día x máquina. Forma una capa de aislamiento compacta y libre de juntas. Ideal para galpones, contenedores, embarcaciones dado que evita condensación interior.   
+  - title: Soplado o Inyectado
+    image: "/images/application_types/soplado.jpg"
+    content: <strong>Densidad media:</strong> 58 kg/m3<br>
+      <br>
+      Aplicación en seco en muros.<br>
+      <br>
+      <strong>Avance:</strong> 150 mts2 x día x máquina.<br>
+      Para esta aplicación es necesario tener una cara sobre la estructura<br>
+      instalada para luego instalar un sistema de sujeción que permita<br>
+      contener la aislación de celulosa.
+  - title: Insuflado
+    image: "/images/application_types/insuflado.jpg"
+    content: <strong>Densidad media:</strong> 45-50 kg/m3<br>
+      <br>
+      Aplicación en seco, se aplica de arriba hacia abajo en entretechos,<br>
+      entrepisos principalmente.<br>
+      <br>
+      <strong>Espesor recomendado:</strong> 10 cm.
 ---

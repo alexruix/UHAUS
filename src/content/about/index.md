@@ -39,24 +39,23 @@ gallery:
 
 ## our works
 features:
-  title: The six core work <br /> drive everything do
+  title: ¿Por qué elegirnos?
   button:
     label: Download The Theme
     link: "https://themefisher.com/astro-themes/pinwheel-astro"
-    enable: true
+    enable: false
   features_list:
     - title: Accessibility
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
+      content: Entendemos que cada proyecto de construcción es único, por lo que ofrecemos un servicio de consultoría personalizado. Nuestros  técnicos altamente calificados trabajan en estrecha colaboración con arquitectos, contratistas y propietarios para analizar las características del entorno, las normativas locales y los requisitos específicos de confort. Esto nos permite diseñar soluciones a medida que garantizan un aislamiento térmico y acústico óptimo.
     - title: Empowerement
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
+      content: Nuestro equipo de instaladores certificados asegura que cada material sea aplicado con precisión, siguiendo estrictos protocolos de calidad. La atención al detalle en cada etapa del proceso garantiza que nuestros sistemas de aislamiento funcionen de manera óptima, evitando puentes térmicos y minimizando la propagación de vibraciones y ruidos estructurales.
     - title: Excellence
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
+      content: Sabemos que un aislamiento efectivo requiere de un mantenimiento adecuado. Ofrecemos programas de mantenimiento preventivo y auditorías regulares para asegurar que los sistemas de aislamiento mantengan su eficiencia a lo largo del tiempo. Nuestro servicio incluye la evaluación continua del rendimiento térmico y acústico, con recomendaciones para optimizar o actualizar los sistemas según sea necesario.
     - title: Innovation
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
+      content: Comprometidos con la sostenibilidad, promovemos el uso de materiales reciclados y técnicas de instalación que contribuyen a la reducción de la huella de carbono. Nuestras soluciones no solo mejoran el confort interior, sino que también permiten una significativa reducción en el consumo energético, reflejándose en menores costos operativos y un impacto positivo en el medio ambiente.
     - title: Innovation
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
-    - title: Innovation
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
+      content: Utilizamos materiales de vanguardia, seleccionados meticulosamente para ofrecer el mejor rendimiento en cada aplicación. Como la celulosa proyectada y  fibras minerales.
+    
     
 
 ## members

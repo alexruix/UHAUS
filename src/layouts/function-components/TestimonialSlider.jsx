@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Star } from "react-feather";
+import { CaretLeft , CaretLineRight, CaretRight } from "@phosphor-icons/react";
 import SwiperCore from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -23,7 +23,6 @@ const TestimonialSlider = ({ list }) => {
         onSwiper={(swiper) => {
           setSwiper(swiper);
         }}
-        // loop={true}
         modules={[Pagination, Autoplay]}
         slidesPerView={1}
         breakpoints={{
@@ -31,37 +30,48 @@ const TestimonialSlider = ({ list }) => {
             slidesPerView: 2,
           },
           1200: {
-            slidesPerView: 3,
+            slidesPerView: 2,
           },
         }}
       >
         {list.map((item, i) => (
           <SwiperSlide key={"feature-" + i}>
-            <div className="review">
-              <div className="review-author-avatar bg-gradient">
-                <img src={item.avatar} alt="" />
+            <div className="review rounded-sm shadow-sm border border-gray-200 text-start flex gap-4">
+              <div>
+                <h5>{item.author}</h5>
               </div>
-              <h4 className="mb-2">{item.author}</h4>
-              <p className="mb-4 text-[#666]">{item.organization}</p>
-              <p>{item.content}</p>
-              <div
-                className={`review-rating mt-6 flex items-center justify-center space-x-2.5 ${item.rating}  `}
-              >
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-                <Star />
+              <div>
+                <h5 className="mb-4">{item.organization}</h5>
+                <p>{item.content}</p>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* Flecha izquierda */}
+      <button
+        className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-40 transition-opacity duration-300 ${
+          swiper && swiper.isEnd ? "opacity-0" : "opacity-100"
+        } hover:opacity-100`}
+        onClick={() => swiper?.slidePrev()}
+      >
+        <CaretLeft className="w-8 h-8 text-gray-500 hover:text-gray-800" />
+      </button>
+
+      {/* Flecha derecha */}
+      <button
+        className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-40 transition-opacity duration-300 ${
+          swiper && swiper.isEnd ? "opacity-0" : "opacity-100"
+        } hover:opacity-100`}
+        onClick={() => swiper?.slideNext()}
+      >
+        <CaretRight className="w-8 h-8 text-gray-500 hover:text-gray-800" />
+      </button>
+
       <div className="relative flex justify-center">
         <div
-          width="100%"
           className="swiper-pagination reviews-carousel-pagination !bottom-0"
-          style={{ width: "100%" }}
           ref={paginationRef}
         ></div>
       </div>

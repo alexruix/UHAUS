@@ -1,43 +1,49 @@
 ---
-import { humanize, markdownify, slugify } from "@/lib/utils/textConverter";
+import { humanize, markdownify } from "@/lib/utils/textConverter";
+// import * as Icon from "react-feather";
+import * as Icon from "@phosphor-icons/react";
 const { page_data } = Astro.props || {};
 const { title, index_title, page_title, slug, image, content } =
   page_data || {};
 ---
 
 <div
-  class="relative h-96 flex items-center justify-center text-center bg-cover bg-center bg-norepeat"
+  class="relative h-screen rounded flex items-center justify-center text-center bg-cover bg-center bg-norepeat"
   style={`background-image: url(${image})`}
 >
-  <div class="relative z-10">
-    <p class="text-lg font-light mb-2">AÍSLA • PROTEGE • AHORRA</p>
+  <div class="relative z-10 p-4 rounded lg:p-24">
     <h1
-      class="text-4xl font-bold mb-5 mt-8"
+      class="text-7xl font-bold mb-5 mt-8"
       set:html={markdownify(
         page_data?.page_title ? page_data?.page_title : page_data?.title,
       )}
     />
     <p set:html={markdownify(content)} />
-    
+
     {
       page_data.buttons && (
         <div class="mt-11 justify-center sm:flex">
-          {page_data.buttons.map(
-            (button: any) =>
-              button?.enable && (
-                <a
-                  class={`btn m-3 block sm:inline-block ${
-                    button?.outline ? "btn-outline-primary" : "btn-primary"
-                  } `}
-                  href={button?.link}
-                >
-                  {button?.label}
-                </a>
-              ),
-          )}
+          {page_data.buttons.map((button: any) => {
+            if (!button?.enable) return null;
+
+            const FeatherIcon = Icon[humanize(button.icon)]; // Obtiene el ícono con el nombre pasado en 'button.icon'
+
+            return (
+              <a
+                class={`btn m-3 ${
+                  button?.outline ? "btn-outline-primary" : "btn-primary"
+                }`}
+                href={button?.link}
+              >
+                {/* Renderiza el ícono solo si existe */}
+                {FeatherIcon && <FeatherIcon size={18} />}
+                {button?.label}
+              </a>
+            );
+          })}
         </div>
       )
     }
   </div>
-  <div class="absolute inset-0 bg-white bg-opacity-50 z-0"></div>
+  <div class="absolute inset-0 bg-slate-200 bg-opacity-20 z-0"></div>
 </div>

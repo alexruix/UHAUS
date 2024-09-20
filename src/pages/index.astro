@@ -1,25 +1,117 @@
 ---
 import Base from "@/layouts/Base.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import { markdownify } from "@/lib/utils/textConverter";
 import Banner from "@/layouts/components/Banner.astro";
+import Blogs from "@/components/Blog.astro";
 import KeyFeatures from "@/layouts/components/KeyFeatures.astro";
 import Testimonial from "@/layouts/components/Testimonial.astro";
 import Service from "@/layouts/components/Service.astro";
 import Cta from "@/layouts/partials/Cta.astro";
 import { getEntryBySlug } from "astro:content";
+import Image from "astro/components/Image.astro";
 
 const homepage = await getEntryBySlug("homepage", "index");
-const { banner, key_features, service, testimonial } = homepage.data;
+const {
+  hero,
+  perfomance,
+  banner,
+  key_features,
+  service,
+  testimonial,
+  beneficios,
+  application_types,
+} = homepage.data;
+
+const page_data = {
+  title: hero.title, // Título de la sección hero
+  image: hero.image, // Imagen de fondo
+  buttons: hero.buttons, // Los botones del hero
+  content: hero.content, // Cualquier otro contenido que quieras agregar
+
+};
+
+const beneficios_data = beneficios.items;
 ---
 
 <Base>
+  <section class="page-hero pb-14 relative">
+    <div class="relative">
+      <!-- Contenido del Hero -->
+      <div class="page-hero-content z-0 mx-auto text-center relative">
+        <PageHeader page_data={page_data} />
+      </div>
+
+      <!-- Contenedor del div bg-white por encima del contenido anterior -->
+      <div
+        class="row z-1 -mt-12 bg-white rounded py-4 shadow-lg max-w-screen-lg mx-auto relative"
+      >
+        {
+          perfomance.map((item: any, i: number) => (
+            <div class="sm:col-6 md:col-4 md:mb-0 flex items-start gap-5 py-4">
+              <div class="text-4xl font-bold text-gray-500">
+                {/* Aquí podrías añadir algún número o icono si fuera necesario */}
+              </div>
+              <div>
+                <h2 class="h4">{item.title}</h2>
+                <p class="mt-4">{item.subtitle}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- banner -->
   <Banner banner={banner} />
-  <!-- key features -->
-  <KeyFeatures key_features={key_features} />
-  <!-- service -->
-  <Service service={service} />
   <!-- testimonial -->
   <Testimonial testimonial={testimonial} />
+  <!-- key features -->
+  <KeyFeatures key_features={key_features} />
+
+  <section class="section">
+    <div class="container">
+      <div class="row text-center mb-10">
+        <h2 class="h3">{beneficios.head}</h2>
+      </div>
+      <Blogs posts={beneficios_data} />
+    </div>
+  </section>
+  <!-- service -->
+  <!-- <Service service={service} /> -->
+
+  <section>
+    <div class="container">
+      {application_types.map((item: any, index: number) => (
+        <div
+          class={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 my-20 ${
+            index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'
+          }`}
+          key={index}
+        >
+          <div class="flex-shrink-0 lg:w-1/2">
+            <div class="relative">
+              <Image
+                class="max-h-64 object-cover"
+                alt={item.image}
+                width={473}
+                height={286}
+                src={item.image}
+              />
+            </div>
+          </div>
+          <div class="lg:w-1/2 lg:text-left">
+            <div class="text-container">
+              <h2 class="text-2xl lg:text-4xl font-bold">{item.title}</h2>
+              <p class="mt-4 text-dark" set:html={markdownify(item.content)}/></p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+  
   <!-- call to action -->
   <Cta />
 </Base>

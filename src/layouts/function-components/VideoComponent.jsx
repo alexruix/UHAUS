@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Play } from "react-feather";
+import { Play } from "@phosphor-icons/react";
 import YouTube from "react-youtube";
 
 const VideoComponent = ({
@@ -13,7 +13,8 @@ const VideoComponent = ({
 }) => {
   const [play, setPlay] = useState(false);
   const videoOptions = {
-    borderRadius: "16px",
+    borderRadius: 0,
+    
     playerVars: {
       autoplay: 1,
     },
@@ -24,22 +25,22 @@ const VideoComponent = ({
       {!play ? (
         <div className="relative text-center">
           <button className="video-play-btn" onClick={() => setPlay(true)}>
-            <Play />
+            <Play weight="fill" />
           </button>
           <img
             width={width}
             height={height}
             src={src}
             alt={title}
-            className="inline h-auto max-w-full rounded-2xl"
+            className="inline h-auto max-w-full rounded-none"
           />
         </div>
       ) : (
-        <div className="youtube mx-auto text-center">
+        <div className="youtube mx-auto text-center rounded-none">
           <YouTube
             videoId={video_id}
             opts={videoOptions}
-            iframeClassName={`  aspect-video ${video_height} ${video_width} max-w-full bg-transparent rounded-2xl`}
+            iframeClassName={`  aspect-video ${video_height} ${video_width} max-w-full bg-transparent rounded-none`}
           />
         </div>
       )}
