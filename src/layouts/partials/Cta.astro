@@ -1,31 +1,44 @@
 ---
-import config from "@/config/config.json";
+import { humanize } from "@/lib/utils/textConverter";
+import * as Icon from "@phosphor-icons/react";
 
-const {
-  call_to_action: {
-    title,
-    description,
-    button: { label, link },
-  },
-} = config;
+const { cta_data, id } = Astro.props || {};
+const { title, buttons } = cta_data || {};
 ---
 
-<section class="px-5 py-20 xl:py-[120px]">
-  <div class="container">
+<section class="px-5 py-20 xl:py-[120px]" id={id}>
+  <div class="">
     <div
-      class="bg-gradient row justify-center rounded-b-[80px] rounded-t-[20px] px-[30px] pb-[75px] pt-16"
+      class="bg-gray-400 row justify-center px-[30px] pb-[75px] pt-16"
     >
-      <div class="lg:col-11">
-        <div class="row">
+      <div class="container lg:col-11">
+        <div class="flex justify-around">
           <div class="lg:col-7">
-            <h2 class="h1 text-white">{title}</h2>
-            <a class="btn btn-white mt-8" href={link}>{label}</a>
+            <h2 class="h3 text-center text-white">{title}</h2>
           </div>
-          <div class="mt-8 lg:col-5 lg:mt-0">
-            <p class="text-white">
-              {description}
-            </p>
-          </div>
+            {
+              buttons && (
+                <div class="mt-11 justify-center sm:flex">
+                  {buttons.map((button: any) => {
+                    if (!button?.enable) return null;
+
+                    const IconComponent = Icon[humanize(button.icon)]; // Obtiene el ícono con el nombre pasado en 'button.icon'
+
+                    return (
+                      <a
+                        class={`btn m-3 ${button?.outline ? "btn-outline-primary" : "btn-primary"}`}
+                        href={button?.link}
+                      >
+                        {/* Renderiza el ícono solo si existe */}
+                        {IconComponent && <IconComponent size={18} />}
+                        {button?.label}
+                      </a>
+                    );
+                  })}
+                </div>
+              )
+            }
+          
         </div>
       </div>
     </div>

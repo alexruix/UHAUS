@@ -1,15 +1,15 @@
 ---
 hero:
-  title: "AÍSLA PROTEGE AHORRA"
-  image: "/images/banner.png"
+  title: "AISLA PROTEGE AHORRA"
+  image: "/images/banner.jpg"
   buttons:
     - label: "Solicitar presupuesto"
-      link: "https://themefisher.com/astro-themes/pinwheel-astro"
+      link: "/#"
       icon: "WhatsappLogo"
       enable: true
 
 
-perfomance:
+banner:
    - title: Aisla
      subtitle: Aislamiento ecológico, sustentable y efectivo que puede mantener tu hogar confortable durante todo el año.
      icon: Heart  #icon package react-feather-icon [https://feathericons.com/]
@@ -20,7 +20,7 @@ perfomance:
      subtitle: Se reduce hasta un 40% la demanda energética ahorrando en facturas de luz y gas.
      icon: Heart  #icon package react-feather-icon [https://feathericons.com/]
 
-banner:
+about_us:
   title: "Sobre nosotros"
   content: "Somos una empresa líder en el sector de aislamiento termo
 acústico, dedicada a proporcionar soluciones avanzadas que
@@ -49,7 +49,7 @@ no irrita la piel, por lo que se utiliza como aislante seguro."
     enable: false
 
 ##key features
-key_features:
+we_apply:
   title: "¿Dónde podemos aplicar?"
   
   feature_list:
@@ -66,12 +66,10 @@ key_features:
       content: Casas, Departamentos y Rehabilitación de construcciones
     
 
-
-#testimonial
-testimonial:
+choise_us:
   title: ¿Por qué elegirnos?
   description: 
-  testimonial_list:
+  list:
     - author: 1
       avatar: 
       organization: Consultoría técnica especializada 
@@ -110,62 +108,74 @@ beneficios:
         video_id: "g3-VxLQO7do"
 
     - title: "Resistente al fuego"
-      description: "Evita puentes térmicos y acústicos"
+      description: "No se inflama, ni genera gases tóxicos"
       video:
         thumbnail: "/images/intro-thumbnail.png"
         video_id: "g3-VxLQO7do"
 
     - title: "Doble aislación"
-      description: "Evita puentes térmicos y acústicos"
+      description: "Aislamiento termoacústico en una sola aplicación"
       video:
         thumbnail: "/images/intro-thumbnail.png"
         video_id: "g3-VxLQO7do"
 
     - title: "Evita condensación"
-      description: "Evita puentes térmicos y acústicos"
+      description: "Es higrófuga, absorbe y cede la humedad al ambiente logrando regular la condensación, 100% antihongos."
       video:
         thumbnail: "/images/intro-thumbnail.png"
         video_id: "g3-VxLQO7do"
 
     - title: "Rápida instalación"
-      description: "Evita puentes térmicos y acústicos"
+      description: "Trabajo de 200 mt2 por día y por máquina en la construcción"
       video:
         thumbnail: "/images/intro-thumbnail.png"
         video_id: "g3-VxLQO7do"
 
     - title: "Evita plagas"
-      description: "Evita puentes térmicos y acústicos"
+      description: "Gracias al borax añadido, repele ratones y plagas en general"
       video:
         thumbnail: "/images/intro-thumbnail.png"
         video_id: "g3-VxLQO8do"
 
 
 application_types:
-  - title: Proyectado
-    image: "/images/application_types/proyectado.jpg"
-    content: <strong>Densidad media:</strong> 45-50 kg/m3<br>
-      <br>
-      Proyectado con humedad y adhesivo<br>
-      sobre muros, losas y cubiertas inclinadas<br>
-      para asegurar adherencia el tiempo.<br>
-      <br>
-      <strong>Avance:</strong> 150m2 x día x máquina. Forma una capa de aislamiento compacta y libre de juntas. Ideal para galpones, contenedores, embarcaciones dado que evita condensación interior.   
-  - title: Soplado o Inyectado
-    image: "/images/application_types/soplado.jpg"
-    content: <strong>Densidad media:</strong> 58 kg/m3<br>
-      <br>
-      Aplicación en seco en muros.<br>
-      <br>
-      <strong>Avance:</strong> 150 mts2 x día x máquina.<br>
-      Para esta aplicación es necesario tener una cara sobre la estructura<br>
-      instalada para luego instalar un sistema de sujeción que permita<br>
-      contener la aislación de celulosa.
-  - title: Insuflado
-    image: "/images/application_types/insuflado.jpg"
-    content: <strong>Densidad media:</strong> 45-50 kg/m3<br>
-      <br>
-      Aplicación en seco, se aplica de arriba hacia abajo en entretechos,<br>
-      entrepisos principalmente.<br>
-      <br>
-      <strong>Espesor recomendado:</strong> 10 cm.
+    head: Tipos de aplicación
+    items: 
+    - title: Proyectado
+      image: "/images/application_types/proyectado.jpg"
+      content: <a>Densidad media:</a> 45-50 kg/m3<br>
+        <br>
+        Proyectado con humedad y adhesivo<br>
+        sobre muros, losas y cubiertas inclinadas<br>
+        para asegurar adherencia el tiempo.<br>
+        <br>
+        <a>Avance:</a> 150m2 x día x máquina. Forma una capa de aislamiento compacta y libre de juntas. Ideal para galpones, contenedores, embarcaciones dado que evita condensación interior.   
+    - title: Soplado o Inyectado
+      image: "/images/application_types/soplado.jpg"
+      content: <a>Densidad media:</a> 58 kg/m3<br>
+        <br>
+        Aplicación en seco en muros.<br>
+        <br>
+        <a>Avance:</a> 150 mts2 x día x máquina.<br>
+        Para esta aplicación es necesario tener una cara sobre la estructura<br>
+        instalada para luego instalar un sistema de sujeción que permita<br>
+        contener la aislación de celulosa.
+    - title: Insuflado
+      image: "/images/application_types/insuflado.jpg"
+      content: <a>Densidad media:</a> 45-50 kg/m3<br>
+        <br>
+        Aplicación en seco, se aplica de arriba hacia abajo en entretechos,<br>
+        entrepisos principalmente.<br>
+        <br>
+        <a>Espesor recomendado:</a> 10 cm.
+
+cta:
+  title: Consigue la instalación con celulosa más rápida y sencilla con U HAUS
+  image: /images/banner-img.png
+  buttons:
+    - label: "Solicitar presupuesto"
+      link: "https://themefisher.com/astro-themes/pinwheel-astro"
+      icon: "WhatsappLogo"
+      enable: true
+
 ---

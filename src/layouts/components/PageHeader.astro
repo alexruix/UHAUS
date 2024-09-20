@@ -13,7 +13,7 @@ const { title, index_title, page_title, slug, image, content } =
 >
   <div class="relative z-10 p-4 rounded lg:p-24">
     <h1
-      class="text-7xl font-bold mb-5 mt-8"
+      class="text-7xl text-white font-bold mb-5 mt-8"
       set:html={markdownify(
         page_data?.page_title ? page_data?.page_title : page_data?.title,
       )}
@@ -36,7 +36,7 @@ const { title, index_title, page_title, slug, image, content } =
                 href={button?.link}
               >
                 {/* Renderiza el ícono solo si existe */}
-                {FeatherIcon && <FeatherIcon size={18} />}
+                {FeatherIcon && <FeatherIcon size={20} />}
                 {button?.label}
               </a>
             );
@@ -45,5 +45,5 @@ const { title, index_title, page_title, slug, image, content } =
       )
     }
   </div>
-  <div class="absolute inset-0 bg-slate-200 bg-opacity-20 z-0"></div>
+  <div class="absolute inset-0 bg-gray-700 bg-opacity-30 z-0"></div>
 </div>

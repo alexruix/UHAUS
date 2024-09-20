@@ -2,11 +2,11 @@
 import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import HomapageFeature from "@/layouts/function-components/HomapageFeature";
-const { key_features } = Astro.props;
+const { key_features, id } = Astro.props;
 const { title, description, feature_list } = key_features;
 ---
 
-<section class="relative">
+<section class="relative" id={id}>
   <div class="section bg-neutral-300">
     <div class="container max-w-4xl">
       <div class="row text-center">

@@ -1,0 +1,33 @@
+---
+const { title, image, buttons, content, banner } = Astro.props;
+import PageHeader from "@/components/PageHeader.astro";
+import Image from "astro/components/Image.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+---
+
+<section class="page-hero pb-14 relative">
+  <div class="relative">
+    <!-- Contenido del Hero -->
+    <div class="page-hero-content z-0 mx-auto text-center relative">
+      <!-- Encabezado del hero con el contenido pasado desde props -->
+      <PageHeader page_data={{ title, image, buttons, content }} />
+    </div>
+
+    <!-- Contenedor del div bg-white por encima del contenido anterior -->
+    <div
+      class="row z-1 -mt-12 bg-white rounded py-4 shadow-lg max-w-screen-lg mx-auto relative"
+    >
+      {banner.map((item: any, i: number) => (
+        <div class="sm:col-6 md:col-4 md:mb-0 flex items-start gap-5 py-4" key={i}>
+          <div class="text-4xl font-bold text-gray-500">
+            {/* Aquí podrías añadir algún número o icono si fuera necesario */}
+          </div>
+          <div>
+            <h2 class="h4">{item.title}</h2>
+            <p class="mt-4">{item.subtitle}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

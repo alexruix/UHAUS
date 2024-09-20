@@ -1,24 +1,24 @@
 .btn {
-  @apply inline-flex items-center gap-2 h-[52px] border px-8 py-2 text-base font-medium leading-[36px] transition-all duration-200;
+  @apply inline-flex items-center gap-2 h-[52px] border px-8 py-4 text-base font-semibold leading-[36px] transition-all duration-200;
 }
 
 .btn-primary {
-  @apply cursor-pointer rounded-[8px] border-0 bg-zinc-700 text-center font-medium text-[#82D24E] hover:shadow-[0px_2px_30px_#495C5950];
+  @apply cursor-pointer rounded-[4px] border-0 bg-zinc-700 text-center text-lg font-semibold text-[#82D24E] hover:shadow-[0px_2px_30px_#495C5950];
 }
 
 .btn-outline-primary {
-  @apply relative rounded-[8px] border-primary bg-transparent text-center capitalize text-dark hover:bg-transparent hover:text-white hover:shadow-[0px_5px_30px_rgba(252,167,111,0.5)] hover:before:opacity-100;
+  @apply relative rounded-[4px] border-primary bg-transparent text-center capitalize text-dark hover:bg-transparent hover:text-white hover:shadow-[0px_5px_30px_rgba(252,167,111,0.5)] hover:before:opacity-100;
   &::before {
     @apply absolute bottom-0 left-0 right-0 top-0 -z-[1] rounded-[inherit] bg-gradient-to-tl opacity-0 transition-[inherit] content-[""];
   }
 }
 
 .btn-outline-white {
-  @apply rounded-[8px] bg-transparent text-center capitalize text-dark;
+  @apply rounded-[4px] bg-transparent text-center capitalize text-dark;
 }
 
 .btn-white {
-  @apply min-w-[150px] rounded-[8px] border-white bg-white text-center capitalize text-dark shadow-lg hover:shadow;
+  @apply min-w-[150px] rounded-[4px] border-white bg-white text-center capitalize text-dark shadow-lg hover:shadow;
 }
 
 .btn-sm {

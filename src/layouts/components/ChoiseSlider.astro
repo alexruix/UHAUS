@@ -1,0 +1,17 @@
+---
+import ChoiseSlider from "@/layouts/function-components/TestimonialSlider";
+const { data, id } = Astro.props;
+---
+
+<section class="reviews section" id={id}>
+  <div class="container">
+    <div class="row text-center">
+      <h2 class="h3">{data.title}</h2>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <ChoiseSlider list={data.list} client:load />
+      </div>
+    </div>
+  </div>
+</section>

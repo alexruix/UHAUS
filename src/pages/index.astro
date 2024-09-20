@@ -1,117 +1,72 @@
 ---
 import Base from "@/layouts/Base.astro";
-import PageHeader from "@/components/PageHeader.astro";
-import { markdownify } from "@/lib/utils/textConverter";
-import Banner from "@/layouts/components/Banner.astro";
 import Blogs from "@/components/Blog.astro";
-import KeyFeatures from "@/layouts/components/KeyFeatures.astro";
-import Testimonial from "@/layouts/components/Testimonial.astro";
-import Service from "@/layouts/components/Service.astro";
+import We_apply from "@/layouts/components/KeyFeatures.astro";
+import Choise_us from "@/components/ChoiseSlider.astro";
+import About_us from "@/components/Banner.astro";
 import Cta from "@/layouts/partials/Cta.astro";
+import Types from "@/components/Types.astro";
+import Hero from "@/components/Hero.astro";
 import { getEntryBySlug } from "astro:content";
-import Image from "astro/components/Image.astro";
 
+// Obtener datos de la página
 const homepage = await getEntryBySlug("homepage", "index");
 const {
   hero,
-  perfomance,
   banner,
-  key_features,
-  service,
-  testimonial,
+  about_us,
+  choise_us,
+  we_apply,
   beneficios,
   application_types,
+  cta,
 } = homepage.data;
 
-const page_data = {
-  title: hero.title, // Título de la sección hero
-  image: hero.image, // Imagen de fondo
-  buttons: hero.buttons, // Los botones del hero
-  content: hero.content, // Cualquier otro contenido que quieras agregar
-
+const hero_data = {
+  title: hero.title,
+  image: hero.image,
+  buttons: hero.buttons,
+  content: hero.content,
+  banner: banner, // Pasamos también los datos del banner
 };
 
 const beneficios_data = beneficios.items;
+const types_data = application_types.items;
 ---
 
 <Base>
-  <section class="page-hero pb-14 relative">
-    <div class="relative">
-      <!-- Contenido del Hero -->
-      <div class="page-hero-content z-0 mx-auto text-center relative">
-        <PageHeader page_data={page_data} />
-      </div>
-
-      <!-- Contenedor del div bg-white por encima del contenido anterior -->
-      <div
-        class="row z-1 -mt-12 bg-white rounded py-4 shadow-lg max-w-screen-lg mx-auto relative"
-      >
-        {
-          perfomance.map((item: any, i: number) => (
-            <div class="sm:col-6 md:col-4 md:mb-0 flex items-start gap-5 py-4">
-              <div class="text-4xl font-bold text-gray-500">
-                {/* Aquí podrías añadir algún número o icono si fuera necesario */}
-              </div>
-              <div>
-                <h2 class="h4">{item.title}</h2>
-                <p class="mt-4">{item.subtitle}</p>
-              </div>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
+  <Hero {...hero_data} />
   <!-- banner -->
-  <Banner banner={banner} />
-  <!-- testimonial -->
-  <Testimonial testimonial={testimonial} />
+  <About_us data={about_us} id="nosotros" />
+
+  <!-- choise us -->
+  <Choise_us data={choise_us}/>
   <!-- key features -->
-  <KeyFeatures key_features={key_features} />
+  <We_apply key_features={we_apply} id="beneficios"/>
 
   <section class="section">
     <div class="container">
       <div class="row text-center mb-10">
-        <h2 class="h3">{beneficios.head}</h2>
+        <h2 class="h2">{beneficios.head}</h2>
       </div>
       <Blogs posts={beneficios_data} />
     </div>
   </section>
-  <!-- service -->
-  <!-- <Service service={service} /> -->
 
-  <section>
-    <div class="container">
-      {application_types.map((item: any, index: number) => (
-        <div
-          class={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 my-20 ${
-            index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'
-          }`}
-          key={index}
-        >
-          <div class="flex-shrink-0 lg:w-1/2">
-            <div class="relative">
-              <Image
-                class="max-h-64 object-cover"
-                alt={item.image}
-                width={473}
-                height={286}
-                src={item.image}
-              />
-            </div>
-          </div>
-          <div class="lg:w-1/2 lg:text-left">
-            <div class="text-container">
-              <h2 class="text-2xl lg:text-4xl font-bold">{item.title}</h2>
-              <p class="mt-4 text-dark" set:html={markdownify(item.content)}/></p>
-            </div>
-          </div>
-        </div>
-      ))}
+  <section class="section">
+    <div class="container px-4 mx-auto">
+      <!-- Section title -->
+      <div class="row text-center mb-10">
+        <h2 class="h2">{application_types.head}</h2>
+      </div>
+
+      <!-- Grid for items -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </div>
   </section>
-  
+
+  <Types types_data={types_data} application_types={application_types} id="tipos_de_aplicacion"/>
+
   <!-- call to action -->
-  <Cta />
+  <Cta cta_data={cta} id="contacto"/>
 </Base>
