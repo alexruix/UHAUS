@@ -13,7 +13,7 @@ const VideoComponent = ({
 }) => {
   const [play, setPlay] = useState(false);
   const videoOptions = {
-    borderRadius: 0,
+    borderRadius: 16,
     
     playerVars: {
       autoplay: 1,
@@ -32,11 +32,11 @@ const VideoComponent = ({
             height={height}
             src={src}
             alt={title}
-            className="inline h-auto max-w-full rounded-none"
+            className="inline max-w-full object-cover max-h-52"
           />
         </div>
       ) : (
-        <div className="youtube mx-auto text-center rounded-none">
+        <div className="youtube mx-auto text-center">
           <YouTube
             videoId={video_id}
             opts={videoOptions}

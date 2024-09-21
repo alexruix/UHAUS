@@ -13,7 +13,7 @@ const HomapageFeature = ({ feature_list }) => {
           >
             <div>
               <h3 className="h4 text-xl lg:text-2xl">{item.title}</h3>
-              <p>{item.content}</p>
+              <p className="text-base lg:text-lg leading-relaxed ">{item.content}</p>
             </div>
           </div>
         );

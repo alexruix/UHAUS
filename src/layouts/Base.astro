@@ -45,6 +45,10 @@ const { title, meta_title, description, image, noindex, canonical } =
   <head>
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <!-- theme meta -->
     <meta name="theme-name" content="pinwheel-astro" />
     <meta name="msapplication-TileColor" content="#000000" />
@@ -168,6 +172,7 @@ const { title, meta_title, description, image, noindex, canonical } =
       }`}
     />
     <meta name="twitter:card" content="summary_large_image" />
+    
   </head>
   <body>
     <Header />
@@ -175,5 +180,6 @@ const { title, meta_title, description, image, noindex, canonical } =
       <slot />
     </main>
     <Footer />
+    <script src="/scripts/scrollAnimation.js" type="module"></script>
   </body>
 </html>

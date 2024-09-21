@@ -48,7 +48,7 @@ no irrita la piel, por lo que se utiliza como aislante seguro."
     link: "https://themefisher.com/astro-themes/pinwheel-astro"
     enable: false
 
-##key features
+##we_apply
 we_apply:
   title: "¿Dónde podemos aplicar?"
   
@@ -171,7 +171,7 @@ application_types:
 
 cta:
   title: Consigue la instalación con celulosa más rápida y sencilla con U HAUS
-  image: /images/banner-img.png
+  image: /images/cta-img.jpg
   buttons:
     - label: "Solicitar presupuesto"
       link: "https://themefisher.com/astro-themes/pinwheel-astro"

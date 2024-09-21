@@ -1,13 +1,14 @@
 ---
 import Base from "@/layouts/Base.astro";
 import Blogs from "@/components/Blog.astro";
-import We_apply from "@/layouts/components/KeyFeatures.astro";
+import We_apply from "@/components/We_apply.astro";
 import Choise_us from "@/components/ChoiseSlider.astro";
-import About_us from "@/components/Banner.astro";
+import About_us from "@/components/About_us.astro";
 import Cta from "@/layouts/partials/Cta.astro";
 import Types from "@/components/Types.astro";
 import Hero from "@/components/Hero.astro";
 import { getEntryBySlug } from "astro:content";
+import * as Icon from "@phosphor-icons/react";
 
 // Obtener datos de la página
 const homepage = await getEntryBySlug("homepage", "index");
@@ -40,13 +41,13 @@ const types_data = application_types.items;
   <About_us data={about_us} id="nosotros" />
 
   <!-- choise us -->
-  <Choise_us data={choise_us}/>
+  <Choise_us data={choise_us} />
   <!-- key features -->
-  <We_apply key_features={we_apply} id="beneficios"/>
+  <We_apply key_features={we_apply} id="beneficios" />
 
   <section class="section">
     <div class="container">
-      <div class="row text-center mb-10">
+      <div class="row text-center mb-10 animate__animated animate__fadeInUp">
         <h2 class="h2">{beneficios.head}</h2>
       </div>
       <Blogs posts={beneficios_data} />
@@ -65,8 +66,33 @@ const types_data = application_types.items;
     </div>
   </section>
 
-  <Types types_data={types_data} application_types={application_types} id="tipos_de_aplicacion"/>
+  <Types
+    types_data={types_data}
+    application_types={application_types}
+    id="tipos_de_aplicacion"
+  />
 
   <!-- call to action -->
-  <Cta cta_data={cta} id="contacto"/>
+  <Cta cta_data={cta} id="contacto" />
+
+  <!-- WhatsApp Button with text -->
+  <div class="fixed bottom-4 right-4 flex items-center group">
+    <a
+      href="https://wa.me/1234567890"
+      class="flex items-center bg-green-500 rounded-full p-4 shadow-lg transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div
+        class="flex items-center bg-green-500 rounded-full transition-transform"
+      >
+        <Icon.WhatsappLogo size={24} color="#ffffff" />
+      </div>
+      <span
+        class="text-white text-base bg-green-500 rounded-full px-2 transform leading-tight"
+      >
+        Escríbenos
+      </span>
+    </a>
+  </div>
 </Base>
