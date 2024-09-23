@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "U HAUS",
-    "base_url": "https://pinwheel-astro.vercel.app",
+    "title": "U HAUS - Aislaciones sustentables",
+    "base_url": "/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_width": "147",
     "logo_height": "31",
-    "logo_text": "U HAUS"
+    "logo_text": "U HAUS Logo"
   },
 
   "settings": {
@@ -22,23 +22,23 @@
     "description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
     "button": {
       "label": "Solicitar presupuesto",
-      "link": "https://themefisher.com/astro-themes/pinwheel-astro"
+      "link": "https://wa.me/1234567890"
     }
   },
 
 
   "params": {
     "footer_description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
-    "email": "info@andromeda.io",
-    "location": "2118 Thornridge Cir. Syracuse, Connecticut 35624",
-    "phone": "+704-555-0127",
+    "phone": "telefono",
+    "email": "email",
+    "location": "ubicacion",    
     "contact_form_action": "#",
     "copyright": "Copyright © 2024"
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
-    "meta_image": "/images/og-image.png",
-    "meta_description": "pinwheel astro"
+    "meta_author": "U HAUS",
+    "meta_image": "/images/banner.jpg",
+    "meta_description": "Aislaciones sustentables"
   }
 }

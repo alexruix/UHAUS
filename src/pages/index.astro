@@ -8,7 +8,7 @@ import Cta from "@/layouts/partials/Cta.astro";
 import Types from "@/components/Types.astro";
 import Hero from "@/components/Hero.astro";
 import { getEntryBySlug } from "astro:content";
-import * as Icon from "@phosphor-icons/react";
+import {WhatsappLogo} from "@phosphor-icons/react";
 
 // Obtener datos de la página
 const homepage = await getEntryBySlug("homepage", "index");
@@ -19,6 +19,7 @@ const {
   choise_us,
   we_apply,
   beneficios,
+  graph,
   application_types,
   cta,
 } = homepage.data;
@@ -33,6 +34,7 @@ const hero_data = {
 
 const beneficios_data = beneficios.items;
 const types_data = application_types.items;
+const graph_data = graph.items;
 ---
 
 <Base>
@@ -57,8 +59,9 @@ const types_data = application_types.items;
   <section class="section">
     <div class="container px-4 mx-auto">
       <!-- Section title -->
-      <div class="row text-center mb-10">
-        <h2 class="h2">{application_types.head}</h2>
+      <div class="row text-center mb-10 gap-4">
+        <h2 class="h2">{graph.head}</h2>
+        <p class="text-lg">{graph.description}</p>
       </div>
 
       <!-- Grid for items -->
@@ -76,20 +79,20 @@ const types_data = application_types.items;
   <Cta cta_data={cta} id="contacto" />
 
   <!-- WhatsApp Button with text -->
-  <div class="fixed bottom-4 right-4 flex items-center group">
+  <div class="fixed bottom-4 right-4 flex items-center group ">
     <a
       href="https://wa.me/1234567890"
-      class="flex items-center bg-green-500 rounded-full p-4 shadow-lg transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+      class="flex items-center bg-green-600 drop-shadow-md rounded-full p-4  transition-transform duration-300 ease-in-out transform group-hover:scale-105"
       target="_blank"
       rel="noopener noreferrer"
     >
       <div
-        class="flex items-center bg-green-500 rounded-full transition-transform"
+        class="flex items-center  rounded-full transition-transform"
       >
-        <Icon.WhatsappLogo size={24} color="#ffffff" />
+        <WhatsappLogo size={24} color="#ffffff" />
       </div>
       <span
-        class="text-white text-base bg-green-500 rounded-full px-2 transform leading-tight"
+        class="text-white text-base rounded-full px-2 transform leading-tight"
       >
         Escríbenos
       </span>

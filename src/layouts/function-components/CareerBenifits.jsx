@@ -1,4 +1,4 @@
-import * as Icon from "react-feather";
+import * as Icon from "@phosphor-icons/react";
 import { humanize } from "@/lib/utils/textConverter";
 const CareerBenifits = ({ benifits: { title, description, benifit_list } }) => {
   return (
@@ -12,7 +12,7 @@ const CareerBenifits = ({ benifits: { title, description, benifit_list } }) => {
         </div>
         <div className="row mt-14 text-center">
           {benifit_list.map((item, i) => {
-            const FeatherIcon = Icon[humanize(item.icon)];
+            const PHIcon = Icon[humanize(item.icon)];
 
             return (
               <div className="mb-10 sm:col-6 lg:col-4 " key={i}>
@@ -32,7 +32,7 @@ const CareerBenifits = ({ benifits: { title, description, benifit_list } }) => {
                     />
                   </svg>
                   <span className="benifit-icon absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[28%]">
-                    <FeatherIcon color={item.color} size={48} />
+                    <PHIcon color={item.color} size={48} />
                   </span>
                 </div>
                 <h3 className="h4 mb-4 mt-8">{item.title}</h3>

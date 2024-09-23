@@ -1,6 +1,5 @@
 ---
 import { humanize, markdownify } from "@/lib/utils/textConverter";
-// import * as Icon from "react-feather";
 import * as Icon from "@phosphor-icons/react";
 const { page_data } = Astro.props || {};
 const { title, index_title, page_title, slug, image, content } =
@@ -26,7 +25,7 @@ const { title, index_title, page_title, slug, image, content } =
           {page_data.buttons.map((button: any) => {
             if (!button?.enable) return null;
 
-            const FeatherIcon = Icon[humanize(button.icon)]; // Obtiene el ícono con el nombre pasado en 'button.icon'
+            const PHIcon = Icon[humanize(button.icon)]; // Obtiene el ícono con el nombre pasado en 'button.icon'
 
             return (
               <a
@@ -36,7 +35,7 @@ const { title, index_title, page_title, slug, image, content } =
                 href={button?.link}
               >
                 {/* Renderiza el ícono solo si existe */}
-                {FeatherIcon && <FeatherIcon size={20} />}
+                {PHIcon && <PHIcon size={20} />}
                 {button?.label}
               </a>
             );

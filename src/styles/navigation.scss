@@ -39,8 +39,8 @@ input#nav-toggle:checked ~ #nav-menu {
   @apply block p-3 py-2 text-[15px] text-dark transition hover:text-primary md:px-2 lg:inline-block;
 
   &.active {
-    @apply relative;
-
+    @apply relative  underline underline-offset-4 decoration-2;
+     
     &::after {
       @apply absolute bottom-0 left-2 right-2 h-0.5 bg-gradient-to-tl content-[''];
     }

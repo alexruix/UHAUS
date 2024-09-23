@@ -117,6 +117,7 @@ const { pathname } = Astro.url;
 </header>
 
 <script is:inline>
+  // Dropdown button functionality
   document.querySelectorAll(".dropdown-button").forEach((button) => {
     button.addEventListener("click", (e) => {
       const dropdown = e.target.nextElementSibling;
@@ -126,7 +127,7 @@ const { pathname } = Astro.url;
     });
   });
 
-  //sticky header
+  // Sticky header functionality
   document.addEventListener("astro:page-load", () => {
     const header = document.querySelector(".header");
     window.addEventListener("scroll", () => {
@@ -137,4 +138,70 @@ const { pathname } = Astro.url;
       }
     });
   });
+
+  // Navigation highlighting for sections (internal links with hash)
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // Function to remove the active class from all links
+    function removeActiveClasses() {
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+      });
+    }
+
+    // Function to add the active class to the corresponding link
+    function addActiveClass(link) {
+      removeActiveClasses();
+      link.classList.add("active");
+    }
+
+    // Detect scroll position and update active link
+    function handleScroll() {
+      let currentSection = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        // Check if the link points to the correct anchor (hash)
+        if (link.getAttribute("href").includes(`#${currentSection}`)) {
+          addActiveClass(link);
+        }
+      });
+    }
+
+    // Listen for scroll events to update highlighting
+    window.addEventListener("scroll", handleScroll);
+
+    // Listen for hash changes in the URL
+    window.addEventListener("hashchange", () => {
+      const hash = window.location.hash; // Get the current hash
+      if (hash) {
+        navLinks.forEach((link) => {
+          // If the href matches the current hash, activate it
+          if (link.getAttribute("href") === hash) {
+            addActiveClass(link);
+          }
+        });
+      }
+    });
+
+    // Check for initial hash when the page loads
+    const initialHash = window.location.hash;
+    if (initialHash) {
+      navLinks.forEach((link) => {
+        if (link.getAttribute("href") === initialHash) {
+          addActiveClass(link);
+        }
+      });
+    }
+  });
 </script>
+

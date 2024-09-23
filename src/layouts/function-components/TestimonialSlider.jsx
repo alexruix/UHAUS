@@ -38,7 +38,7 @@ const TestimonialSlider = ({ list }) => {
           <SwiperSlide key={"feature-" + i}>
             <div className="review rounded-sm shadow-sm border border-gray-200 text-start flex gap-4">
               <div>
-                <h5>{item.author}</h5>
+                <span className="h5 font-semibold">{item.author}</span>
               </div>
               <div>
                 <h5 className="mb-4">{item.organization}</h5>
@@ -54,9 +54,10 @@ const TestimonialSlider = ({ list }) => {
         className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-40 transition-opacity duration-300 ${
           swiper && swiper.isEnd ? "opacity-0" : "opacity-100"
         } hover:opacity-100`}
+        aria-label="Botón anterior"
         onClick={() => swiper?.slidePrev()}
       >
-        <CaretLeft className="w-8 h-8 text-gray-500 hover:text-gray-800" />
+        {/* <CaretLeft className="w-8 h-8 text-gray-500 hover:text-gray-800" /> */}
       </button>
 
       {/* Flecha derecha */}
@@ -64,9 +65,10 @@ const TestimonialSlider = ({ list }) => {
         className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-40 transition-opacity duration-300 ${
           swiper && swiper.isEnd ? "opacity-0" : "opacity-100"
         } hover:opacity-100`}
+        aria-label="Botón siguiente"
         onClick={() => swiper?.slideNext()}
       >
-        <CaretRight className="w-8 h-8 text-gray-500 hover:text-gray-800" />
+        {/* <CaretRight className="w-8 h-8 text-gray-500 hover:text-gray-800" /> */}
       </button>
 
       <div className="relative flex justify-center">

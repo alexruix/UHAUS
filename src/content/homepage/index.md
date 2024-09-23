@@ -4,7 +4,7 @@ hero:
   image: "/images/banner.jpg"
   buttons:
     - label: "Solicitar presupuesto"
-      link: "/#"
+      link: "https://wa.me/1234567890"
       icon: "WhatsappLogo"
       enable: true
 
@@ -97,7 +97,6 @@ choise_us:
 
 
 
-
 beneficios: 
   head: Beneficios del aislamiento
   items:
@@ -138,43 +137,73 @@ beneficios:
         video_id: "g3-VxLQO8do"
 
 
+graph:
+  head: ¿Por qué elegir el servicio?
+  description: Somos una empresa comprometida en impactar de forma positiva en nuestra comunidad, el medio ambiente y en nuestros empleados. Todos los días debemos esforzarnos por ser mejores personas, ya que todos compartimos este mundo como seres humanos.
+  items:
+      - title: Bienestar
+        subtitle: Más información
+        content: Nuestro compromiso con el bienestar de nuestros empleados se refleja en iniciativas como seguros complementarios de salud, oportunidades de capacitación y desarrollo profesional.
+        icon: Heart  #icon package react-feather-icon [https://feathericons.com/]
+      - title: Certificaciones
+        subtitle: Más información
+        content: La certificación como Empresa B en 2021 y el prestigioso Sello Pro otorgado por la Cámara Chilena de la Construcción en 2023 son ejemplos claros de nuestro compromiso con la sustentables y sostenibles.
+        icon: award  #icon package react-feather-icon [https://feathericons.com/]
+      - title: Innovación
+        subtitle: Más información
+        content: Nuestra empresa se guía por un propósito claro y una estrategia de sostenibilidad empresarial. Además, contamos con un equipo directivo altamente capacitado que impulsa la innovación y la mejora continua de nuestras operaciones.
+        icon: zap  #icon package react-feather-icon [https://feathericons.com/]
+      - title: Comunidad
+        subtitle: Más información
+        content: Contribuimos activamente al bienestar de nuestros trabajadores mediante programas de aislación térmica gratuita, apoyo continuo a fundaciones y/o corporaciones locales.
+        icon: users  #icon package react-feather-icon [https://feathericons.com/]
+      - title: Proveedores y clientes
+        subtitle: Más información
+        content: Mantenemos relaciones sólidas y transparentes con nuestros proveedores y clientes, garantizando la calidad de nuestros productos y servicios, y promoviendo prácticas comerciales éticas y sostenibles.
+        icon: truck  #icon package react-feather-icon [https://feathericons.com/]
+      - title: Medio Ambiente
+        subtitle: Más información
+        content: Utilizar al menos en un 85% de materias primas recicladas, así disminuir al máximo nuestro impacto en la huella de Carbono, adoptando prácticas de reutilización y reciclaje.
+        icon: thermometer  #icon package react-feather-icon [https://feathericons.com/]
+
+
 application_types:
     head: Tipos de aplicación
     items: 
     - title: Proyectado
       image: "/images/application_types/proyectado.jpg"
-      content: <a>Densidad media:</a> 45-50 kg/m3<br>
+      content: <span>Densidad media:</span> 45-50 kg/m3<br>
         <br>
         Proyectado con humedad y adhesivo<br>
         sobre muros, losas y cubiertas inclinadas<br>
         para asegurar adherencia el tiempo.<br>
         <br>
-        <a>Avance:</a> 150m2 x día x máquina. Forma una capa de aislamiento compacta y libre de juntas. Ideal para galpones, contenedores, embarcaciones dado que evita condensación interior.   
+        <span>Avance:</span> 150m2 x día x máquina. Forma una capa de aislamiento compacta y libre de juntas. Ideal para galpones, contenedores, embarcaciones dado que evita condensación interior.   
     - title: Soplado o Inyectado
       image: "/images/application_types/soplado.jpg"
-      content: <a>Densidad media:</a> 58 kg/m3<br>
+      content: <span>Densidad media:</span> 58 kg/m3<br>
         <br>
         Aplicación en seco en muros.<br>
         <br>
-        <a>Avance:</a> 150 mts2 x día x máquina.<br>
+        <span>Avance:</span> 150 mts2 x día x máquina.<br>
         Para esta aplicación es necesario tener una cara sobre la estructura<br>
         instalada para luego instalar un sistema de sujeción que permita<br>
         contener la aislación de celulosa.
     - title: Insuflado
       image: "/images/application_types/insuflado.jpg"
-      content: <a>Densidad media:</a> 45-50 kg/m3<br>
+      content: <span>Densidad media:</span> 45-50 kg/m3<br>
         <br>
         Aplicación en seco, se aplica de arriba hacia abajo en entretechos,<br>
         entrepisos principalmente.<br>
         <br>
-        <a>Espesor recomendado:</a> 10 cm.
+        <span>Espesor recomendado:</span> 10 cm.
 
 cta:
   title: Consigue la instalación con celulosa más rápida y sencilla con U HAUS
   image: /images/cta-img.jpg
   buttons:
     - label: "Solicitar presupuesto"
-      link: "https://themefisher.com/astro-themes/pinwheel-astro"
+      link: "https://wa.me/1234567890"
       icon: "WhatsappLogo"
       enable: true
 

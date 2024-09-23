@@ -17,44 +17,6 @@
       "url": "/#tipos_de_aplicacion"
     },
     {
-      "name": "Pages",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Career",
-          "url": "/career"
-        },
-
-        {
-          "name": "Integrations",
-          "url": "/integrations"
-        },
-
-        {
-          "name": "Pricing",
-          "url": "/pricing"
-        },
-        {
-          "name": "Sign In",
-          "url": "/signin"
-        },
-
-        {
-          "name": "Elements",
-          "url": "/elements"
-        },
-        {
-          "name": "Changelog",
-          "url": "/changelog"
-        },
-        {
-          "name": "Terms And Conditions",
-          "url": "/terms-and-conditions"
-        }
-      ]
-    },
-    {
       "name": "Contacto",
       "url": "/#contacto"
     }
@@ -63,7 +25,7 @@
   "footer": [
     {
       "name": "Inicio",
-      "url": "/"
+      "url": "/#"
     },
     {
       "name": "Nosotros",
