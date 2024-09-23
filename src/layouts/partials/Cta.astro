@@ -9,10 +9,13 @@ const { title, image, buttons } = cta_data || {};
 <section class="px-5 py-20 xl:py-[120px]" id={id}>
   <div class="">
     <div
-      class="section row justify-center py-[130px] lg:py-[180px] bg-cover bg-center"
+      class="section relative row justify-center py-[130px] lg:py-[180px] bg-cover bg-center"
       style={`background-image: url(${image});`} 
     >
-      <div class="container lg:col-11">
+      <!-- Overlay usando ::before -->
+      <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+      
+      <div class="container lg:col-11 relative z-10">
         <div class="flex flex-col lg:flex-row lg:justify-between items-center">
           
           <div class="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">

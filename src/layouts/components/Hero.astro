@@ -1,11 +1,11 @@
 ---
-const { title, image, buttons, content, banner } = Astro.props;
+const { title, image, buttons, content, banner, id } = Astro.props;
 import PageHeader from "@/components/PageHeader.astro";
 import Image from "astro/components/Image.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 ---
 
-<section class="page-hero pb-14 relative">
+<section class="page-hero pb-14 relative" id={id}>
   <div class="relative">
     <!-- Contenido del Hero -->
     <div class="page-hero-content z-0 mx-auto text-center relative">

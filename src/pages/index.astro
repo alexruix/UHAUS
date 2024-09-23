@@ -35,10 +35,11 @@ const hero_data = {
 const beneficios_data = beneficios.items;
 const types_data = application_types.items;
 const graph_data = graph.items;
+const future_data = graph.futuro;
 ---
 
 <Base>
-  <Hero {...hero_data} />
+  <Hero {...hero_data} id="home"/>
   <!-- banner -->
   <About_us data={about_us} id="nosotros" />
 
@@ -56,18 +57,47 @@ const graph_data = graph.items;
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="compromiso">
     <div class="container px-4 mx-auto">
-      <!-- Section title -->
-      <div class="row text-center mb-10 gap-4">
+      {/* Section title */}
+      <div class="text-center mb-10">
         <h2 class="h2">{graph.head}</h2>
         <p class="text-lg">{graph.description}</p>
       </div>
+  
+      <div class="flex flex-col lg:flex-row gap-8">
 
-      <!-- Grid for items -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 flex-1">
+          {graph_data.map((item: any) => (
+            <div class="relative p-8 bg-white rounded-lg shadow-lg transition-all duration-300 hover:scale-105 group">
+
+              <div class="flex flex-col items-center">
+                <i class={`${item.icon} text-4xl mb-4`}></i> {/* Icon */}
+                <h3 class="font-bold text-xl text-center">{item.title}</h3> {/* Title */}
+              </div>
+
+              <div class="max-h-0 overflow-hidden transition-all duration-300 group-hover:max-h-48 group-hover:opacity-100 opacity-0">
+                <p class="mt-4 text-gray-700">{item.content}</p> {/* Additional Text */}
+              </div>
+            </div>
+          ))}
+        </div>
+  
+        <div class="flex flex-col gap-4 flex-none w-full lg:w-1/3">
+          {future_data.map((post) => (
+            <div class="bg-white p-4 rounded-sm border-gray-200 border" key={post.title}>
+              <div class="py-4">
+                <h2 class="text-xl font-semibold mb-2">{post.title}</h2>
+                <p class="text-gray-600">{post.content}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
+  
+  
 
   <Types
     types_data={types_data}

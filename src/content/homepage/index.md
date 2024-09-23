@@ -166,6 +166,12 @@ graph:
         content: Utilizar al menos en un 85% de materias primas recicladas, así disminuir al máximo nuestro impacto en la huella de Carbono, adoptando prácticas de reutilización y reciclaje.
         icon: thermometer  #icon package react-feather-icon [https://feathericons.com/]
 
+  futuro:
+    - title: Mision
+      content: Nuestra misión es mejorar la calidad de vida de nuestros clientes, proporcionando soluciones de aislamiento que optimizan el confort térmico y acústico, al tiempo que fomentamos la eficiencia energética y la sostenibilidad en cada proyecto que emprendemos.
+    - title: Vision
+      content: Ser reconocidos como líderes en el mercado de aislamiento termoacústico, ofreciendo innovaciones tecnológicas y servicios personalizados que excedan las expectativas de nuestros clientes y contribuyan a un entorno más silencioso y energéticamente eficiente.
+
 
 application_types:
     head: Tipos de aplicación
