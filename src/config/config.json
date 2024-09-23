@@ -29,9 +29,10 @@
 
   "params": {
     "footer_description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
-    "phone": "telefono",
+    "phone": "Escríbenos a WhatsAPP",
     "email": "email",
-    "location": "ubicacion",    
+    "location": "473bis Nº 2776 e/ Belgrano y calle 23, CP 1900 <br/> La Plata, Buenos Aires.",    
+    "instagram": "https://www.instagram.com/uhaus.aislaciontermoacustica/",
     "contact_form_action": "#",
     "copyright": "Copyright © 2024"
   },

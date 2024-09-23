@@ -19,11 +19,11 @@ import { markdownify } from "@/lib/utils/textConverter";
     >
       {banner.map((item: any, i: number) => (
         <div class="sm:col-6 md:col-4 md:mb-0 flex items-start gap-5 py-4" key={i}>
-          <div class="text-4xl font-bold text-gray-500">
+          <div class="text-4xl font-bold">
             {/* Aquí podrías añadir algún número o icono si fuera necesario */}
           </div>
           <div>
-            <h2 class="h4">{item.title}</h2>
+            <h2 class="h4 text-uhaus">{item.title}</h2>
             <p class="mt-4">{item.subtitle}</p>
           </div>
         </div>

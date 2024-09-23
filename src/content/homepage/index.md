@@ -1,6 +1,6 @@
 ---
 hero:
-  title: "AISLA PROTEGE AHORRA"
+  title: "AISLA • PROTEGE • AHORRA"
   image: "/images/banner.jpg"
   buttons:
     - label: "Solicitar presupuesto"
@@ -42,7 +42,7 @@ asesoramiento técnico hasta la implementación de sistemas de
 aislamiento en edificaciones residenciales, comerciales e
 industriales. La celulosa es un material suave y cálido al tacto, que
 no irrita la piel, por lo que se utiliza como aislante seguro."
-  image: /images/banner-img.png
+  image: /images/about.jpg
   button:
     label: Download The Theme
     link: "https://themefisher.com/astro-themes/pinwheel-astro"
@@ -103,38 +103,44 @@ beneficios:
     - title: "Sellador"
       description: "Evita puentes térmicos y acústicos"
       video:
-        thumbnail: "/images/banner.png"
+        thumbnail: "/images/beneficios/b1.png"
         video_id: "g3-VxLQO7do"
+        video_path: "/images/beneficios/b1.mp4"
 
     - title: "Resistente al fuego"
       description: "No se inflama, ni genera gases tóxicos"
       video:
-        thumbnail: "/images/intro-thumbnail.png"
+        thumbnail: "/images/beneficios/b2.png"
         video_id: "g3-VxLQO7do"
+        video_path: "/images/beneficios/b2.mp4"
 
     - title: "Doble aislación"
       description: "Aislamiento termoacústico en una sola aplicación"
       video:
-        thumbnail: "/images/intro-thumbnail.png"
+        thumbnail: "/images/beneficios/b3.png"
         video_id: "g3-VxLQO7do"
+        video_path: "/images/beneficios/b3.mp4"
 
     - title: "Evita condensación"
       description: "Es higrófuga, absorbe y cede la humedad al ambiente logrando regular la condensación, 100% antihongos."
       video:
-        thumbnail: "/images/intro-thumbnail.png"
-        video_id: "g3-VxLQO7do"
+        thumbnail: "/images/beneficios/b4.png"
+        video_id: "KYnru3NBrIs"
+        video_path: "/images/beneficios/b4.mp4"
 
     - title: "Rápida instalación"
       description: "Trabajo de 200 mt2 por día y por máquina en la construcción"
       video:
-        thumbnail: "/images/intro-thumbnail.png"
-        video_id: "g3-VxLQO7do"
+        thumbnail: "/images/beneficios/b5.png"
+        video_id: "CVVLYa-omT0"
+        video_path: "/images/beneficios/b5.mp4"
 
     - title: "Evita plagas"
       description: "Gracias al borax añadido, repele ratones y plagas en general"
       video:
-        thumbnail: "/images/intro-thumbnail.png"
-        video_id: "g3-VxLQO8do"
+        thumbnail: "/images/beneficios/b6.png"
+        video_id: "7uapnBQazoM"
+        video_path: "/images/beneficios/b6.mp4"
 
 
 graph:

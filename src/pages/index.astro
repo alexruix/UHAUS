@@ -58,44 +58,34 @@ const future_data = graph.futuro;
   </section>
 
   <section class="section" id="compromiso">
-    <div class="container px-4 mx-auto">
-      {/* Section title */}
-      <div class="text-center mb-10">
-        <h2 class="h2">{graph.head}</h2>
-        <p class="text-lg">{graph.description}</p>
-      </div>
-  
-      <div class="flex flex-col lg:flex-row gap-8">
-
-        <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 flex-1">
-          {graph_data.map((item: any) => (
-            <div class="relative p-8 bg-white rounded-lg shadow-lg transition-all duration-300 hover:scale-105 group">
-
-              <div class="flex flex-col items-center">
-                <i class={`${item.icon} text-4xl mb-4`}></i> {/* Icon */}
-                <h3 class="font-bold text-xl text-center">{item.title}</h3> {/* Title */}
-              </div>
-
-              <div class="max-h-0 overflow-hidden transition-all duration-300 group-hover:max-h-48 group-hover:opacity-100 opacity-0">
-                <p class="mt-4 text-gray-700">{item.content}</p> {/* Additional Text */}
-              </div>
-            </div>
-          ))}
-        </div> -->
-  
-        <div class="flex flex-col gap-4 flex-none w-full ">
-          {future_data.map((post) => (
-            <div class="bg-white p-4 rounded-sm border-gray-200 border" key={post.title}>
-              <div class="py-4">
-                <h2 class="text-xl font-semibold mb-2">{post.title}</h2>
-                <p class="text-gray-600">{post.content}</p>
-              </div>
-            </div>
-          ))}
+    <div class="container mx-auto px-4">
+        <!-- Section title -->
+        <div class="text-center mb-10">
+            <h2 class="text-2xl font-bold">{graph.head}</h2>
+            <p class="text-lg">{graph.description}</p>
         </div>
-      </div>
+
+        <!-- Interactive Circle -->
+        <div class="flex flex-wrap justify-center gap-8">
+            {graph_data.map((item, index) => (
+                <div class="relative p-8 bg-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 group w-64">
+                    {/* Icon & Title */}
+                    <div class="flex flex-col items-center">
+                        <i class={`${item.icon} text-4xl mb-4`}></i>
+                        <h3 class="font-bold text-xl text-center">{item.title}</h3>
+                    </div>
+                    {/* Additional Info (Initially Hidden) */}
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 group-hover:max-h-48 group-hover:opacity-100 opacity-0">
+                        <p class="mt-4 text-gray-700 text-left">{item.content}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
     </div>
-  </section>
+</section>
+
+
+
   
   
 
