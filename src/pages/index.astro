@@ -73,51 +73,47 @@ const future_data = graph.futuro;
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 flex-1 p-8 bg-neutral-300"
         >
-          {
-            graph_data.map((item: any) => (
-              <div
-                class="relative p-8 border-2 cursor-pointer bg-white rounded transition-transform duration-500 ease-in-out hover:scale-105 group"
-                style={`border-color: ${item.color};`}
-              >
-                {/* Icon & Title */}
-                <div class="flex flex-col items-center">
-                  <div class="flex gap-4">
-                    <IconImport data={item.icon} sizeIcon={24} />
-                    <h3 class="font-bold text-xl text-center">{item.title}</h3>
-                  </div>
-                </div>
-
-                {/* Additional Info (Initially Hidden) */}
-                <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-48 group-hover:opacity-100 opacity-0 md:group-hover:max-h-48 md:group-hover:opacity-100">
-                  <p class="mt-4 text-gray-700">
-                    <span set:html={markdownify(item.content)}/>
-
-                  {/* Renderizar botones si existen */}
-                  {item.button && ( // Cambiado de item.buttons a item.button
-                    <div class="mt-4 flex justify-center">
-                      <a
-                        class={`btn mx-2 ${
-                          item.button?.outline
-                            ? "btn-outline-primary"
-                            : "btn-primary"
-                        }`}
-                        href={item.button?.link}
-                      >
-                        {/* Renderiza el ícono si existe */}
-                        {item.button?.icon && (
-                          <IconImport
-                            data={item.button.icon}
-                            sizeIcon={20}
-                          />
-                        )}
-                        {item.button?.label}
-                      </a>
-                    </div>
-                  )}
+        {
+          graph_data.map((item: any) => (
+            <div
+              class="relative p-8 border-2 cursor-pointer bg-white rounded transition-transform duration-500 ease-in-out hover:scale-105 group"
+              style={`border-color: ${item.color};`}
+            >
+              <div class="flex flex-col items-center">
+                <div class="flex gap-4">
+                  <IconImport data={item.icon} sizeIcon={24} />
+                  <h3 class="font-bold text-xl text-center">{item.title}</h3>
                 </div>
               </div>
-            ))
-          }
+        
+              {/* Additional Info */}
+              <div class="max-h-full lg:max-h-0 lg:overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-48 lg:group-hover:opacity-100 opacity-100 lg:opacity-0">
+                <p class="mt-4 text-gray-700">
+                  <span set:html={markdownify(item.content)} />
+                </p>
+        
+                {/* Renderizar botones si existen */}
+                {item.button && (
+                  <div class="mt-4 flex justify-center">
+                    <a
+                      class={`btn mx-2 ${
+                        item.button?.outline ? "btn-outline-primary" : "btn-primary"
+                      }`}
+                      href={item.button?.link}
+                    >
+                      {/* Renderiza el ícono si existe */}
+                      {item.button?.icon && (
+                        <IconImport data={item.button.icon} sizeIcon={20} />
+                      )}
+                      {item.button?.label}
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))
+        }
+        
         </div>
 
         {/* Future data cards */}

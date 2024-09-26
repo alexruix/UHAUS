@@ -158,7 +158,7 @@ graph:
         color: "#495C59"
         button:
           label: Ver certificaciones
-          link: "https://web.whatsapp.com/send?phone=5492216148901&amp;text=Hola%20UHAUS"
+          link: "/"
           outline: true
           enable: true    
 
