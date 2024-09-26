@@ -4,7 +4,7 @@ hero:
   image: "/images/banner.jpg"
   buttons:
     - label: "Solicitar presupuesto"
-      link: "https://wa.me/1234567890"
+      link: "https://web.whatsapp.com/send?phone=5492216148901&amp;text=Hola%20UHAUS"
       icon: "WhatsappLogo"
       enable: true
 
@@ -12,13 +12,16 @@ hero:
 banner:
    - title: Aisla
      subtitle: Aislamiento ecológico, sustentable y efectivo que puede mantener tu hogar confortable durante todo el año.
-     icon: Heart  #icon package react-feather-icon [https://feathericons.com/]
+     icon: Heart  
+     image: "/images/icons/aislaIcon.png"
    - title: Protege
      subtitle: Regula la humedad ambiente y previene las humedad por condensación evitando asi, la aparición de hongos y moho.
-     icon: Heart  #icon package react-feather-icon [https://feathericons.com/]
+     icon: Heart  
+     image: "/images/icons/protegeIcon.png"
    - title: Ahorra
      subtitle: Se reduce hasta un 40% la demanda energética ahorrando en facturas de luz y gas.
-     icon: Heart  #icon package react-feather-icon [https://feathericons.com/]
+     icon: Heart  
+     image: "/images/icons/ahorraIcon.png"
 
 about_us:
   title: "Sobre nosotros"
@@ -45,7 +48,7 @@ no irrita la piel, por lo que se utiliza como aislante seguro."
   image: /images/about.jpg
   button:
     label: Download The Theme
-    link: "https://themefisher.com/astro-themes/pinwheel-astro"
+    link: "https://web.whatsapp.com/send?phone=5492216148901&amp;text=Hola%20UHAUS"
     enable: false
 
 ##we_apply
@@ -54,14 +57,17 @@ we_apply:
   
   feature_list:
     - icon: "map"  #icon package react-feather-icon [https://feathericons.com/]
+      image: /images/apply/industrial.jpg
       title: Industrial
       content: Galpones, fábricas, producción avícola y porcina
 
     - icon: "lock"  #icon package react-feather-icon [https://feathericons.com/]
       title: Comercial
+      image: /images/apply/comercial.webp
       content: Salones de fiestas, bares, locales que generen ruidos, coworking, oficinas, hotelería
 
     - icon: "link"  #icon package react-feather-icon [https://feathericons.com/]
+      image: /images/apply/residencial.jpg
       title: Residencial
       content: Casas, Departamentos y Rehabilitación de construcciones
     
@@ -104,43 +110,37 @@ beneficios:
       description: "Evita puentes térmicos y acústicos"
       video:
         thumbnail: "/images/beneficios/b1.png"
-        video_id: "g3-VxLQO7do"
-        video_path: "/images/beneficios/b1.mp4"
+        video_path: "/videos/sellador.mp4"
 
     - title: "Resistente al fuego"
       description: "No se inflama, ni genera gases tóxicos"
       video:
         thumbnail: "/images/beneficios/b2.png"
-        video_id: "g3-VxLQO7do"
-        video_path: "/images/beneficios/b2.mp4"
+        video_path: "/videos/fuego.mp4"
 
     - title: "Doble aislación"
       description: "Aislamiento termoacústico en una sola aplicación"
       video:
         thumbnail: "/images/beneficios/b3.png"
-        video_id: "g3-VxLQO7do"
-        video_path: "/images/beneficios/b3.mp4"
+        video_path: "/videos/aislacion.mp4"
 
     - title: "Evita condensación"
       description: "Es higrófuga, absorbe y cede la humedad al ambiente logrando regular la condensación, 100% antihongos."
       video:
         thumbnail: "/images/beneficios/b4.png"
-        video_id: "KYnru3NBrIs"
-        video_path: "/images/beneficios/b4.mp4"
+        video_path: "/videos/condensacion.mp4"
 
     - title: "Rápida instalación"
       description: "Trabajo de 200 mt2 por día y por máquina en la construcción"
       video:
         thumbnail: "/images/beneficios/b5.png"
-        video_id: "CVVLYa-omT0"
-        video_path: "/images/beneficios/b5.mp4"
+        video_path: "/videos/instalacion.mp4"
 
     - title: "Evita plagas"
       description: "Gracias al borax añadido, repele ratones y plagas en general"
       video:
         thumbnail: "/images/beneficios/b6.png"
-        video_id: "7uapnBQazoM"
-        video_path: "/images/beneficios/b6.mp4"
+        video_path: "/videos/plaga.mp4"
 
 
 graph:
@@ -148,29 +148,39 @@ graph:
   description: Somos una empresa comprometida en impactar de forma positiva en nuestra comunidad, el medio ambiente y en nuestros empleados. Todos los días debemos esforzarnos por ser mejores personas, ya que todos compartimos este mundo como seres humanos.
   items:
       - title: Bienestar
-        subtitle: Más información
-        content: Nuestro compromiso con el bienestar de nuestros empleados se refleja en iniciativas como seguros complementarios de salud, oportunidades de capacitación y desarrollo profesional.
-        icon: Heart  #icon package react-feather-icon [https://feathericons.com/]
+        content: Minimizar nuestro impacto en nuestra huella de carbono utilizando al menos un 85% de materias primas recicladas, adoptando prácticas de reutilización y reciclaje.
+        icon: Recycle  
+        color: "#6856FF"
+
       - title: Certificaciones
-        subtitle: Más información
-        content: La certificación como Empresa B en 2021 y el prestigioso Sello Pro otorgado por la Cámara Chilena de la Construcción en 2023 son ejemplos claros de nuestro compromiso con la sustentables y sostenibles.
-        icon: award  #icon package react-feather-icon [https://feathericons.com/]
-      - title: Innovación
-        subtitle: Más información
-        content: Nuestra empresa se guía por un propósito claro y una estrategia de sostenibilidad empresarial. Además, contamos con un equipo directivo altamente capacitado que impulsa la innovación y la mejora continua de nuestras operaciones.
-        icon: zap  #icon package react-feather-icon [https://feathericons.com/]
+        content: La certificación de **Celulosa.pro®** nuestro compromiso con la sustentabilidad y sostenibilidad.
+        icon: Certificate 
+        color: "#495C59"
+        button:
+          label: Ver certificaciones
+          link: "https://web.whatsapp.com/send?phone=5492216148901&amp;text=Hola%20UHAUS"
+          outline: true
+          enable: true    
+
+      - title: Innovación  
+        color: "#887CC1"      
+        content: Nuestro objetivo en la empresa es seguir una estrategia de sostenibilidad empresarial. Contamos con un equipo directivo muy preparado que fomenta la innovación y la mejora constante de nuestras operaciones.
+        icon: Lightbulb 
+        
       - title: Comunidad
-        subtitle: Más información
-        content: Contribuimos activamente al bienestar de nuestros trabajadores mediante programas de aislación térmica gratuita, apoyo continuo a fundaciones y/o corporaciones locales.
-        icon: users  #icon package react-feather-icon [https://feathericons.com/]
+        color: "#FFAF45"        
+        content: Apoyamos a nuestros trabajadores brindando programas de aislación térmica gratuita y apoyando a organizaciones locales.
+        icon: Handshake  
+
       - title: Proveedores y clientes
-        subtitle: Más información
-        content: Mantenemos relaciones sólidas y transparentes con nuestros proveedores y clientes, garantizando la calidad de nuestros productos y servicios, y promoviendo prácticas comerciales éticas y sostenibles.
-        icon: truck  #icon package react-feather-icon [https://feathericons.com/]
+        color: "#D82565"
+        content: Trabajamos para mantener  buenas relaciones con nuestros proveedores y clientes, asegurando la calidad de lo que ofrecemos y fomentando prácticas comerciales éticas y sostenibles.
+        icon: Truck  
+
       - title: Medio Ambiente
-        subtitle: Más información
-        content: Utilizar al menos en un 85% de materias primas recicladas, así disminuir al máximo nuestro impacto en la huella de Carbono, adoptando prácticas de reutilización y reciclaje.
-        icon: thermometer  #icon package react-feather-icon [https://feathericons.com/]
+        color: "#07A7EF"
+        content: Utilizamos más del 85% de  materiales reciclados en nuestros productos para reducir nuestro impacto en el medio ambiente, fomentando la reutilización y el reciclaje.
+        icon: GlobeHemisphereWest  
 
   futuro:
     - title: Mision
@@ -212,10 +222,10 @@ application_types:
 
 cta:
   title: Consigue la instalación con celulosa más rápida y sencilla con U HAUS
-  image: /images/cta-img.jpg
+  image: /images/cta-img3.jpg
   buttons:
     - label: "Solicitar presupuesto"
-      link: "https://wa.me/1234567890"
+      link: "https://web.whatsapp.com/send?phone=5492216148901&amp;text=Hola%20UHAUS"
       icon: "WhatsappLogo"
       enable: true
 

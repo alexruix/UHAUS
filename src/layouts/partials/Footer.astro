@@ -5,8 +5,10 @@ import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import social from "@/config/social.json";
 import { markdownify } from "@/lib/utils/textConverter";
+import { MapPin, Envelope, InstagramLogo, WhatsappLogo } from "@phosphor-icons/react";
 const { footer } = menu;
-const { copyright, location, email, phone, footer_description, instagram } = config.params;
+const { copyright, location, email, phone, footer_description, instagram, telLink } =
+  config.params;
 ---
 
 <footer class="footer bg-[#F1F1F1]">
@@ -20,7 +22,7 @@ const { copyright, location, email, phone, footer_description, instagram } = con
       </div>
 
       <div class="flex flex-col mt-12 md:w-2/3 lg:w-3/4">
-        <div class="flex justify-end">
+        <div class="flex gap-8 justify-end">
           <div class="flex flex-col">
             <h6>Menú</h6>
             <ul>
@@ -42,27 +44,35 @@ const { copyright, location, email, phone, footer_description, instagram } = con
           <div class="flex flex-col ml-8">
             <h6>Contacto</h6>
             <ul>
-              
-              <li class="mb-2">
-                <a class="hover:text-primary" href={`mailto:${email}`}>
+              <li class="mb-4 flex items-center">
+                <!-- <MapPin className="mr-2" size={20} /> -->
+                <span set:html={markdownify(location)} />
+              </li>
+
+              <li class="mb-2 flex items-center">
+                <Envelope className="mr-2" size={20} />
+                <a class="hover:text-primary" target="_blank" href={`mailto:${email}`}>
                   {email}
                 </a>
               </li>
-              <li>
-                <a
-                  class="hover:text-primary hover:underline"
-                  href={`tel:${phone}`}
-                >
+
+              <li class="mb-2 flex items-center">
+                <WhatsappLogo className="mr-2" size={20} />
+                <a class="hover:text-primary hover:underline" target="_blank" href={`${telLink}`}>
                   {phone}
                 </a>
               </li>
-              <li class="mb-2" set:html={markdownify(location)}/>
-              <li class="mb-2" > <a
-                class="hover:text-primary hover:underline"
-                href={`${instagram}`}
-              >
-                Instagram
-              </a></li>
+
+              <li class="mb-2 flex items-center">
+                <InstagramLogo className="mr-2" size={20} />
+                <a
+                  class="hover:text-primary hover:underline"
+                  href={`${instagram}`}
+                  target="_blank"
+                >
+                  <span>Instagram</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

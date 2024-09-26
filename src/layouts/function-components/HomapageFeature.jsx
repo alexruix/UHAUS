@@ -9,11 +9,19 @@ const HomapageFeature = ({ feature_list }) => {
         return (
           <div
             key={i}
-            className="flex flex-col justify-between rounded-sm bg-body p-5"
+            className="relative flex flex-col justify-end rounded overflow-hidden"
+            style={{
+              backgroundImage: `url(${item.image})`, // Usa la imagen de fondo
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              height: '450px', // Define la altura del contenedor
+            }}
           >
-            <div>
-              <h3 className="h4 text-xl lg:text-2xl">{item.title}</h3>
-              <p className="text-base lg:text-lg leading-relaxed ">{item.content}</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-neutral-800 to-35%"></div>
+            {/* Contenido del texto */}
+            <div className="relative z-10 p-5 text-white">
+              <h3 className="text-xl lg:text-2xl text-white font-bold">{item.title}</h3>
+              <p className="text-base lg:text-lg leading-relaxed mt-2">{item.content}</p>
             </div>
           </div>
         );

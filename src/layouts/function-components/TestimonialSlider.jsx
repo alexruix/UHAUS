@@ -11,6 +11,7 @@ const TestimonialSlider = ({ list }) => {
   const [swiper, setSwiper] = useState(null);
   const paginationRef = useRef(null);
 
+
   return (
     <div className="reviews-carousel relative">
       <Swiper
@@ -24,51 +25,65 @@ const TestimonialSlider = ({ list }) => {
           setSwiper(swiper);
         }}
         modules={[Pagination, Autoplay]}
-        slidesPerView={1}
+        autoplay={10000}
+        slidesPerView={1.2}
         breakpoints={{
           992: {
-            slidesPerView: 2,
+            slidesPerView: 1.2,
           },
           1200: {
-            slidesPerView: 2,
+            slidesPerView: 3.2,
           },
         }}
       >
-        {list.map((item, i) => (
-          <SwiperSlide key={"feature-" + i}>
-            <div className="review rounded-sm shadow-sm border border-gray-200 text-start flex gap-4">
-              <div>
-                <span className="h5 font-semibold">{item.author}</span>
-              </div>
-              <div>
-                <h5 className="mb-4">{item.organization}</h5>
-                <p>{item.content}</p>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        {list.map((item, i) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const isLongContent = item.content.length > 200;
+
+    return (
+      <SwiperSlide key={"feature-" + i}>
+        <div className="review rounded  shadow text-start flex gap-4 sm:gap-2">
+          <div>
+            {/* <span className="h5 font-semibold">{item.author}</span> */}
+          </div>
+          <div>
+            <h5 className="mb-4 h4">{item.organization}</h5>
+            
+            <p>
+              {isExpanded || !isLongContent ? item.content : item.content.slice(0, 200) + '...'}
+            </p>
+            {isLongContent && (
+              <button className="text-uhaus mt-2" onClick={() => setIsExpanded(!isExpanded)}>
+                {isExpanded ? 'Ver menos' : 'Ver más'}
+              </button>
+            )}
+          </div>
+        </div>
+      </SwiperSlide>
+    );
+  })}
+</Swiper>
 
       {/* Flecha izquierda */}
       <button
-        className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-40 transition-opacity duration-300 ${
+        className={`absolute -left-2 top-1/2 rounded-full p-2 bg-slate-50 shadow-lg transform -translate-y-1/3 z-40 transition-opacity duration-300 ${
           swiper && swiper.isEnd ? "opacity-0" : "opacity-100"
         } hover:opacity-100`}
         aria-label="Botón anterior"
         onClick={() => swiper?.slidePrev()}
       >
-        {/* <CaretLeft className="w-8 h-8 text-gray-500 hover:text-gray-800" /> */}
+        <CaretLeft className="w-8 h-8 text-gray-500 hover:text-gray-800" />
       </button>
 
       {/* Flecha derecha */}
       <button
-        className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-40 transition-opacity duration-300 ${
+        className={`absolute -right-4 top-1/2 rounded-full p-2 bg-slate-50 shadow-lg transform -translate-y-1/3 z-40 transition-opacity duration-300 ${
           swiper && swiper.isEnd ? "opacity-0" : "opacity-100"
         } hover:opacity-100`}
         aria-label="Botón siguiente"
         onClick={() => swiper?.slideNext()}
       >
-        {/* <CaretRight className="w-8 h-8 text-gray-500 hover:text-gray-800" /> */}
+        <CaretRight className="w-8 h-8 text-gray-500 hover:text-gray-800" />
       </button>
 
       <div className="relative flex justify-center">

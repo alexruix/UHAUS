@@ -1,24 +1,16 @@
 import { useState } from "react";
 import { Play } from "@phosphor-icons/react";
-import YouTube from "react-youtube";
 
-const VideoComponent = ({
+const Videos = ({
   height,
   width,
   src,
   title,
-  video_id,
+  video_path, // Nueva propiedad para el video local
   video_height,
   video_width,
 }) => {
   const [play, setPlay] = useState(false);
-  const videoOptions = {
-    borderRadius: 16,
-    
-    playerVars: {
-      autoplay: 1,
-    },
-  };
 
   return (
     <>
@@ -36,16 +28,21 @@ const VideoComponent = ({
           />
         </div>
       ) : (
-        <div className="youtube mx-auto text-center">
-          <YouTube
-            videoId={video_id}
-            opts={videoOptions}
-            iframeClassName={`  aspect-video ${video_height} ${video_width} max-w-full bg-transparent rounded-none`}
-          />          
+        <div className="mx-auto text-center">
+          <video
+            src={video_path}  
+            width={width}
+            height={height}
+            // controls
+            autoPlay
+            className="max-w-full object-cover rounded-none"
+          >
+            Tu navegador no soporta la etiqueta de video.
+          </video>
         </div>
       )}
     </>
   );
 };
 
-export default VideoComponent;
+export default Videos;

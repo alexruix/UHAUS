@@ -8,7 +8,10 @@ import Cta from "@/layouts/partials/Cta.astro";
 import Types from "@/components/Types.astro";
 import Hero from "@/components/Hero.astro";
 import { getEntryBySlug } from "astro:content";
-import {WhatsappLogo} from "@phosphor-icons/react";
+import { WhatsappLogo } from "@phosphor-icons/react";
+import IconImport from "@/layouts/function-components/Icons.jsx";
+import { humanize, markdownify } from "@/lib/utils/textConverter";
+
 
 // Obtener datos de la página
 const homepage = await getEntryBySlug("homepage", "index");
@@ -39,18 +42,18 @@ const future_data = graph.futuro;
 ---
 
 <Base>
-  <Hero {...hero_data} id="home"/>
-  <!-- banner -->
+  <Hero {...hero_data} id="home" />
+  <!-- Sobre nosotros -->
   <About_us data={about_us} id="nosotros" />
 
-  <!-- choise us -->
+  <!-- ¿Por qué elegirnos? -->
   <Choise_us data={choise_us} />
-  <!-- key features -->
+  <!-- ¿Donde podemos aplicar? -->
   <We_apply key_features={we_apply} id="beneficios" />
 
   <section class="section">
     <div class="container">
-      <div class="row text-center mb-10 animate__animated animate__fadeInUp">
+      <div class="row text-center mb-10">
         <h2 class="h2">{beneficios.head}</h2>
       </div>
       <Blogs posts={beneficios_data} />
@@ -58,36 +61,86 @@ const future_data = graph.futuro;
   </section>
 
   <section class="section" id="compromiso">
-    <div class="container mx-auto px-4">
-        <!-- Section title -->
-        <div class="text-center mb-10">
-            <h2 class="text-2xl font-bold">{graph.head}</h2>
-            <p class="text-lg">{graph.description}</p>
-        </div>
+    <div class="container px-4 mx-auto">
+      {/* Section title */}
+      <div class="mb-10">
+        <h2 class="h2 mb-4 text-center">{graph.head}</h2>
+        <p class="text-lg">{graph.description}</p>
+      </div>
 
-        <!-- Interactive Circle -->
-        <div class="flex flex-wrap justify-center gap-8">
-            {graph_data.map((item, index) => (
-                <div class="relative p-8 bg-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 group w-64">
-                    {/* Icon & Title */}
-                    <div class="flex flex-col items-center">
-                        <i class={`${item.icon} text-4xl mb-4`}></i>
-                        <h3 class="font-bold text-xl text-center">{item.title}</h3>
-                    </div>
-                    {/* Additional Info (Initially Hidden) */}
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 group-hover:max-h-48 group-hover:opacity-100 opacity-0">
-                        <p class="mt-4 text-gray-700 text-left">{item.content}</p>
-                    </div>
+      <div class="flex flex-col lg:flex-row gap-8">
+        {/* Grid for items */}
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 flex-1 p-8 bg-neutral-300"
+        >
+          {
+            graph_data.map((item: any) => (
+              <div
+                class="relative p-8 border-2 cursor-pointer bg-white rounded transition-transform duration-500 ease-in-out hover:scale-105 group"
+                style={`border-color: ${item.color};`}
+              >
+                {/* Icon & Title */}
+                <div class="flex flex-col items-center">
+                  <div class="flex gap-4">
+                    <IconImport data={item.icon} sizeIcon={24} />
+                    <h3 class="font-bold text-xl text-center">{item.title}</h3>
+                  </div>
                 </div>
-            ))}
+
+                {/* Additional Info (Initially Hidden) */}
+                <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-48 group-hover:opacity-100 opacity-0 md:group-hover:max-h-48 md:group-hover:opacity-100">
+                  <p class="mt-4 text-gray-700">
+                    <span set:html={markdownify(item.content)}/>
+
+                  {/* Renderizar botones si existen */}
+                  {item.button && ( // Cambiado de item.buttons a item.button
+                    <div class="mt-4 flex justify-center">
+                      <a
+                        class={`btn mx-2 ${
+                          item.button?.outline
+                            ? "btn-outline-primary"
+                            : "btn-primary"
+                        }`}
+                        href={item.button?.link}
+                      >
+                        {/* Renderiza el ícono si existe */}
+                        {item.button?.icon && (
+                          <IconImport
+                            data={item.button.icon}
+                            sizeIcon={20}
+                          />
+                        )}
+                        {item.button?.label}
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))
+          }
         </div>
+
+        {/* Future data cards */}
+        <div class="flex flex-col gap-8 flex-none w-full lg:w-1/3">
+          {
+            future_data.map((post) => (
+              <div
+                class="bg-white p-4 rounded-sm border-gray-200 border"
+                key={post.title}
+              >
+                <div class="py-4">
+                  <h2 class="text-xl font-semibold mb-2 text-uhaus">
+                    {post.title}
+                  </h2>
+                  <p class="text-gray-600">{post.content}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
-</section>
-
-
-
-  
-  
+  </section>
 
   <Types
     types_data={types_data}
@@ -99,16 +152,14 @@ const future_data = graph.futuro;
   <Cta cta_data={cta} id="contacto" />
 
   <!-- WhatsApp Button with text -->
-  <div class="fixed bottom-4 right-4 flex items-center group ">
+  <div class="fixed bottom-4 right-4 flex items-center group">
     <a
-      href="https://wa.me/1234567890"
-      class="flex items-center bg-green-600 drop-shadow-md rounded-full p-4  transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+      href="https://wa.me/+5492216148901"
+      class="flex items-center bg-green-600 drop-shadow-md rounded-full p-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div
-        class="flex items-center  rounded-full transition-transform"
-      >
+      <div class="flex items-center rounded-full transition-transform">
         <WhatsappLogo size={24} color="#ffffff" />
       </div>
       <span
