@@ -29,9 +29,9 @@ const TestimonialSlider = ({ list }) => {
         slidesPerView={1.2}
         breakpoints={{
           992: {
-            slidesPerView: 1.2,
+            slidesPerView: 2.8,
           },
-          1200: {
+          1100: {
             slidesPerView: 3.2,
           },
         }}
@@ -66,7 +66,7 @@ const TestimonialSlider = ({ list }) => {
 
       {/* Flecha izquierda */}
       <button
-        className={`absolute -left-2 top-1/2 rounded-full p-2 bg-slate-50 shadow-lg transform -translate-y-1/3 z-40 transition-opacity duration-300 ${
+        className={`absolute -left-2 top-1/2 rounded-full p-2 bg-slate-50 shadow-lg transform -translate-y-1/3 z-30 transition-opacity duration-300 ${
           swiper && swiper.isEnd ? "opacity-0" : "opacity-100"
         } hover:opacity-100`}
         aria-label="Botón anterior"
@@ -77,7 +77,7 @@ const TestimonialSlider = ({ list }) => {
 
       {/* Flecha derecha */}
       <button
-        className={`absolute -right-4 top-1/2 rounded-full p-2 bg-slate-50 shadow-lg transform -translate-y-1/3 z-40 transition-opacity duration-300 ${
+        className={`absolute -right-4 top-1/2 rounded-full p-2 bg-slate-50 shadow-lg transform -translate-y-1/3 z-30 transition-opacity duration-300 ${
           swiper && swiper.isEnd ? "opacity-0" : "opacity-100"
         } hover:opacity-100`}
         aria-label="Botón siguiente"

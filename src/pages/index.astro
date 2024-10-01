@@ -12,7 +12,6 @@ import { WhatsappLogo } from "@phosphor-icons/react";
 import IconImport from "@/layouts/function-components/Icons.jsx";
 import { humanize, markdownify } from "@/lib/utils/textConverter";
 
-
 // Obtener datos de la página
 const homepage = await getEntryBySlug("homepage", "index");
 const {
@@ -39,6 +38,7 @@ const beneficios_data = beneficios.items;
 const types_data = application_types.items;
 const graph_data = graph.items;
 const future_data = graph.futuro;
+
 ---
 
 <Base>
@@ -73,47 +73,49 @@ const future_data = graph.futuro;
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 flex-1 p-8 bg-neutral-300"
         >
-        {
-          graph_data.map((item: any) => (
-            <div
-              class="relative p-8 border-2 cursor-pointer bg-white rounded transition-transform duration-500 ease-in-out hover:scale-105 group"
-              style={`border-color: ${item.color};`}
-            >
-              <div class="flex flex-col items-center">
-                <div class="flex gap-4">
-                  <IconImport data={item.icon} sizeIcon={24} />
-                  <h3 class="font-bold text-xl text-center">{item.title}</h3>
+          {
+            graph_data.map((item: any) => (
+              <div
+                class="relative p-8 border-4 cursor-pointer bg-white rounded transition-transform duration-500 ease-in-out lg:hover:scale-105 group"
+                style={`border-color: ${item.color};`}
+              >
+                <div class="flex flex-col items-center">
+                  <div class="flex gap-4">
+                    <IconImport data={item.icon} sizeIcon={24} />
+                    <h3 class="font-bold text-xl text-center">{item.title}</h3>
+                  </div>
+                </div>
+
+                {/* Additional Info */}
+                <div class="max-h-full lg:max-h-0 lg:overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-48 lg:group-hover:opacity-100 opacity-100 lg:opacity-0">
+                  <p class="mt-4 text-gray-700">
+                    <span set:html={markdownify(item.content)} />
+                  </p>
+
+                  {/* Renderizar botones si existen */}
+                  {item.button && (
+                    <div class="mt-4 flex justify-center">
+                      <a
+                        class={`btn mx-2 ${
+                          item.button?.outline
+                            ? "btn-outline-primary"
+                            : "btn-primary"
+                        }`}
+                        target="_blank"
+                        href={item.button?.link}
+                      >
+                        {/* Renderiza el ícono si existe */}
+                        {item.button?.icon && (
+                          <IconImport data={item.button.icon} sizeIcon={20} />
+                        )}
+                        {item.button?.label}
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
-        
-              {/* Additional Info */}
-              <div class="max-h-full lg:max-h-0 lg:overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-48 lg:group-hover:opacity-100 opacity-100 lg:opacity-0">
-                <p class="mt-4 text-gray-700">
-                  <span set:html={markdownify(item.content)} />
-                </p>
-        
-                {/* Renderizar botones si existen */}
-                {item.button && (
-                  <div class="mt-4 flex justify-center">
-                    <a
-                      class={`btn mx-2 ${
-                        item.button?.outline ? "btn-outline-primary" : "btn-primary"
-                      }`}
-                      href={item.button?.link}
-                    >
-                      {/* Renderiza el ícono si existe */}
-                      {item.button?.icon && (
-                        <IconImport data={item.button.icon} sizeIcon={20} />
-                      )}
-                      {item.button?.label}
-                    </a>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))
-        }
-        
+            ))
+          }
         </div>
 
         {/* Future data cards */}
@@ -148,14 +150,14 @@ const future_data = graph.futuro;
   <Cta cta_data={cta} id="contacto" />
 
   <!-- WhatsApp Button with text -->
-  <div class="fixed bottom-4 right-4 flex items-center group">
+  <div class="fixed bottom-4 right-4 flex items-center group z-50">
     <a
-      href="https://wa.me/+5492216148901"
+      href="https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492216148901"
       class="flex items-center bg-green-600 drop-shadow-md rounded-full p-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div class="flex items-center rounded-full transition-transform">
+      <div class="flex items-center rounded-full transition-transform z-50">
         <WhatsappLogo size={24} color="#ffffff" />
       </div>
       <span

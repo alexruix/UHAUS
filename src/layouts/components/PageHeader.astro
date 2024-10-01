@@ -7,7 +7,7 @@ const { title, index_title, page_title, slug, image, content } =
 ---
 
 <div
-  class="relative h-screen rounded flex items-center justify-center text-center bg-cover bg-center bg-norepeat"
+  class="relative lg:h-[90vh] h-[80vh] rounded flex items-center justify-center text-center bg-cover bg-center bg-norepeat"
   style={`background-image: url(${image})`}
 >
   <div class="relative z-10 p-4 rounded lg:p-24">
@@ -33,6 +33,7 @@ const { title, index_title, page_title, slug, image, content } =
                   button?.outline ? "btn-outline-primary" : "btn-primary"
                 }`}
                 href={button?.link}
+                target="_blank"
               >
                 {/* Renderiza el ícono solo si existe */}
                 {PHIcon && <PHIcon size={20} />}

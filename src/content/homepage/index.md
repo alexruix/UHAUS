@@ -4,7 +4,7 @@ hero:
   image: "/images/banner.jpg"
   buttons:
     - label: "Solicitar presupuesto"
-      link: "https://web.whatsapp.com/send?phone=5492216148901&amp;text=Hola%20UHAUS"
+      link: "https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492216148901"
       icon: "WhatsappLogo"
       enable: true
 
@@ -48,7 +48,7 @@ no irrita la piel, por lo que se utiliza como aislante seguro."
   image: /images/about.jpg
   button:
     label: Download The Theme
-    link: "https://web.whatsapp.com/send?phone=5492216148901&amp;text=Hola%20UHAUS"
+    link: "https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492216148901"
     enable: false
 
 ##we_apply
@@ -153,12 +153,12 @@ graph:
         color: "#6856FF"
 
       - title: Certificaciones
-        content: La certificación de **Celulosa.pro®** nuestro compromiso con la sustentabilidad y sostenibilidad.
+        content: La certificación de **Celulosa.pro®** es nuestro compromiso con la sustentabilidad y sostenibilidad.
         icon: Certificate 
         color: "#495C59"
         button:
           label: Ver certificaciones
-          link: "/"
+          link: "/CertificadosUHAUS.pdf"
           outline: true
           enable: true    
 
@@ -222,10 +222,10 @@ application_types:
 
 cta:
   title: Consigue la instalación con celulosa más rápida y sencilla con U HAUS
-  image: /images/cta-img3.jpg
+  image: /images/cta-img.jpg
   buttons:
     - label: "Solicitar presupuesto"
-      link: "https://web.whatsapp.com/send?phone=5492216148901&amp;text=Hola%20UHAUS"
+      link: "https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492216148901"
       icon: "WhatsappLogo"
       enable: true
 
