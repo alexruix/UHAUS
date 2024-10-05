@@ -103,43 +103,43 @@ choise_us:
 
 
 
-beneficios: 
+benefits: 
   head: Beneficios del aislamiento
   items:
     - title: "Sellador"
       description: "Evita puentes térmicos y acústicos"
       video:
-        thumbnail: "/images/beneficios/b1.png"
+        thumbnail: "/images/benefits/b1.png"
         video_path: "/videos/sellador.mp4"
 
     - title: "Resistente al fuego"
       description: "No se inflama, ni genera gases tóxicos"
       video:
-        thumbnail: "/images/beneficios/b2.png"
+        thumbnail: "/images/benefits/b2.png"
         video_path: "/videos/fuego.mp4"
 
     - title: "Doble aislación"
       description: "Aislamiento termoacústico en una sola aplicación"
       video:
-        thumbnail: "/images/beneficios/b3.png"
+        thumbnail: "/images/benefits/b3.png"
         video_path: "/videos/aislacion.mp4"
 
     - title: "Evita condensación"
       description: "Es higrófuga, absorbe y cede la humedad al ambiente logrando regular la condensación, 100% antihongos."
       video:
-        thumbnail: "/images/beneficios/b4.png"
+        thumbnail: "/images/benefits/b4.png"
         video_path: "/videos/condensacion.mp4"
 
     - title: "Rápida instalación"
       description: "Trabajo de 200 mt2 por día y por máquina en la construcción"
       video:
-        thumbnail: "/images/beneficios/b5.png"
+        thumbnail: "/images/benefits/b5.png"
         video_path: "/videos/instalacion.mp4"
 
     - title: "Evita plagas"
       description: "Gracias al borax añadido, repele ratones y plagas en general"
       video:
-        thumbnail: "/images/beneficios/b6.png"
+        thumbnail: "/images/benefits/b6.png"
         video_path: "/videos/plaga.mp4"
 
 

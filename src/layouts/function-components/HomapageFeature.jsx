@@ -11,14 +11,14 @@ const HomapageFeature = ({ feature_list }) => {
             key={i}
             className="relative h-[320px] sm:h-[450px] flex flex-col justify-end rounded overflow-hidden"
             style={{
-              backgroundImage: `url(${item.image})`, // Usa la imagen de fondo
+              backgroundImage: `url(${item.image})`, 
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-               // Define la altura del contenedor
+               
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-neutral-800 sm:to-35% to-70%"></div>
-            {/* Contenido del texto */}
+            
             <div className="relative z-10 p-5 text-white">
               <h3 className="text-xl lg:text-2xl text-white font-bold">{item.title}</h3>
               <p className="text-base lg:text-lg leading-relaxed mt-2">{item.content}</p>

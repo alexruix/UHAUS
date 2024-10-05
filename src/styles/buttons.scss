@@ -7,7 +7,7 @@
 }
 
 .btn-outline-primary {
-  @apply relative rounded-[4px] border-[#78c247] bg-transparent text-center text-[#78c247] hover:bg-transparent  hover:shadow-[0px_1px_7px_#495C5950] hover:before:opacity-100;
+  @apply relative rounded-[4px] border-uhausG bg-transparent text-center text-uhausG hover:bg-transparent  hover:shadow-[0px_1px_7px_#495C5950] hover:before:opacity-100;
   &::before {
     @apply absolute bottom-0 left-0 right-0 top-0 -z-[1] rounded-[inherit] bg-gradient-to-tl opacity-0 transition-[inherit] content-[""];
   }
@@ -23,8 +23,4 @@
 
 .btn-sm {
   @apply h-[42px] leading-[24px];
-}
-
-.text-uhaus{
-  @apply text-[#78c247];
 }

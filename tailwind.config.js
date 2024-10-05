@@ -45,6 +45,7 @@ module.exports = {
         border: theme.colors.default.theme_color.border,
         "theme-light": theme.colors.default.theme_color.theme_light,
         "theme-dark": theme.colors.default.theme_color.theme_dark,
+        'uhausG': '#78c247',
       },
       fontSize: {
         base: font_base + "px",

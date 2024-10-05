@@ -20,7 +20,7 @@ const {
   about_us,
   choise_us,
   we_apply,
-  beneficios,
+  benefits,
   graph,
   application_types,
   cta,
@@ -31,14 +31,13 @@ const hero_data = {
   image: hero.image,
   buttons: hero.buttons,
   content: hero.content,
-  banner: banner, // Pasamos también los datos del banner
+  banner: banner,
 };
 
-const beneficios_data = beneficios.items;
+const beneficios_data = benefits.items;
 const types_data = application_types.items;
 const graph_data = graph.items;
 const future_data = graph.futuro;
-
 ---
 
 <Base>
@@ -54,7 +53,7 @@ const future_data = graph.futuro;
   <section class="section">
     <div class="container">
       <div class="row text-center mb-10">
-        <h2 class="h2">{beneficios.head}</h2>
+        <h2 class="h2">{benefits.head}</h2>
       </div>
       <Blogs posts={beneficios_data} />
     </div>
@@ -62,37 +61,35 @@ const future_data = graph.futuro;
 
   <section class="section" id="compromiso">
     <div class="container px-4 mx-auto">
-      {/* Section title */}
-      <div class="mb-10">
-        <h2 class="h2 mb-4 text-center">{graph.head}</h2>
-        <p class="text-lg">{graph.description}</p>
+      <div class="mb-10 ">
+        <h2 class="h2 mb-4 text-center ">{graph.head}</h2>
+        <p class="text-lg ">{graph.description}</p>
       </div>
 
       <div class="flex flex-col lg:flex-row gap-8">
-        {/* Grid for items */}
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 flex-1 p-8 bg-neutral-300"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 flex-1 md:p-8 lg:p-8 rounded bg-clip-padding backdrop-filter backdrop-blur-lg border-gray-200 border"
         >
           {
             graph_data.map((item: any) => (
               <div
-                class="relative p-8 border-4 cursor-pointer bg-white rounded transition-transform duration-500 ease-in-out lg:hover:scale-105 group"
+                class="relative p-8 border-4 cursor-pointer shadow bg-white rounded transition-transform duration-500 ease-in-out lg:hover:scale-105 group"
                 style={`border-color: ${item.color};`}
               >
                 <div class="flex flex-col items-center">
-                  <div class="flex gap-4">
-                    <IconImport data={item.icon} sizeIcon={24} />
-                    <h3 class="font-bold text-xl text-center">{item.title}</h3>
+                  <div class="flex gap-4 text-uhausG">
+                    <IconImport data={item.icon} sizeIcon={32} />
+                    <h3 class="font-bold h5 text-center text-uhausG">
+                      {item.title}
+                    </h3>
                   </div>
                 </div>
 
-                {/* Additional Info */}
                 <div class="max-h-full lg:max-h-0 lg:overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-48 lg:group-hover:opacity-100 opacity-100 lg:opacity-0">
                   <p class="mt-4 text-gray-700">
                     <span set:html={markdownify(item.content)} />
                   </p>
 
-                  {/* Renderizar botones si existen */}
                   {item.button && (
                     <div class="mt-4 flex justify-center">
                       <a
@@ -104,7 +101,6 @@ const future_data = graph.futuro;
                         target="_blank"
                         href={item.button?.link}
                       >
-                        {/* Renderiza el ícono si existe */}
                         {item.button?.icon && (
                           <IconImport data={item.button.icon} sizeIcon={20} />
                         )}
@@ -118,18 +114,15 @@ const future_data = graph.futuro;
           }
         </div>
 
-        {/* Future data cards */}
         <div class="flex flex-col gap-8 flex-none w-full lg:w-1/3">
           {
             future_data.map((post) => (
               <div
-                class="bg-white p-4 rounded-sm border-gray-200 border"
+                class="bg-white p-4 rounded border-gray-200 border"
                 key={post.title}
               >
                 <div class="py-4">
-                  <h2 class="text-xl font-semibold mb-2 text-uhaus">
-                    {post.title}
-                  </h2>
+                  <h2 class="text-xl font-semibold mb-2">{post.title}</h2>
                   <p class="text-gray-600">{post.content}</p>
                 </div>
               </div>
@@ -149,7 +142,6 @@ const future_data = graph.futuro;
   <!-- call to action -->
   <Cta cta_data={cta} id="contacto" />
 
-  <!-- WhatsApp Button with text -->
   <div class="fixed bottom-4 right-4 flex items-center group z-50">
     <a
       href="https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492216148901"
