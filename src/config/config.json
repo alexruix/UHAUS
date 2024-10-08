@@ -8,7 +8,8 @@
     "logo": "/images/logo.png",
     "logo_width": "147",
     "logo_height": "31",
-    "logo_text": "U HAUS Logo"
+    "logo_text": "U HAUS Logo",
+    "whatsapp": "https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492216148901"
   },
 
   "settings": {

@@ -2,7 +2,7 @@
 import { humanize, markdownify } from "@/lib/utils/textConverter";
 import * as Icon from "@phosphor-icons/react";
 const { page_data } = Astro.props || {};
-const { title, index_title, page_title, slug, image, content } =
+const { image, content } =
   page_data || {};
 ---
 
@@ -25,7 +25,7 @@ const { title, index_title, page_title, slug, image, content } =
           {page_data.buttons.map((button: any) => {
             if (!button?.enable) return null;
 
-            const PHIcon = Icon[humanize(button.icon)]; // Obtiene el ícono con el nombre pasado en 'button.icon'
+            const PHIcon = Icon[humanize(button.icon)];
 
             return (
               <a

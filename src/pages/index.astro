@@ -10,7 +10,9 @@ import Hero from "@/components/Hero.astro";
 import { getEntryBySlug } from "astro:content";
 import { WhatsappLogo } from "@phosphor-icons/react";
 import IconImport from "@/layouts/function-components/Icons.jsx";
-import { humanize, markdownify } from "@/lib/utils/textConverter";
+import { markdownify } from "@/lib/utils/textConverter";
+import config from "@/config/config.json";
+
 
 // Obtener datos de la página
 const homepage = await getEntryBySlug("homepage", "index");
