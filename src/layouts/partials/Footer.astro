@@ -1,12 +1,12 @@
 ---
 import Logo from "@/components/Logo.astro";
-import Social from "@/components/Social.astro";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
-import social from "@/config/social.json";
 import { markdownify } from "@/lib/utils/textConverter";
-import { MapPin, Envelope, InstagramLogo, WhatsappLogo } from "@phosphor-icons/react";
+import { Envelope, InstagramLogo, WhatsappLogo } from "@phosphor-icons/react";
 const { footer } = menu;
+const currentYear = new Date().getFullYear();
+const {whatsapp} = config.site; 
 const { copyright, location, email, phone, footer_description, instagram, telLink } =
   config.params;
 ---
@@ -18,7 +18,6 @@ const { copyright, location, email, phone, footer_description, instagram, telLin
     >
       <div class="flex flex-col mt-12 md:w-1/3 lg:w-1/4">
         <Logo />
-        <!-- <Social source={social} className="social-icons mt-4 lg:mt-6" /> -->
       </div>
 
       <div class="flex flex-col mt-12 md:w-2/3 lg:w-3/4">
@@ -45,7 +44,6 @@ const { copyright, location, email, phone, footer_description, instagram, telLin
             <h6>Contacto</h6>
             <ul>
               <li class="mb-4 flex items-center">
-                <!-- <MapPin className="mr-2" size={20} /> -->
                 <span set:html={markdownify(location)} />
               </li>
 
@@ -58,7 +56,7 @@ const { copyright, location, email, phone, footer_description, instagram, telLin
 
               <li class="mb-2 flex items-center">
                 <WhatsappLogo className="mr-2" size={20} />
-                <a class="hover:text-primary hover:underline" target="_blank" href={`${telLink}`}>
+                <a class="hover:text-primary hover:underline" target="_blank" href={`${whatsapp}`}>
                   {phone}
                 </a>
               </li>
@@ -82,9 +80,11 @@ const { copyright, location, email, phone, footer_description, instagram, telLin
 
   <div class="container max-w-[1440px]">
     <div
-      class="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-center"
+      class="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-left"
     >
-      <p class="content text-text" set:html={markdownify(copyright)} />
+    <p class="content text-text">
+      {markdownify(`${copyright} ${currentYear}. Todos los derechos reservados.`)}
+    </p>
     </div>
   </div>
 </footer>

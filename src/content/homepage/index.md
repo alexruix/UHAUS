@@ -3,8 +3,7 @@ hero:
   title: "AISLA • PROTEGE • AHORRA"
   image: "/images/banner.jpg"
   buttons:
-    - label: "Solicitar presupuesto"
-      link: "https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492216148901"
+    - label: "Solicitar presupuesto"      
       icon: "WhatsappLogo"
       enable: true
 
@@ -25,31 +24,9 @@ banner:
 
 about_us:
   title: "Sobre nosotros"
-  content: "Somos una empresa líder en el sector de aislamiento termo
-acústico, dedicada a proporcionar soluciones avanzadas que
-maximizan el <b>confort y la eficiencia energética</b> en proyectos de
-construcción. Utilizamos la materia prima de <b>Celulosa.pro®</b>, con
-más de una década de experiencia en el mercado, aseguramos que
-la celulosa es el aislante que brinda un mayor valor agregado desde
-el punto de vista técnico y económico.
-<br/>
-Utilizando tecnología avanzada para aplicar el material más
-ecológico y resistente disponible, te ofrecemos un aislamiento
-térmico y acústico efectivo que puede mantener tu hogar 5ºC más
-fresco o cálido durante todo el año. Esto se traduce en un <b>ahorro
-de al menos el 40% en sus facturas de luz por aire
-acondicionado y calefacción. </b>
-<br/>
-Ofrecemos servicios integrales que abarcan desde el
-asesoramiento técnico hasta la implementación de sistemas de
-aislamiento en edificaciones residenciales, comerciales e
-industriales. La celulosa es un material suave y cálido al tacto, que
-no irrita la piel, por lo que se utiliza como aislante seguro."
+  content: "Somos una empresa líder en el sector de aislamiento termo acústico, dedicada a proporcionar soluciones avanzadas que maximizan el <b>confort y la eficiencia energética</b> en proyectos de construcción. Utilizamos la materia prima de <b>Celulosa.pro®</b>, con más de una década de experiencia en el mercado, aseguramos que la celulosa es el aislante que brinda un mayor valor agregado desde el punto de vista técnico y económico. <br/> Utilizando tecnología avanzada para aplicar el material más ecológico y resistente disponible, te ofrecemos un aislamiento térmico y acústico efectivo que puede mantener tu hogar 5ºC más fresco o cálido durante todo el año. Esto se traduce en un <b>ahorro de al menos el 40% en sus facturas de luz por aire acondicionado y calefacción. </b> <br/> Ofrecemos servicios integrales que abarcan desde el asesoramiento técnico hasta la implementación de sistemas de aislamiento en edificaciones residenciales, comerciales e industriales. La celulosa es un material suave y cálido al tacto, que no irrita la piel, por lo que se utiliza como aislante seguro."
   image: /images/about.jpg
-  button:
-    label: Download The Theme
-    link: "https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492216148901"
-    enable: false
+  
 
 ##we_apply
 we_apply:
@@ -224,8 +201,7 @@ cta:
   title: Consigue la instalación con celulosa más rápida y sencilla con U HAUS
   image: /images/cta-img.jpg
   buttons:
-    - label: "Solicitar presupuesto"
-      link: "https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492216148901"
+    - label: "Solicitar presupuesto"      
       icon: "WhatsappLogo"
       enable: true
 

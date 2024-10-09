@@ -23,20 +23,19 @@
     "description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
     "button": {
       "label": "Solicitar presupuesto",
-      "link": "https://wa.me/+5492216148901"
+      "link": ""
     }
   },
 
 
   "params": {
     "footer_description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
-    "telLink": "https://wa.me/+5492216148901",
     "phone": "221 6148901",
     "email": "email",
     "location": "473bis Nº 2776 e/ Belgrano y calle 23 <br/> La Plata, Buenos Aires.",    
     "instagram": "https://www.instagram.com/uhaus.aislaciontermoacustica/",
     "contact_form_action": "#",
-    "copyright": "Copyright © 2024"
+    "copyright": "Copyright © "
   },
 
   "metadata": {

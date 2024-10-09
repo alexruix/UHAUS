@@ -14,8 +14,7 @@ const { Content } = await entry.render();
   <section class="section h-screen flex items-center justify-center bg-gradient-to-r from-slate-50 to-neutral-50">
     <div class="container">
       <div class="text-center flex flex-col items-center">
-        <!-- Imagen con animación -->
-        <div class="mb-6 animate-bounce">
+        <div class="mb-6 animate__animated animate__flash animate__delay-2s">
           <Image
             src="/images/404.png"
             class="mb-4 inline"
@@ -25,15 +24,12 @@ const { Content } = await entry.render();
           />
         </div>
 
-        <!-- Título del error -->
         <h1 class="text-6xl font-bold mb-4" set:html={markdownify(entry.data.title)}></h1>
 
-        <!-- Contenido de la página -->
         <div class="text-lg mb-6 max-w-lg">
           <Content />
         </div>
 
-        <!-- Botón para volver al inicio -->
         <a href="/" class="btn btn-primary mt-6 px-8 py-4 text-lg font-semibold">
           Volver al Inicio
         </a>

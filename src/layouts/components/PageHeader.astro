@@ -1,7 +1,10 @@
 ---
 import { humanize, markdownify } from "@/lib/utils/textConverter";
 import * as Icon from "@phosphor-icons/react";
+import config from "@/config/config.json";
+
 const { page_data } = Astro.props || {};
+const {whatsapp} = config.site; 
 const { image, content } =
   page_data || {};
 ---
@@ -10,7 +13,7 @@ const { image, content } =
   class="relative lg:h-[90vh] h-[80vh] rounded flex items-center justify-center text-center bg-cover bg-center bg-norepeat"
   style={`background-image: url(${image})`}
 >
-  <div class="relative z-10 p-4 rounded lg:p-24">
+  <div class="relative z-10 p-4 rounded lg:p-24 entrance">
     <h1
       class="text-7xl text-white font-bold mb-5 mt-8"
       set:html={markdownify(
@@ -32,7 +35,7 @@ const { image, content } =
                 class={`btn m-3 ${
                   button?.outline ? "btn-outline-primary" : "btn-primary"
                 }`}
-                href={button?.link}
+                href={`${whatsapp}`}
                 target="_blank"
               >
                 {/* Renderiza el ícono solo si existe */}

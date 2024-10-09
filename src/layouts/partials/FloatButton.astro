@@ -1,0 +1,26 @@
+---
+// Importa el logo de WhatsApp y el config
+import { WhatsappLogo } from "@phosphor-icons/react";
+import config from "@/config/config.json";
+
+const { whatsapp } = config.site;
+---
+
+<div class="fixed bottom-4 right-4 flex items-center group z-50 float-button">
+    <a
+      href={whatsapp}
+      class="flex items-center bg-green-600 drop-shadow-md rounded-full p-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="flex items-center rounded-full transition-transform z-50">
+        <WhatsappLogo size={24} color="#ffffff" />
+      </div>
+      <span class="text-white text-base rounded-full px-2 transform leading-tight">
+        Escríbenos
+      </span>
+    </a>
+</div>
+
+
+

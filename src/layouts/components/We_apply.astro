@@ -9,7 +9,7 @@ const { title, description, feature_list } = key_features;
   <div class="section bg-uhausG">
     <div class="container">
       <div class="row text-center">
-        <h2 class="h3 text-white" set:html={markdownify(title)} />
+        <h2 class="h3 text-white " set:html={markdownify(title)} />
       </div>
       <HomapageFeature feature_list={feature_list} client:load />
     </div>

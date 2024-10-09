@@ -1,18 +1,20 @@
 ---
 import { humanize } from "@/lib/utils/textConverter";
 import * as Icon from "@phosphor-icons/react";
+import config from "@/config/config.json";
 
 const { cta_data, id } = Astro.props || {};
 const { title, image, buttons } = cta_data || {};
+const {whatsapp} = config.site; 
+
 ---
 
 <section class="px-5 py-20 xl:py-[120px]" id={id}>
   <div class="">
     <div
-      class="section relative row justify-center py-[130px] lg:py-[180px] bg-cover bg-center"
+      class="section relative cta row justify-center py-[130px] lg:py-[180px] bg-cover bg-center"
       style={`background-image: url(${image});`} 
     >
-      <!-- Overlay usando ::before -->
       <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
       
       <div class="container lg:col-11 relative z-0">
@@ -22,7 +24,6 @@ const { title, image, buttons } = cta_data || {};
             <h2 class="h3 text-white text-center">{title}</h2>
           </div>
 
-          <!-- Columna de botones -->
           {buttons && (
             <div class="mt-8 lg:mt-0 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
               {buttons.map((button: any) => {
@@ -33,7 +34,7 @@ const { title, image, buttons } = cta_data || {};
                 return (
                   <a
                     class={`btn px-6 py-3 ${button?.outline ? "btn-outline-primary" : "btn-primary"}`}
-                    href={button?.link}
+                    href={`${whatsapp}`}
                     target="_blank"
                   >
                     {IconComponent && <IconComponent size={18} class="mr-2" />}
