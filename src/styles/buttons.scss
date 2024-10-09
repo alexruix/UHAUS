@@ -3,11 +3,11 @@
 }
 
 .btn-primary {
-  @apply cursor-pointer rounded-[4px] border-0 bg-zinc-700 text-center text-lg font-semibold text-[#82D24E] hover:shadow-[0px_2px_30px_#495C5950];
+  @apply cursor-pointer rounded-[4px] border-0 bg-zinc-700 text-center text-lg font-semibold text-[#82D24E] hover:shadow-[1px_2px_20px_#495C5980] hover:scale-95;
 }
 
 .btn-outline-primary {
-  @apply relative rounded-[4px] border-uhausG bg-transparent text-center text-uhausG hover:bg-transparent  hover:shadow-[0px_1px_7px_#495C5950] hover:before:opacity-100;
+  @apply relative rounded-[4px] border-uhausG bg-transparent text-center text-uhausG hover:bg-transparent  hover:shadow-[0px_1px_7px_#495C5950] hover:before:opacity-100 hover:scale-95;
   &::before {
     @apply absolute bottom-0 left-0 right-0 top-0 -z-[1] rounded-[inherit] bg-gradient-to-tl opacity-0 transition-[inherit] content-[""];
   }

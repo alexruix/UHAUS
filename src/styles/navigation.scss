@@ -36,7 +36,7 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 .nav-link {
-  @apply block p-3 py-2 text-[15px] text-dark transition hover:text-primary md:px-2 lg:inline-block;
+  @apply block p-3 py-2 text-[15px] text-dark transition hover:text-primary hover:underline hover:text-uhausG hover:underline-offset-4 hover:decoration-2 md:px-2 lg:inline-block;
 
   &.active {
     @apply relative  underline underline-offset-4 decoration-2;

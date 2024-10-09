@@ -39,9 +39,7 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
     // Animación fadeInUp con un delay de 200ms en elementos con clase .entrance
     startFadeInUpAnimation('.entrance', 200);
 
-
-  
-
+    
     const cards = document.querySelectorAll('.mycard'); 
     const observerCards = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
