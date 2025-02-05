@@ -9,7 +9,7 @@
     "logo_width": "147",
     "logo_height": "31",
     "logo_text": "U HAUS Logo",
-    "whatsapp": "https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492216742440"
+    "whatsapp": "https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492216003470"
   },
 
   "settings": {
@@ -30,7 +30,7 @@
 
   "params": {
     "footer_description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
-    "phone": "221 6742440",
+    "phone": "221 6003470",
     "email": "ventas@uhaus.com.ar",
     "location": "473bis Nº 2776 e/ Belgrano y calle 23 <br/> La Plata, Buenos Aires.",    
     "instagram": "https://www.instagram.com/uhaus.aislaciontermoacustica/",
