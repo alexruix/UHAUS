@@ -1,7 +1,7 @@
 ---
 hero:
   title: "AISLA • PROTEGE • AHORRA"
-  image: "/images/banner.jpg"
+  image: "/images/banner.webp"
   buttons:
     - label: "Solicitar presupuesto"      
       icon: "WhatsappLogo"
@@ -12,20 +12,20 @@ banner:
    - title: Aisla
      subtitle: Aislamiento ecológico, sustentable y efectivo que puede mantener tu hogar confortable durante todo el año.
      icon: Heart  
-     image: "/images/icons/aislaIcon.png"
+     image: "/images/icons/aislaIcon.webp"
    - title: Protege
      subtitle: Regula la humedad ambiente y previene las humedad por condensación evitando asi, la aparición de hongos y moho.
      icon: Heart  
-     image: "/images/icons/protegeIcon.png"
+     image: "/images/icons/protegeIcon.webp"
    - title: Ahorra
      subtitle: Se reduce hasta un 40% la demanda energética ahorrando en facturas de luz y gas.
      icon: Heart  
-     image: "/images/icons/ahorraIcon.png"
+     image: "/images/icons/ahorraIcon.webp"
 
 about_us:
   title: "Sobre nosotros"
   content: "Somos una empresa líder en el sector de aislamiento termo acústico, dedicada a proporcionar soluciones avanzadas que maximizan el <b>confort y la eficiencia energética</b> en proyectos de construcción. Utilizamos la materia prima de <b>Celulosa.pro®</b>, con más de una década de experiencia en el mercado, aseguramos que la celulosa es el aislante que brinda un mayor valor agregado desde el punto de vista técnico y económico. <br/> Utilizando tecnología avanzada para aplicar el material más ecológico y resistente disponible, te ofrecemos un aislamiento térmico y acústico efectivo que puede mantener tu hogar 5ºC más fresco o cálido durante todo el año. Esto se traduce en un <b>ahorro de al menos el 40% en sus facturas de luz por aire acondicionado y calefacción. </b> <br/> Ofrecemos servicios integrales que abarcan desde el asesoramiento técnico hasta la implementación de sistemas de aislamiento en edificaciones residenciales, comerciales e industriales. La celulosa es un material suave y cálido al tacto, que no irrita la piel, por lo que se utiliza como aislante seguro."
-  image: /images/about.jpg
+  image: /images/about.webp
   
 
 ##we_apply
@@ -34,7 +34,7 @@ we_apply:
   
   feature_list:
     - icon: "map"  #icon package react-feather-icon [https://feathericons.com/]
-      image: /images/apply/industrial.jpg
+      image: /images/apply/industrial.webp
       title: Industrial
       content: Galpones, fábricas, producción avícola y porcina
 
@@ -44,7 +44,7 @@ we_apply:
       content: Salones de fiestas, bares, locales que generen ruidos, coworking, oficinas, hotelería
 
     - icon: "link"  #icon package react-feather-icon [https://feathericons.com/]
-      image: /images/apply/residencial.jpg
+      image: /images/apply/residencial.webp
       title: Residencial
       content: Casas, Departamentos y Rehabilitación de construcciones
     
@@ -86,37 +86,37 @@ benefits:
     - title: "Sellador"
       description: "Evita puentes térmicos y acústicos"
       video:
-        thumbnail: "/images/benefits/b1.png"
+        thumbnail: "/images/benefits/b1.webp"
         video_path: "/videos/sellador.mp4"
 
     - title: "Resistente al fuego"
       description: "No se inflama, ni genera gases tóxicos"
       video:
-        thumbnail: "/images/benefits/b2.png"
+        thumbnail: "/images/benefits/b2.webp"
         video_path: "/videos/fuego.mp4"
 
     - title: "Doble aislación"
       description: "Aislamiento termoacústico en una sola aplicación"
       video:
-        thumbnail: "/images/benefits/b3.png"
+        thumbnail: "/images/benefits/b3.webp"
         video_path: "/videos/aislacion.mp4"
 
     - title: "Evita condensación"
       description: "Es higrófuga, absorbe y cede la humedad al ambiente logrando regular la condensación, 100% antihongos."
       video:
-        thumbnail: "/images/benefits/b4.png"
+        thumbnail: "/images/benefits/b4.webp"
         video_path: "/videos/condensacion.mp4"
 
     - title: "Rápida instalación"
       description: "Trabajo de 200 mt2 por día y por máquina en la construcción"
       video:
-        thumbnail: "/images/benefits/b5.png"
+        thumbnail: "/images/benefits/b5.webp"
         video_path: "/videos/instalacion.mp4"
 
     - title: "Evita plagas"
       description: "Gracias al borax añadido, repele ratones y plagas en general"
       video:
-        thumbnail: "/images/benefits/b6.png"
+        thumbnail: "/images/benefits/b6.webp"
         video_path: "/videos/plaga.mp4"
 
 
@@ -170,7 +170,7 @@ application_types:
     head: Tipos de aplicación
     items: 
     - title: Proyectado
-      image: "/images/application_types/proyectado.jpg"
+      image: "/images/application_types/proyectado.webp"
       content: <span>Densidad media:</span> 45-50 kg/m3<br>
         <br>
         Proyectado con humedad y adhesivo<br>
@@ -179,7 +179,7 @@ application_types:
         <br>
         <span>Avance:</span> 150m2 x día x máquina. Forma una capa de aislamiento compacta y libre de juntas. Ideal para galpones, contenedores, embarcaciones dado que evita condensación interior.   
     - title: Soplado o Inyectado
-      image: "/images/application_types/soplado.jpg"
+      image: "/images/application_types/soplado.webp"
       content: <span>Densidad media:</span> 58 kg/m3<br>
         <br>
         Aplicación en seco en muros.<br>
@@ -189,7 +189,7 @@ application_types:
         instalada para luego instalar un sistema de sujeción que permita<br>
         contener la aislación de celulosa.
     - title: Insuflado
-      image: "/images/application_types/insuflado.jpg"
+      image: "/images/application_types/insuflado.webp"
       content: <span>Densidad media:</span> 45-50 kg/m3<br>
         <br>
         Aplicación en seco, se aplica de arriba hacia abajo en entretechos,<br>
@@ -199,7 +199,7 @@ application_types:
 
 cta:
   title: Consigue la instalación con celulosa más rápida y sencilla con U HAUS
-  image: /images/cta-img.jpg
+  image: /images/cta-img.webp
   buttons:
     - label: "Solicitar presupuesto"      
       icon: "WhatsappLogo"

@@ -4,8 +4,8 @@
     "base_url": "https://uhaus.com.ar/",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
+    "favicon": "/images/favicon.webp",
+    "logo": "/images/logo.webp",
     "logo_width": "147",
     "logo_height": "31",
     "logo_text": "U HAUS Logo",
@@ -26,7 +26,7 @@
   },
   "params": {
     "footer_description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
-    "phone": "221 6003470",
+    "phone": "221 5747693",
     "email": "info@uhaus.com.ar",
     "location": "473bis Nº 2776 e/ Belgrano y calle 23 <br/> La Plata, Buenos Aires.",
     "instagram": "https://www.instagram.com/uhaus.aislaciones/",
@@ -35,7 +35,7 @@
   },
   "metadata": {
     "meta_author": "U HAUS",
-    "meta_image": "/images/banner.jpg",
+    "meta_image": "/images/banner.webp",
     "meta_description": "Aislaciones sustentables"
   }
 }
