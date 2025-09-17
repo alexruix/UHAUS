@@ -30,6 +30,6 @@ const pagesCollection = defineCollection({
 
 // Export collections
 export const collections = {
-  blog: blogCollection,
+  // blog: blogCollection,
   pages: pagesCollection,
 };
