@@ -12,9 +12,9 @@ const ContentBlock = ({
   return (
     <div className="section">
       <div className="container">
-        <div className="row items-center justify-center">
+        <div className="flex flex-wrap items-center justify-center gap-8">
           <div
-            className={`lg:col-5 ${
+            className={`w-full lg:w-5/12 ${
               order === "right" ? "order-1" : "order-1 lg:order-0"
             }`}
           >
@@ -32,7 +32,7 @@ const ContentBlock = ({
             )}
           </div>
           <div
-            className={`mb-6 lg:col-5 lg:mb-0 lg:mt-0 ${
+            className={`mb-6 w-full lg:w-5/12 lg:mb-0 lg:mt-0 ${
               order === "right" ? "order-0" : "order-0 lg:order-1"
             }`}
           >

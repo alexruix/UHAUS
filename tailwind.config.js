@@ -46,6 +46,7 @@ module.exports = {
         "theme-light": theme.colors.default.theme_color.theme_light,
         "theme-dark": theme.colors.default.theme_color.theme_dark,
         'uhausG': '#78c247',
+        'uhausG-dark': '#5a9e33',
       },
       fontSize: {
         base: font_base + "px",
@@ -68,16 +69,5 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
-    require("tailwind-bootstrap-grid")({
-      generateContainer: false,
-      gridGutterWidth: "2rem",
-      gridGutters: {
-        1: "0.25rem",
-        2: "0.5rem",
-        3: "1rem",
-        4: "1.5rem",
-        5: "3rem",
-      },
-    }),
   ],
 };

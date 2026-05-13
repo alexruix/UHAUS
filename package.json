@@ -1,8 +1,8 @@
 {
-  "name": "red-resonance",
-  "version": "2.0.0",
-  "description": "Astro and Tailwindcss boilerplate",
-  "author": "themefisher",
+  "name": "uhaus",
+  "version": "26.5.13",
+  "description": "UHAUS - Sitio Web Institucional",
+  "author": "UHAUS",
   "license": "MIT",
   "packageManager": "yarn@1.22.19",
   "scripts": {
@@ -47,7 +47,6 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "sharp": "^0.33.5",
-    "tailwind-bootstrap-grid": "^5.1.0",
     "tailwindcss": "^4.3.0",
     "tslib": "^2.8.1",
     "typescript": "^5.9.2"

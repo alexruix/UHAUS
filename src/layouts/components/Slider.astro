@@ -16,36 +16,32 @@ const uniqueId = `slider-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
 <div class="testimonial-slider relative w-full group py-4" id={uniqueId}>
-  {/* -- Background Decoration -- */}
   <div class="absolute -inset-x-4 inset-y-0 bg-gray-50/30 -z-10 rounded-3xl transform skew-y-1"></div>
 
-  {/* -- Track -- */}
   <div
     data-track
-    class="flex overflow-x-auto snap-x snap-mandatory gap-6
-           pb-12 pt-4 px-2 scrollbar-hide scroll-smooth"
+    class="flex overflow-x-auto snap-x snap-mandatory gap-10
+           pb-12 pt-4 px-6 scrollbar-hide scroll-smooth"
   >
     {list.map((item, i) => (
       <div class="snap-start flex-none w-[85%] md:w-[46%] lg:w-[31%] h-auto">
         <Card title={item.organization}>
-          <div class="review-content relative overflow-hidden transition-all duration-500 ease-in-out max-h-[160px]" data-expandable>
+          <div class="review-content relative overflow-hidden transition-all duration-500 ease-in-out line-clamp-5" data-expandable>
             <p class="text-text/90 text-[15px] leading-relaxed whitespace-pre-line">
               {item.content}
             </p>
-            <div class="fade-overlay absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-white to-transparent transition-opacity duration-300"></div>
+            <div class="fade-overlay absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-white to-transparent transition-opacity duration-300 opacity-0"></div>
           </div>
 
-          {item.content.length > 200 && (
-            <button
-              class="text-primary text-sm font-bold text-left hover:text-primary/80 transition-colors mt-4 flex items-center gap-2 group/btn"
-              data-expand-btn
-            >
-              <span class="relative">
-                <span class="btn-text">Ver más</span>
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover/btn:w-full transition-all duration-300"></span>
-              </span>
-            </button>
-          )}
+          <button
+            class="text-uhausG text-sm font-bold text-left hover:text-uhausG-dark transition-colors mt-4 flex items-center gap-2 group/btn hidden"
+            data-expand-btn
+          >
+            <span class="relative">
+              <span class="btn-text">Ver más</span>
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-uhausG group-hover/btn:w-full transition-all duration-300"></span>
+            </span>
+          </button>
         </Card>
       </div>
     ))}
@@ -58,7 +54,7 @@ const uniqueId = `slider-${Math.random().toString(36).substr(2, 9)}`;
       class="absolute -left-6 top-1/2 -translate-y-1/2 z-20
              w-12 h-12 flex items-center justify-center
              rounded-full bg-white shadow-xl border border-gray-100
-             text-dark transition-all duration-300 opacity-0 scale-75 pointer-events-none hover:bg-primary hover:text-white"
+             text-dark transition-all duration-300 opacity-0 scale-75 pointer-events-none hover:bg-uhausG-dark hover:text-white"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M168,224a8,8,0,0,1-5.66-2.34l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L101.31,128l72.35,72.34A8,8,0,0,1,168,224Z"></path></svg>
     </button>
@@ -69,21 +65,20 @@ const uniqueId = `slider-${Math.random().toString(36).substr(2, 9)}`;
       class="absolute -right-6 top-1/2 -translate-y-1/2 z-20
              w-12 h-12 flex items-center justify-center
              rounded-full bg-white shadow-xl border border-gray-100
-             text-dark transition-all duration-300 opacity-100 scale-100 hover:bg-primary hover:text-white"
+             text-dark transition-all duration-300 opacity-100 scale-100 hover:bg-uhausG-dark hover:text-white"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L154.69,128,90.34,63.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg>
     </button>
   </div>
 
-  {/* -- Pagination dots -- */}
   <div class="flex items-center justify-center gap-3 mt-4" data-pagination>
     {list.map((_, i) => (
       <button
         data-index={i}
-        class="group/dot p-2 transition-all duration-300"
+        class="group/dot p-2 transition-all duration-300 dot-container"
         aria-label={`Ir al slide ${i + 1}`}
       >
-        <div class={`dot-pill h-2 rounded-full transition-all duration-500 ease-out ${i === 0 ? "w-8 bg-primary" : "w-2 bg-gray-300"}`}></div>
+        <div class={`dot-pill h-2 rounded-full transition-all duration-500 ease-out ${i === 0 ? "w-8 bg-uhausG" : "w-2 bg-gray-300"}`}></div>
       </button>
     ))}
   </div>
@@ -124,14 +119,28 @@ const uniqueId = `slider-${Math.random().toString(36).substr(2, 9)}`;
     // Update active dot
     const firstSlide = track.children[0];
     if (firstSlide) {
-      const slideWidth = firstSlide.offsetWidth + 24;
+      const slideWidth = firstSlide.offsetWidth + 32; // Updated gap to 32px (gap-8)
       const activeIndex = Math.round(track.scrollLeft / slideWidth);
+      
+      // Calculate how many dots should be visible
+      const visibleSlides = Math.round(track.clientWidth / firstSlide.offsetWidth);
+      const maxDots = Math.max(1, total - visibleSlides + 1);
+
       dots?.forEach((dot, i) => {
+        // Handle visibility
+        const container = dot.parentElement;
+        if (i >= maxDots) {
+          container.classList.add('hidden');
+        } else {
+          container.classList.remove('hidden');
+        }
+
+        // Handle active state
         if (i === activeIndex) {
-          dot.classList.add('w-8', 'bg-primary');
+          dot.classList.add('w-8', 'bg-uhausG');
           dot.classList.remove('w-2', 'bg-gray-300');
         } else {
-          dot.classList.remove('w-8', 'bg-primary');
+          dot.classList.remove('w-8', 'bg-uhausG');
           dot.classList.add('w-2', 'bg-gray-300');
         }
       });
@@ -141,21 +150,21 @@ const uniqueId = `slider-${Math.random().toString(36).substr(2, 9)}`;
   const scrollTo = (index) => {
     const firstSlide = track?.children[0];
     if (firstSlide) {
-      const slideWidth = firstSlide.offsetWidth + 24;
+      const slideWidth = firstSlide.offsetWidth + 32; // Updated gap to 32px
       track.scrollTo({ left: index * slideWidth, behavior: 'smooth' });
     }
   };
 
   prevBtn?.addEventListener('click', () => {
     const firstSlide = track?.children[0];
-    const slideWidth = firstSlide?.offsetWidth + 24;
+    const slideWidth = firstSlide?.offsetWidth + 32;
     const activeIndex = Math.round(track.scrollLeft / slideWidth);
     scrollTo(activeIndex - 1);
   });
 
   nextBtn?.addEventListener('click', () => {
     const firstSlide = track?.children[0];
-    const slideWidth = firstSlide?.offsetWidth + 24;
+    const slideWidth = firstSlide?.offsetWidth + 32;
     const activeIndex = Math.round(track.scrollLeft / slideWidth);
     scrollTo(activeIndex + 1);
   });
@@ -164,10 +173,27 @@ const uniqueId = `slider-${Math.random().toString(36).substr(2, 9)}`;
     dot.parentElement.addEventListener('click', () => scrollTo(i));
   });
 
-  track?.addEventListener('scroll', updateUI, { passive: true });
-  window.addEventListener('resize', updateUI);
-
   // Expandable logic
+  const checkOverflow = () => {
+    expandBtns?.forEach((btn) => {
+      const parent = btn.closest('.card');
+      const content = parent?.querySelector('[data-expandable]');
+      const fade = parent?.querySelector('.fade-overlay');
+      if (content) {
+        const isOverflowing = content.scrollHeight > content.clientHeight;
+        const isClamped = content.classList.contains('line-clamp-5');
+        
+        if (isOverflowing || !isClamped) {
+          btn.classList.remove('hidden');
+          if (isClamped) fade?.classList.remove('opacity-0');
+        } else {
+          btn.classList.add('hidden');
+          fade?.classList.add('opacity-0');
+        }
+      }
+    });
+  };
+
   expandBtns?.forEach((btn) => {
     btn.addEventListener('click', () => {
       const parent = btn.closest('.card');
@@ -175,21 +201,29 @@ const uniqueId = `slider-${Math.random().toString(36).substr(2, 9)}`;
       const fade = parent?.querySelector('.fade-overlay');
       const btnText = btn.querySelector('.btn-text');
       
-      if (content?.classList.contains('max-h-[160px]')) {
-        content.classList.remove('max-h-[160px]');
-        content.classList.add('max-h-[1000px]');
+      if (content?.classList.contains('line-clamp-5')) {
+        content.classList.remove('line-clamp-5');
         fade?.classList.add('opacity-0');
         if (btnText) btnText.textContent = 'Ver menos';
       } else {
-        content?.classList.add('max-h-[160px]');
-        content?.classList.remove('max-h-[1000px]');
+        content?.classList.add('line-clamp-5');
         fade?.classList.remove('opacity-0');
         if (btnText) btnText.textContent = 'Ver más';
       }
     });
   });
 
-  updateUI();
+  track?.addEventListener('scroll', updateUI, { passive: true });
+  window.addEventListener('resize', () => {
+    updateUI();
+    checkOverflow();
+  });
+
+  // Initial checks
+  setTimeout(() => {
+    updateUI();
+    checkOverflow();
+  }, 100);
 </script>
 
 <style>
