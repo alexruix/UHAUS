@@ -1,4 +1,7 @@
 ---
+title: "U HAUS - Aislaciones sustentables"
+meta_title: "U HAUS | Aislamiento Térmico y Acústico Sustentable en La Plata"
+description: "Expertos en aislación con celulosa proyectada en La Plata. Ahorra hasta un 40% de energía y mejora el confort de tu hogar con soluciones ecológicas."
 hero:
   title: "AISLA • PROTEGE • AHORRA"
   image: "/images/banner.webp"

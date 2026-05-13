@@ -1,5 +1,5 @@
 ---
-import ChoiseSlider from "@/layouts/function-components/Slider"
+import Slider from "@/layouts/components/Slider.astro";
 const { data, id } = Astro.props;
 ---
 
@@ -10,7 +10,7 @@ const { data, id } = Astro.props;
     </div>
     <div class="row">
       <div class="col-12">
-        <ChoiseSlider list={data.list} client:load />
+        <Slider list={data.list} />
       </div>
     </div>
   </div>

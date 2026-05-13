@@ -1,0 +1,80 @@
+---
+interface Props {
+  height: number;
+  width: number;
+  src: string;
+  title: string;
+  video_path: string;
+  video_height?: string;
+  video_width?: string;
+}
+
+const { height, width, src, title, video_path } = Astro.props;
+const uniqueId = `video-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="video-container relative text-center overflow-hidden rounded-xl shadow-lg" id={uniqueId}>
+  <div class="thumbnail-wrapper relative">
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+      <button 
+        class="video-play-btn w-16 h-16 flex items-center justify-center rounded-full bg-primary text-white shadow-2xl transition-transform hover:scale-110 active:scale-95"
+        data-play-button
+        aria-label="Reproducir video"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.75a16,16,0,0,1-24.32-13.51V40.24A16,16,0,0,1,88.32,26.73L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <img
+      width={width}
+      height={height}
+      src={src}
+      alt={title}
+      class="w-full h-full object-cover max-h-[400px] transition-filter duration-500"
+      data-thumbnail
+    />
+  </div>
+
+  <div class="video-wrapper hidden">
+    <video
+      src={video_path}
+      width={width}
+      height={height}
+      class="w-full h-full object-cover rounded-xl"
+      data-video-element
+    >
+      Tu navegador no soporta la etiqueta de video.
+    </video>
+  </div>
+</div>
+
+<script define:vars={{ uniqueId }}>
+  const container = document.getElementById(uniqueId);
+  const playBtn = container?.querySelector('[data-play-button]');
+  const thumbWrapper = container?.querySelector('.thumbnail-wrapper');
+  const videoWrapper = container?.querySelector('.video-wrapper');
+  const video = container?.querySelector('[data-video-element]');
+
+  playBtn?.addEventListener('click', () => {
+    thumbWrapper?.classList.add('hidden');
+    videoWrapper?.classList.remove('hidden');
+    if (video) {
+      video.setAttribute('controls', 'true');
+      video.play();
+    }
+  });
+</script>
+
+<style>
+  .video-container:hover .video-play-btn {
+    animation: shadow-pulse 1.5s infinite;
+  }
+
+  @keyframes shadow-pulse {
+    0% { box-shadow: 0 0 0 0px rgba(130, 210, 78, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(130, 210, 78, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(130, 210, 78, 0); }
+  }
+</style>

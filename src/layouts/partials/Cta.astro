@@ -1,11 +1,14 @@
 ---
 import { humanize } from "@/lib/utils/textConverter";
 import * as Icon from "@phosphor-icons/react";
-import config from "@/config/config.json";
+import { getEntry } from "astro:content";
+
+const global_settings = await getEntry("settings", "global");
+const { site } = global_settings!.data;
 
 const { cta_data, id } = Astro.props || {};
 const { title, image, buttons } = cta_data || {};
-const {whatsapp} = config.site; 
+const { whatsapp } = site;
 
 ---
 
@@ -29,13 +32,15 @@ const {whatsapp} = config.site;
               {buttons.map((button: any) => {
                 if (!button?.enable) return null;
 
-                const IconComponent = Icon[humanize(button.icon)];
+                const iconName = button.icon ? humanize(button.icon) : null;
+                const IconComponent = iconName ? (Icon as any)[iconName] : null;
 
                 return (
                   <a
                     class={`btn px-6 py-3 ${button?.outline ? "btn-outline-primary" : "btn-primary"}`}
                     href={`${whatsapp}`}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {IconComponent && <IconComponent size={18} class="mr-2" />}
                     {button?.label}

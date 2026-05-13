@@ -76,7 +76,7 @@ const { pathname } = Astro.url;
                 </span>
                 <ul
                   id="dropdown"
-                  class="nav-dropdown-list mx-auto hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
+                  class="nav-dropdown-list mx-auto hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-54 lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
                 >
                   {menu.children?.map((child) => (
                     <li class="nav-dropdown-item">
@@ -116,92 +116,59 @@ const { pathname } = Astro.url;
   </nav>
 </header>
 
-<script is:inline>
-  // Dropdown button functionality
-  document.querySelectorAll(".dropdown-button").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      const dropdown = e.target.nextElementSibling;
-      dropdown.classList.toggle(
-        dropdown.style === "hidden" ? "block" : "hidden"
-      );
-    });
-  });
-
-  // Sticky header functionality
-  document.addEventListener("astro:page-load", () => {
+<script>
+  function initHeader() {
     const header = document.querySelector(".header");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 0) {
-        header.classList.add("header-sticky");
-      } else {
-        header.classList.remove("header-sticky");
-      }
-    });
-  });
-
-  // Navigation highlighting for sections (internal links with hash)
-  document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section[id]");
 
-    // Function to remove the active class from all links
-    function removeActiveClasses() {
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-      });
-    }
+    const handleSticky = () => {
+      if (window.scrollY > 0) {
+        header?.classList.add("header-sticky");
+      } else {
+        header?.classList.remove("header-sticky");
+      }
+    };
+    window.addEventListener("scroll", handleSticky);
+    handleSticky(); // Initial check
 
-    // Function to add the active class to the corresponding link
-    function addActiveClass(link) {
-      removeActiveClasses();
-      link.classList.add("active");
-    }
+    if (sections.length > 0) {
+      const observerOptions = {
+        root: null,
+        rootMargin: "-20% 0px -70% 0px", 
+        threshold: 0,
+      };
 
-    // Detect scroll position and update active link
-    function handleScroll() {
-      let currentSection = "";
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
-          currentSection = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((link) => {
-        // Check if the link points to the correct anchor (hash)
-        if (link.getAttribute("href").includes(`#${currentSection}`)) {
-          addActiveClass(link);
-        }
-      });
-    }
-
-    // Listen for scroll events to update highlighting
-    window.addEventListener("scroll", handleScroll);
-
-    // Listen for hash changes in the URL
-    window.addEventListener("hashchange", () => {
-      const hash = window.location.hash; // Get the current hash
-      if (hash) {
-        navLinks.forEach((link) => {
-          // If the href matches the current hash, activate it
-          if (link.getAttribute("href") === hash) {
-            addActiveClass(link);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            navLinks.forEach((link) => {
+              const href = link.getAttribute("href");
+              if (href?.includes(`#${id}`)) {
+                link.classList.add("active");
+              } else if (href?.startsWith("#") || (href?.includes("#") && href.includes(window.location.pathname))) {
+                 link.classList.remove("active");
+              }
+            });
           }
         });
-      }
-    });
+      }, observerOptions);
 
-    // Check for initial hash when the page loads
-    const initialHash = window.location.hash;
-    if (initialHash) {
-      navLinks.forEach((link) => {
-        if (link.getAttribute("href") === initialHash) {
-          addActiveClass(link);
+      sections.forEach((section) => observer.observe(section));
+    }
+
+    document.querySelectorAll(".dropdown-button").forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const dropdown = (e.currentTarget as HTMLElement).querySelector(".nav-dropdown-list");
+        if (dropdown) {
+          dropdown.classList.toggle("hidden");
+          dropdown.classList.toggle("block");
         }
       });
-    }
-  });
+    });
+  }
+
+  document.addEventListener("astro:page-load", initHeader);
 </script>
 

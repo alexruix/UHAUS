@@ -1,6 +1,9 @@
 ---
-import config from "@/config/config.json";
+import { getEntry } from "astro:content";
 import { Image } from "astro:assets";
+
+const global_settings = await getEntry("settings", "global");
+const { site } = global_settings!.data;
 const { src } = Astro.props;
 const {
   logo,
@@ -8,21 +11,15 @@ const {
   logo_height,
   logo_text,
   title,
-}: {
-  logo: string;
-  logo_width: any;
-  logo_height: any;
-  logo_text: string;
-  title: string;
-} = config.site;
+} = site;
 ---
 
 <a href="/" class="navbar-brand block">
   {
     src || logo ? (
       <Image
-        width={logo_width.replace("px", "") * 2}
-        height={logo_height.replace("px", "") * 2}
+        width={Number(logo_width.replace("px", "")) * 2}
+        height={Number(logo_height.replace("px", "")) * 2}
         src={src ? src : logo}
         alt={title}
         style={{

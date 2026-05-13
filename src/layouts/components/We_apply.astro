@@ -1,6 +1,6 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
-import HomapageFeature from "@/layouts/function-components/HomapageFeature";
+import HomapageFeature from "@/layouts/components/HomapageFeature.astro";
 const { key_features, id } = Astro.props;
 const { title, description, feature_list } = key_features;
 ---
@@ -11,7 +11,7 @@ const { title, description, feature_list } = key_features;
       <div class="row text-center">
         <h2 class="h3 text-white " set:html={markdownify(title)} />
       </div>
-      <HomapageFeature feature_list={feature_list} client:load />
+      <HomapageFeature feature_list={feature_list} />
     </div>
   </div>
 </section>

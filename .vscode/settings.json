@@ -1,5 +1,14 @@
 {
   "files.associations": {
     "*.mdx": "markdown"
-  }
+  },
+  "css.validate": false,
+  "scss.validate": false,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.includeLanguages": {
+    "astro": "html"
+  },
+  "tailwindCSS.experimental.classRegex": []
 }

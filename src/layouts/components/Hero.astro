@@ -13,31 +13,28 @@ import { markdownify } from "@/lib/utils/textConverter";
     </div>
 
 
-    <div
-      class="row z-1 -mt-12 bg-white rounded py-4 shadow-lg max-w-screen-lg mx-auto relative"
-    >
-      {
-        banner.map((item: any, i: number) => (
-          <div
-            class="sm:col-6 md:col-4 md:mb-0 flex items-start gap-2 py-4"
-            key={i}
-          >
-             <div class="flex-shrink-0">
-              <Image
-                class="w-14 h-14 object-contain"
-                alt={item.title}
-                src={item.image}
-                width={500}
-                height={500}
-              />
-            </div>
-            <div>
-              <h2 class="h4 text-uhaus">{item.title}</h2>
-              <p class="mt-4">{item.subtitle}</p>
-            </div>
-          </div>
-        ))
-      }
+    <div class="container relative z-10 -mt-16">
+      <div class="bg-white rounded-xl py-6 px-4 shadow-xl max-w-[1000px] mx-auto">
+        <div class="row justify-center">
+          {
+            banner.map((item: any, i: number) => (
+              <div class="col-12 sm:col-6 md:col-4 flex flex-col items-center gap-2 py-4 px-4">
+                <div class="flex w-full items-center gap-2.5">
+                  <Image
+                    class="w-14 h-14 object-contain"
+                    alt={item.title}
+                    src={item.image}
+                    width={56}
+                    height={56}
+                  />
+                  <h2 class="h3 text-uhaus mb-0">{item.title}</h2>
+                </div>
+                <p class="mt-1 text-base leading-relaxed text-text">{item.subtitle}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
   </div>
 </section>

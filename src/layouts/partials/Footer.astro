@@ -1,14 +1,16 @@
 ---
 import Logo from "@/components/Logo.astro";
-import config from "@/config/config.json";
 import menu from "@/config/menu.json";
+import { getEntry } from "astro:content";
 import { markdownify } from "@/lib/utils/textConverter";
-import { Envelope, InstagramLogo, WhatsappLogo } from "@phosphor-icons/react";
+import Icon from "@/layouts/components/Icon.astro";
+
+const global_settings = await getEntry("settings", "global");
+const { site, params } = global_settings!.data;
 const { footer } = menu;
 const currentYear = new Date().getFullYear();
-const {whatsapp} = config.site; 
-const { copyright, location, email, phone, footer_description, instagram, telLink } =
-  config.params;
+const { whatsapp } = site;
+const { copyright, location, email, phone, instagram } = params;
 ---
 
 <footer class="footer bg-[#F1F1F1]">
@@ -48,25 +50,26 @@ const { copyright, location, email, phone, footer_description, instagram, telLin
               </li>
 
               <li class="mb-2 flex items-center">
-                <Envelope className="mr-2" size={20} />
-                <a class="hover:text-primary" target="_blank" href={`mailto:${email}`}>
+                <Icon name="Envelope" size={20} className="mr-2" />
+                <a class="hover:text-primary" target="_blank" rel="noopener noreferrer" href={`mailto:${email}`}>
                   {email}
                 </a>
               </li>
 
               <li class="mb-2 flex items-center">
-                <WhatsappLogo className="mr-2" size={20} />
-                <a class="hover:text-primary hover:underline" target="_blank" href={`${whatsapp}`}>
+                <Icon name="WhatsappLogo" size={20} className="mr-2" />
+                <a class="hover:text-primary hover:underline" target="_blank" rel="noopener noreferrer" href={`${whatsapp}`}>
                   {phone}
                 </a>
               </li>
 
               <li class="mb-2 flex items-center">
-                <InstagramLogo className="mr-2" size={20} />
+                <Icon name="InstagramLogo" size={20} className="mr-2" />
                 <a
                   class="hover:text-primary hover:underline"
                   href={`${instagram}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span>Instagram</span>
                 </a>
@@ -83,7 +86,7 @@ const { copyright, location, email, phone, footer_description, instagram, telLin
       class="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-left"
     >
     <p class="content text-text">
-      {`Copyright © ${currentYear} Care4It. Todos los derechos reservados. `}      
+      {copyright.replace("2026", currentYear.toString())}      
     </p>
     </div>
   </div>

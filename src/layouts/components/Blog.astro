@@ -1,32 +1,21 @@
 ---
 const { posts } = Astro.props; // Recibe el prop `posts`
-import Videos from "@/layouts/function-components/Videos";
+import Videos from "@/layouts/components/Videos.astro";
+import Card from "@/layouts/components/Card.astro";
 import { Image } from "astro:assets";
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-container">
   {
-    posts.map((post) => (
-      <div
-        class="bg-white p-4 rounded-sm border-gray-200 border"
-        key={post.title}
+    posts.map((post: any) => (
+      <Card
+        image={post.image}
+        noShadow={true}
+        className="border border-border reveal reveal-up"
       >
-        <div>
-          {post.image && (
-            <div class="relative ">
-              <Image
-                class="w-full object-contain"
-                alt={post.title}
-                width={667}
-                height={330}
-                src={post.image}
-              />
-              
-            </div>
-          )}
-          {post.video && (
+        {post.video && (
+          <div class="mb-3">
             <Videos
-              client:load
               src={post.video.thumbnail}
               height={370}
               width={700}
@@ -35,13 +24,11 @@ import { Image } from "astro:assets";
               video_width="w-[700px]"
               video_height="h-[370px]"
             />
-          )}
-        </div>
-        <div class="py-4">
-          <h2 class="text-xl font-semibold mb-2">{post.title}</h2>
-          <p class="text-gray-600">{post.description}</p>
-        </div>
-      </div>
+          </div>
+        )}
+        <h3 class="text-lg font-bold text-dark mb-1">{post.title}</h3>
+        <p class="text-sm text-text leading-relaxed">{post.description}</p>
+      </Card>
     ))
   }
 </div>

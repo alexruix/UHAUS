@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  tags?: string[];
+  footer?: boolean;
+  className?: string;
+  noShadow?: boolean;
+}
+
+const { title, description, image, tags, footer, className, noShadow } = Astro.props;
+---
+
+<div class={`card group ${!noShadow ? "shadow-lg" : "shadow-none"} ${className || ""}`}>
+  {image && (
+    <div class="card-img-container overflow-hidden rounded-t-lg">
+      <Image
+        src={image}
+        alt={title || "card image"}
+        width={400}
+        height={250}
+        class="card-img transition-transform duration-500 group-hover:scale-105"
+      />
+    </div>
+  )}
+  
+  {tags && tags.length > 0 && (
+    <div class="card-tags flex flex-wrap gap-2">
+      {tags.map((tag) => (
+        <span class="tag">{tag}</span>
+      ))}
+    </div>
+  )}
+
+  <div class="card-content">
+    {title && <h3 class="card-title mb-2">{title}</h3>}
+    {description && <p class="text-text">{description}</p>}
+    <slot />
+  </div>
+
+  {footer && (
+    <div class="card-footer">
+      <slot name="footer" />
+    </div>
+  )}
+</div>
+
+<style>
+  .card-img-container {
+    margin: -1.25rem -1.25rem 0 -1.25rem; /* Adjusting for card padding to keep image edge-to-edge if desired */
+  }
+</style>

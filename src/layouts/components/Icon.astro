@@ -1,0 +1,26 @@
+---
+import * as Icons from "@phosphor-icons/react";
+
+interface Props {
+  name: string;
+  size?: number;
+  className?: string;
+  weight?: "thin" | "light" | "regular" | "bold" | "fill" | "duotone";
+  color?: string;
+}
+
+const { name, size = 24, className = "", weight = "regular", color = "currentColor" } = Astro.props;
+
+const IconComponent = (Icons as any)[name];
+---
+
+{IconComponent ? (
+  <IconComponent 
+    size={size} 
+    className={className} 
+    weight={weight} 
+    color={color}
+  />
+) : (
+  <span class="text-red-500 text-xs">Icon "{name}" not found</span>
+)}

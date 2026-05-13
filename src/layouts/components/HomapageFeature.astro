@@ -1,0 +1,38 @@
+---
+import { humanize } from "@/lib/utils/textConverter";
+
+interface Feature {
+  title: string;
+  content: string;
+  image: string;
+  icon: string;
+}
+
+interface Props {
+  feature_list: Feature[];
+}
+
+const { feature_list } = Astro.props;
+---
+
+<div class="key-feature-grid mt-10 grid grid-cols-1 gap-7 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+  {feature_list.map((item) => (
+    <div
+      class="relative h-[320px] sm:h-[450px] flex flex-col justify-end rounded overflow-hidden group shadow-lg"
+    >
+      <div 
+        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+        style={`background-image: url(${item.image});`}
+      ></div>
+      
+      <div class="absolute inset-0 bg-linear-to-t from-neutral-900 via-neutral-900/40 sm:to-35% to-70% opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
+      
+      <div class="relative z-10 p-8 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+        <h3 class="text-xl lg:text-2xl text-white font-bold mb-2">{item.title}</h3>
+        <p class="text-base lg:text-lg leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+          {item.content}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>

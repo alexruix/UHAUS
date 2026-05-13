@@ -1,18 +1,37 @@
 ---
 import { humanize, markdownify } from "@/lib/utils/textConverter";
-import * as Icon from "@phosphor-icons/react";
-import config from "@/config/config.json";
+import { getEntry } from "astro:content";
+import { Image } from "astro:assets";
+import Icon from "@/layouts/components/Icon.astro";
+
+const global_settings = await getEntry("settings", "global");
+const { site } = global_settings!.data;
 
 const { page_data } = Astro.props || {};
-const {whatsapp} = config.site; 
-const { image, content } =
-  page_data || {};
+const { whatsapp } = site;
+const { image, content } = page_data || {};
 ---
 
 <div
-  class="relative lg:h-[90vh] h-[80vh] rounded flex items-center justify-center text-center bg-cover bg-center bg-norepeat"
-  style={`background-image: url(${image})`}
+  class="relative lg:h-[90vh] h-[80vh] rounded flex items-center justify-center text-center overflow-hidden"
 >
+  {image && (
+    <Image
+      src={image}
+      alt={page_data?.title ?? "Hero background"}
+      width={1600}
+      height={900}
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      quality={85}
+    />
+  )}
+
+  {/* Overlay */}
+  <div class="absolute inset-0 bg-gray-700/30 z-0"></div>
+
+  {/* Content */}
   <div class="relative z-10 p-4 rounded lg:p-24 entrance">
     <h1
       class="text-7xl text-white font-bold mb-5 mt-8"
@@ -20,33 +39,27 @@ const { image, content } =
         page_data?.page_title ? page_data?.page_title : page_data?.title,
       )}
     />
-    <p set:html={markdownify(content)} />
+    <p class="text-white/90 text-lg" set:html={markdownify(content)} />
 
-    {
-      page_data.buttons && (
-        <div class="mt-11 justify-center sm:flex">
-          {page_data.buttons.map((button: any) => {
-            if (!button?.enable) return null;
-
-            const PHIcon = Icon[humanize(button.icon)];
-
-            return (
-              <a
-                class={`btn m-3 ${
-                  button?.outline ? "btn-outline-primary" : "btn-primary"
-                }`}
-                href={`${whatsapp}`}
-                target="_blank"
-              >
-                {/* Renderiza el ícono solo si existe */}
-                {PHIcon && <PHIcon size={20} />}
-                {button?.label}
-              </a>
-            );
-          })}
-        </div>
-      )
-    }
+    {page_data.buttons && (
+      <div class="mt-11 justify-center sm:flex">
+        {page_data.buttons.map((button: any) => {
+          if (!button?.enable) return null;
+          return (
+            <a
+              class={`btn m-3 ${button?.outline ? "btn-outline-primary" : "btn-primary"}`}
+              href={`${whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {button?.icon && (
+                <Icon name={humanize(button.icon) || ""} size={20} />
+              )}
+              {button?.label}
+            </a>
+          );
+        })}
+      </div>
+    )}
   </div>
-  <div class="absolute inset-0 bg-gray-700 bg-opacity-30 z-0"></div>
 </div>
