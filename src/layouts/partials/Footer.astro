@@ -9,7 +9,8 @@ const global_settings = await getEntry("settings", "global");
 const { site, params } = global_settings!.data;
 const { footer } = menu;
 const currentYear = new Date().getFullYear();
-const { whatsapp } = site;
+const { whatsapp: whatsappObj } = site;
+const whatsappUrl = whatsappObj?.number ? `https://api.whatsapp.com/send?phone=${whatsappObj.number}${whatsappObj.message ? `&text=${encodeURIComponent(whatsappObj.message)}` : ''}` : '';
 const { copyright, location, email, phone, instagram } = params;
 ---
 
@@ -58,7 +59,7 @@ const { copyright, location, email, phone, instagram } = params;
 
               <li class="mb-2 flex items-center">
                 <Icon name="WhatsappLogo" size={20} className="mr-2" />
-                <a class="hover:text-primary hover:underline" target="_blank" rel="noopener noreferrer" href={`${whatsapp}`}>
+                <a class="hover:text-primary hover:underline" target="_blank" rel="noopener noreferrer" href={whatsappUrl}>
                   {phone}
                 </a>
               </li>

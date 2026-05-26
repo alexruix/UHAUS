@@ -34,7 +34,8 @@ const uniqueId = `slider-${Math.random().toString(36).substr(2, 9)}`;
           </div>
 
           <button
-            class="text-uhausG text-sm font-bold text-left hover:text-uhausG-dark transition-colors mt-4 flex items-center gap-2 group/btn hidden"
+            class="text-uhausG text-sm font-bold text-left hover:text-uhausG-dark transition-colors mt-4 flex items-center gap-2 group/btn"
+            style="display: none;"
             data-expand-btn
           >
             <span class="relative">
@@ -184,10 +185,10 @@ const uniqueId = `slider-${Math.random().toString(36).substr(2, 9)}`;
         const isClamped = content.classList.contains('line-clamp-5');
         
         if (isOverflowing || !isClamped) {
-          btn.classList.remove('hidden');
+          btn.style.display = 'flex';
           if (isClamped) fade?.classList.remove('opacity-0');
         } else {
-          btn.classList.add('hidden');
+          btn.style.display = 'none';
           fade?.classList.add('opacity-0');
         }
       }

@@ -1,7 +1,6 @@
 ---
 import PageHeader from "@/components/PageHeader.astro";
 import Base from "@/layouts/Base.astro";
-import Default from "@/layouts/Default.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 
 export async function getStaticPaths() {
@@ -21,6 +20,7 @@ const { title, meta_title, description, image } = page.data;
 const page_data = {
   ...page.data,
 };
+const { Content } = await page.render();
 ---
 
 <Base
@@ -36,5 +36,11 @@ const page_data = {
       </div>
     </div>
   </section>
-  <Default data={page} />
+  <section class="section pt-0">
+    <div class="container">
+      <div class="content">
+        <Content />
+      </div>
+    </div>
+  </section>
 </Base>

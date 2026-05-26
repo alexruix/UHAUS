@@ -49,42 +49,33 @@ we_apply:
     - icon: "link"  #icon package react-feather-icon [https://feathericons.com/]
       image: /images/apply/residencial.webp
       title: Residencial
-      content: Casas, Departamentos y Rehabilitación de construcciones
+      content: Casas, departamentos y rehabilitación de construcciones
     
 
-choise_us:
+choice_us:
   title: ¿Por qué elegirnos?
   description: 
   list:
-    - author: 1
-      avatar: 
-      organization: Consultoría técnica especializada 
+    - organization: Consultoría técnica especializada 
       content: Entendemos que cada proyecto de construcción es único, por lo que ofrecemos un servicio de consultoría personalizado. Nuestros  técnicos altamente calificados trabajan en estrecha colaboración con arquitectos, contratistas y propietarios para analizar las características del entorno, las normativas locales y los requisitos específicos de confort. Esto nos permite diseñar soluciones a medida que garantizan un aislamiento térmico y acústico óptimo.
-    - author: 2
-      
-      organization: Instalación experta con Garantía de Calidad
+    - organization: Instalación experta con Garantía de Calidad
       
       content: Nuestro equipo de instaladores certificados asegura que cada material sea aplicado con precisión, siguiendo estrictos protocolos de calidad. La atención al detalle en cada etapa del proceso garantiza que nuestros sistemas de aislamiento funcionen de manera óptima, evitando puentes térmicos y minimizando la propagación de vibraciones y ruidos estructurales.
-    - author: 3
-      
-      organization: Mantenimiento proactivo y auditorías de rendimiento
+    - organization: Mantenimiento proactivo y auditorías de rendimiento
       
       content: Sabemos que un aislamiento efectivo requiere de un mantenimiento adecuado. Ofrecemos programas de mantenimiento preventivo y auditorías regulares para asegurar que los sistemas de aislamiento mantengan su eficiencia a lo largo del tiempo. Nuestro servicio incluye la evaluación continua del rendimiento térmico y acústico, con recomendaciones para optimizar o actualizar los sistemas según sea necesario.
-    - author: 4
-      
-      organization: Soluciones sostenibles y eficiencia energética
+    - organization: Soluciones sostenibles y eficiencia energética
       
       content: Comprometidos con la sostenibilidad, promovemos el uso de materiales reciclados y técnicas de instalación que contribuyen a la reducción de la huella de carbono. Nuestras soluciones no solo mejoran el confort interior, sino que también permiten una significativa reducción en el consumo energético, reflejándose en menores costos operativos y un impacto positivo en el medio ambiente.
-    - author: 5
-      
-      organization: Amplia gama de materiales de alta tecnología
+    - organization: Amplia gama de materiales de alta tecnología
       
       content: Utilizamos materiales de vanguardia, seleccionados meticulosamente para ofrecer el mejor rendimiento en cada aplicación. Como la celulosa proyectada y  fibras minerales.    
 
 
 
 benefits: 
-  head: Beneficios del aislamiento
+  head: Trabajos realizados
+  description: 
   items:
     - title: "Sellador"
       description: "Evita puentes térmicos y acústicos"
@@ -132,16 +123,6 @@ graph:
         icon: Recycle  
         color: "#6856FF"
 
-      - title: Certificaciones
-        content: La certificación de **Celulosa.pro®** es nuestro compromiso con la sustentabilidad y sostenibilidad.
-        icon: Certificate 
-        color: "#495C59"
-        button:
-          label: Ver certificaciones
-          link: "/CertificadosUHAUS.pdf"
-          outline: true
-          enable: true    
-
       - title: Innovación  
         color: "#887CC1"      
         content: Nuestro objetivo en la empresa es seguir una estrategia de sostenibilidad empresarial. Contamos con un equipo directivo muy preparado que fomenta la innovación y la mejora constante de nuestras operaciones.
@@ -162,7 +143,7 @@ graph:
         content: Utilizamos más del 85% de  materiales reciclados en nuestros productos para reducir nuestro impacto en el medio ambiente, fomentando la reutilización y el reciclaje.
         icon: GlobeHemisphereWest  
 
-  futuro:
+  future:
     - title: Mision
       content: Nuestra misión es mejorar la calidad de vida de nuestros clientes, proporcionando soluciones de aislamiento que optimizan el confort térmico y acústico, al tiempo que fomentamos la eficiencia energética y la sostenibilidad en cada proyecto que emprendemos.
     - title: Vision

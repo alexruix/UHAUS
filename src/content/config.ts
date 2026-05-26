@@ -38,13 +38,11 @@ const homepageSchema = z.object({
       })
     ),
   }),
-  choise_us: z.object({
+  choice_us: z.object({
     title: z.string(),
     description: z.string().nullable().optional(),
     list: z.array(
       z.object({
-        author: z.any(),
-        avatar: z.string().nullable().optional(),
         organization: z.string(),
         content: z.string(),
       })
@@ -82,7 +80,7 @@ const homepageSchema = z.object({
           .optional(),
       })
     ),
-    futuro: z.array(
+    future: z.array(
       z.object({
         title: z.string(),
         content: z.string(),
@@ -127,7 +125,10 @@ const settingsSchema = z.object({
     logo_width: z.string(),
     logo_height: z.string(),
     logo_text: z.string(),
-    whatsapp: z.string(),
+    whatsapp: z.object({
+      number: z.string(),
+      message: z.string().optional().nullable(),
+    }).optional().nullable(),
   }),
   params: z.object({
     footer_description: z.string(),
@@ -146,33 +147,6 @@ const settingsSchema = z.object({
   social: z.record(z.string()).optional(),
 });
 
-// Blog collection schema
-const blogCollection = defineCollection({
-  schema: z.object({
-    id: z.string().optional(),
-    title: z.string(),
-    subtitle: z.string().optional(),
-    date: z.date().optional(),
-    image: z.string().optional(),
-    author: z.string().optional(),
-    categories: z.array(z.string()).default(["others"]),
-    draft: z.boolean().optional(),
-    featured: z.boolean().optional(),
-  }),
-});
-
-// Pages collection schema
-const pagesCollection = defineCollection({
-  schema: z.object({
-    id: z.string().optional(),
-    title: z.string(),
-    meta_title: z.string().optional(),
-    description: z.string().optional(),
-    image: z.string().optional(),
-    layout: z.string().optional(),
-    draft: z.boolean().optional(),
-  }),
-});
 
 // Export collections
 export const collections = {
@@ -184,6 +158,4 @@ export const collections = {
     type: "data",
     schema: settingsSchema,
   }),
-  pages: pagesCollection,
-  blog: blogCollection,
 };

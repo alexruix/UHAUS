@@ -8,7 +8,8 @@ const global_settings = await getEntry("settings", "global");
 const { site } = global_settings!.data;
 
 const { page_data } = Astro.props || {};
-const { whatsapp } = site;
+const { whatsapp: whatsappObj } = site;
+const whatsappUrl = whatsappObj?.number ? `https://api.whatsapp.com/send?phone=${whatsappObj.number}${whatsappObj.message ? `&text=${encodeURIComponent(whatsappObj.message)}` : ''}` : '';
 const { image, content } = page_data || {};
 ---
 
@@ -48,7 +49,7 @@ const { image, content } = page_data || {};
           return (
             <a
               class={`btn m-3 ${button?.outline ? "btn-outline-primary" : "btn-primary"}`}
-              href={`${whatsapp}`}
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
             >

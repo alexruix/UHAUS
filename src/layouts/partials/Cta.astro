@@ -8,7 +8,8 @@ const { site } = global_settings!.data;
 
 const { cta_data, id } = Astro.props || {};
 const { title, image, buttons } = cta_data || {};
-const { whatsapp } = site;
+const { whatsapp: whatsappObj } = site;
+const whatsappUrl = whatsappObj?.number ? `https://api.whatsapp.com/send?phone=${whatsappObj.number}${whatsappObj.message ? `&text=${encodeURIComponent(whatsappObj.message)}` : ''}` : '';
 
 ---
 
@@ -38,7 +39,7 @@ const { whatsapp } = site;
                 return (
                   <a
                     class={`btn px-6 py-3 ${button?.outline ? "btn-outline-primary" : "btn-primary"}`}
-                    href={`${whatsapp}`}
+                    href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

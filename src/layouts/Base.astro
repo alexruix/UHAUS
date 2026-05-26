@@ -7,6 +7,9 @@ import Header from "@/partials/Header.astro";
 import "@/styles/main.css";
 import { AstroFont } from "astro-font";
 import { ViewTransitions } from "astro:transitions";
+import { VisualEditing } from "@sanity/astro/visual-editing";
+
+const visualEditingEnabled = import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED === 'true';
 
 const global_settings = await getEntry("settings", "global");
 const { site, metadata } = global_settings!.data;
@@ -100,7 +103,7 @@ const { title, meta_title, description, image, noindex, canonical } =
 
     <!-- title -->
     <title>
-      {plainify(meta_title ? meta_title : title ? title : site.title)}
+      {plainify(meta_title ? meta_title : site.title)}
     </title>
 
     <!-- canonical url -->
@@ -247,5 +250,6 @@ const { title, meta_title, description, image, noindex, canonical } =
 
       requestAnimationFrame(raf)
     </script>
+    <VisualEditing enabled={visualEditingEnabled} zIndex={1000} />
   </body>
 </html>

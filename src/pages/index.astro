@@ -1,8 +1,8 @@
 ---
 import Base from "@/layouts/Base.astro";
-import Blogs from "@/components/Blog.astro";
+import Benefits from "@/components/Benefits.astro";
 import We_apply from "@/components/We_apply.astro";
-import Choise_us from "@/components/ChoiseSlider.astro";
+import Choice_us from "@/components/ChoiceSlider.astro";
 import About_us from "@/components/About_us.astro";
 import Cta from "@/layouts/partials/Cta.astro";
 import Types from "@/components/Types.astro";
@@ -10,80 +10,160 @@ import Hero from "@/components/Hero.astro";
 import Compromiso from "@/components/Compromiso.astro";
 import { getEntry } from "astro:content";
 import FloatButton from "@/partials/FloatButton.astro";
+import { sanityClient } from "sanity:client";
+import { urlForImage, loadQuery } from "@/lib/sanity";
 
-// Obtener datos de la página
-const homepage = await getEntry("homepage", "index");
-if (!homepage) {
-  throw new Error("No se encontró la entrada de la página de inicio");
+// Intentar traer datos de Sanity
+let sanityHomepage = null;
+try {
+  const { data } = await loadQuery<any>({
+    query: `*[_type == "homepage"][0]`
+  });
+  sanityHomepage = data;
+} catch (error) {
+  console.error("Error fetching from Sanity:", error);
 }
-const {
-  hero,
-  banner,
-  about_us,
-  choise_us,
-  we_apply,
-  benefits,
-  graph,
-  application_types,
-  cta,
-  title,
-  meta_title,
-  description,
-} = homepage.data;
 
-const hero_data = {
-  title: hero.title,
-  image: hero.image,
-  buttons: hero.buttons,
-  content: hero.content,
-  banner: banner,
-};
+let isSanity = false;
+let homepageData: any = {};
+let pageBuilderBlocks: any[] = [];
 
-const beneficios_data = benefits.items;
-const types_data = application_types.items;
-const graph_data = graph.items;
-const future_data = graph.futuro;
+if (sanityHomepage && Object.keys(sanityHomepage).length > 0) {
+  homepageData = sanityHomepage;
+  pageBuilderBlocks = sanityHomepage.pageBuilder || [];
+  isSanity = true;
+} else {
+  // Fallback Activo: Leer local markdown
+  const homepage = await getEntry("homepage", "index");
+  if (!homepage) {
+    throw new Error("No se encontró la entrada de la página de inicio (ni en Sanity ni local)");
+  }
+  homepageData = homepage.data;
+}
+
+// Extraer variables genéricas (aplican a ambos)
+const title = homepageData.title;
+const meta_title = homepageData.meta_title;
+const description = homepageData.description;
+
+// Helper para obtener Banner de Sanity (si existe) para inyectarlo en el Hero local/sanity
+const bannerBlock = isSanity ? pageBuilderBlocks.find((b: any) => b._type === 'bannerBlock') : null;
+const sanityBanner = bannerBlock ? bannerBlock.bannerItems : [];
+
+// Funciones helpers para mapear imágenes si vienen de Sanity
+const parseImage = (img: any) => isSanity && img ? urlForImage(img).auto('format').url() : img;
+
+// Datos de Fallback Local
+const hero_data = !isSanity ? {
+  title: homepageData.hero.title,
+  image: homepageData.hero.image,
+  buttons: homepageData.hero.buttons,
+  content: homepageData.hero.content,
+  banner: homepageData.banner,
+} : null;
+
+const beneficios_data = !isSanity ? homepageData.benefits.items : [];
+const types_data = !isSanity ? homepageData.application_types.items : [];
+const graph_data = !isSanity ? homepageData.graph.items : [];
+const future_data = !isSanity ? homepageData.graph.future : [];
 ---
 
 <Base title={title} meta_title={meta_title} description={description}>
-  <Hero {...hero_data} id="home" />
-  <div class="reveal reveal-up">
-    <About_us data={about_us} id="nosotros" />
-  </div>
-  <div class="reveal reveal-up">
-    <Choise_us data={choise_us} />
-  </div>
-  <div class="reveal reveal-up">
-    <We_apply key_features={we_apply} id="beneficios" />
-  </div>
-  
-  <section class="section reveal reveal-up">
-    <div class="container">
-      <div class="row text-center mb-10">
-        <h2 class="h2">{benefits.head}</h2>
+  {isSanity && pageBuilderBlocks.length > 0 ? (
+    pageBuilderBlocks.map((block: any) => {
+      switch (block._type) {
+        case 'heroBlock': 
+          // Inject banner block into Hero if it exists
+          const h_data = {
+            title: block.title,
+            image: parseImage(block.image),
+            content: block.content,
+            buttons: block.buttons,
+            banner: sanityBanner.map((b: any) => ({...b, image: parseImage(b.image)}))
+          };
+          return <Hero {...h_data} id="home" />;
+        
+        case 'aboutUsBlock': 
+          const au_data = { ...block, image: parseImage(block.image) };
+          return <div class="reveal reveal-up"><About_us data={au_data} id="nosotros" /></div>;
+        
+        case 'choiceUsBlock': 
+          const cu_data = {
+            ...block,
+            list: block.list || []
+          };
+          return <div class="reveal reveal-up"><Choice_us data={cu_data} /></div>;
+        
+        case 'weApplyBlock': 
+          const wa_data = {
+            ...block,
+            feature_list: block.feature_list?.map((f:any) => ({...f, image: parseImage(f.image)})) || []
+          };
+          return <div class="reveal reveal-up"><We_apply key_features={wa_data} id="beneficios" /></div>;
+        
+        case 'benefitsBlock': 
+          const bb_data = block.items?.map((i:any) => ({
+            ...i,
+            video: {...i.video, thumbnail: parseImage(i.video?.thumbnail)}
+          })) || [];
+          return (
+            <section class="section reveal reveal-up">
+              <div class="container">
+                <div class="row text-center mb-10">
+                  <h2 class="h2">{block.head}</h2>
+                </div>
+                <Benefits items={bb_data} />
+              </div>
+            </section>
+          );
+        
+        case 'graphBlock': 
+          return <div class="reveal reveal-up"><Compromiso graph={block} graph_data={block.items} future_data={block.future} id="compromiso" /></div>;
+        
+        case 'applicationTypesBlock': 
+          const at_data = block.items?.map((i:any) => ({...i, image: parseImage(i.image)})) || [];
+          return <div class="reveal reveal-up"><Types types_data={at_data} application_types={block} id="tipos_de_aplicacion" /></div>;
+        
+        case 'ctaBlock': 
+          const cta_data = { ...block, image: parseImage(block.image) };
+          return <div class="reveal reveal-up"><Cta cta_data={cta_data} id="contacto" /></div>;
+        
+        default: return null;
+      }
+    })
+  ) : (
+    // LOCAL FALLBACK RENDER
+    <>
+      <Hero {...hero_data} id="home" />
+      <div class="reveal reveal-up">
+        <About_us data={homepageData.about_us} id="nosotros" />
       </div>
-      <Blogs posts={beneficios_data} />
-    </div>
-  </section>
+      <div class="reveal reveal-up">
+        <Choice_us data={homepageData.choice_us} />
+      </div>
+      <div class="reveal reveal-up">
+        <We_apply key_features={homepageData.we_apply} id="beneficios" />
+      </div>
+      <section class="section reveal reveal-up">
+        <div class="container">
+          <div class="row text-center mb-10">
+            <h2 class="h2">{homepageData.benefits.head}</h2>
+          </div>
+          <Benefits items={beneficios_data} />
+        </div>
+      </section>
+      <div class="reveal reveal-up">
+        <Compromiso graph={homepageData.graph} graph_data={graph_data} future_data={future_data} id="compromiso" />
+      </div>
+      <div class="reveal reveal-up">
+        <Types types_data={types_data} application_types={homepageData.application_types} id="tipos_de_aplicacion" />
+      </div>
+      <div class="reveal reveal-up">
+        <Cta cta_data={homepageData.cta} id="contacto" />
+      </div>
+    </>
+  )}
 
-  <div class="reveal reveal-up">
-    <Compromiso 
-      graph={graph} 
-      graph_data={graph_data} 
-      future_data={future_data} 
-      id="compromiso" 
-    />
-  </div>
-
-  <div class="reveal reveal-up">
-    <Types types_data={types_data} application_types={application_types} id="tipos_de_aplicacion" />
-  </div>
-  
-  <div class="reveal reveal-up">
-    <Cta cta_data={cta} id="contacto" />
-  </div>
-  
   <FloatButton />
-
-  <script src="/scripts/animated.js" type="module"></script>
+  <script>import "@/scripts/animated.js";</script>
 </Base>

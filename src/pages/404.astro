@@ -7,15 +7,13 @@ import { getEntry } from "astro:content";
 const global_settings = await getEntry("settings", "global");
 const { site } = global_settings!.data;
 const { logo } = site;
-const entry = await getEntry("pages", "404");
-if (!entry) {
-  throw new Error("404 page not found in content collection");
-}
-const { Content } = await entry.render();
+
+const title = "Página no encontrada";
+const content = "Lo sentimos, pero la página que buscas no existe o ha sido movida.";
 ---
 
-<Base title={entry.data.title} noindex={true}>
-  <section class="section h-screen flex items-center justify-center bg-gradient-to-r from-slate-50 to-neutral-50">
+<Base title={title} noindex={true}>
+  <section class="section h-screen flex items-center justify-center bg-linear-to-r from-slate-50 to-neutral-50">
     <div class="container">
       <div class="text-center flex flex-col items-center">
         <div class="mb-6 animate__animated animate__flash animate__delay-2s">
@@ -28,10 +26,10 @@ const { Content } = await entry.render();
           />
         </div>
 
-        <h1 class="text-6xl font-bold mb-4" set:html={markdownify(entry.data.title)}></h1>
+        <h1 class="text-6xl font-bold mb-4" set:html={markdownify(title)}></h1>
 
         <div class="text-lg mb-6 max-w-lg">
-          <Content />
+          <p>{content}</p>
         </div>
 
         <a href="/" class="btn btn-primary mt-6 px-8 py-4 text-lg font-semibold">

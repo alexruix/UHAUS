@@ -18,14 +18,14 @@
   },
   "call_to_action": {
     "title": "Consigue la instalación con celulosa más rápida y sencilla con U HAUS",
-    "description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
+    "description": "Mejora el confort térmico y acústico de tu hogar o empresa con nuestro sistema de aislamiento ecológico. Rápido, limpio y amigable con el medio ambiente.",
     "button": {
       "label": "Solicitar presupuesto",
-      "link": ""
+      "link": "https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20un%20presupuesto&phone=5492215747693"
     }
   },
   "params": {
-    "footer_description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
+    "footer_description": "Somos expertos en aislamiento térmico y acústico sustentable mediante proyección de celulosa. Optimizá tu consumo energético y cuidá el planeta con U HAUS.",
     "phone": "221 5747693",
     "email": "info@uhaus.com.ar",
     "location": "473bis Nº 2776 e/ Belgrano y calle 23 <br/> La Plata, Buenos Aires.",

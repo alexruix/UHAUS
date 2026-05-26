@@ -9,7 +9,10 @@
     "logo_width": "147",
     "logo_height": "31",
     "logo_text": "U HAUS Logo",
-    "whatsapp": "https://api.whatsapp.com/send?text=Hola%20quisiera%20consultar%20sobre%20&phone=5492215747693"
+    "whatsapp": {
+      "number": "5492215747693",
+      "message": "Hola quisiera consultar sobre "
+    }
   },
   "params": {
     "footer_description": "Aislaciones sustentables de alta calidad para tu hogar o empresa.",

@@ -4,12 +4,13 @@ import { getEntry } from "astro:content";
 
 const global_settings = await getEntry("settings", "global");
 const { site } = global_settings!.data;
-const { whatsapp } = site;
+const { whatsapp: whatsappObj } = site;
+const whatsappUrl = whatsappObj?.number ? `https://api.whatsapp.com/send?phone=${whatsappObj.number}${whatsappObj.message ? `&text=${encodeURIComponent(whatsappObj.message)}` : ''}` : '';
 ---
 
 <div class="fixed bottom-10 right-10 flex items-center group z-50 float-button pulse-premium rounded-full">
     <a
-      href={whatsapp}
+      href={whatsappUrl}
       class="flex items-center bg-green-600 drop-shadow-md rounded-full p-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105"
       target="_blank"
       rel="noopener noreferrer"

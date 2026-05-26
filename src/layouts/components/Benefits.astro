@@ -1,5 +1,5 @@
 ---
-const { posts } = Astro.props; // Recibe el prop `posts`
+const { items } = Astro.props; // Recibe el prop `items`
 import Videos from "@/layouts/components/Videos.astro";
 import Card from "@/layouts/components/Card.astro";
 import { Image } from "astro:assets";
@@ -7,7 +7,7 @@ import { Image } from "astro:assets";
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-container">
   {
-    posts.map((post: any) => (
+    items.map((post: any) => (
       <Card
         image={post.image}
         noShadow={true}
