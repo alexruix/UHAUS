@@ -77,41 +77,35 @@ benefits:
   head: Trabajos realizados
   description: 
   items:
-    - title: "Sellador"
-      description: "Evita puentes térmicos y acústicos"
+    - title: "Aislación en techos"
+      description: "Trabajo realizado en techos de chapa con espuma de poliuretano proyectado. Crea una barrera térmica impermeable, sellando puentes térmicos al instante."
       video:
-        thumbnail: "/images/benefits/b1.webp"
-        video_path: "/videos/sellador.mp4"
+        thumbnail: "/images/benefits/trabajo1.webp"
+        video_path: "/videos/trabajo1.mp4"
+        
+    - title: "Aislamiento acústico en paredes"
+      description: "Inyección de celulosa en tabiquería. Absorbe ruidos molestos, bloquea la transferencia de sonido y funciona como una barrera térmica continua sin fisuras."
+      video:
+        thumbnail: "/images/benefits/trabajo3.webp"
+        video_path: "/videos/trabajo3.mp4"
 
-    - title: "Resistente al fuego"
-      description: "No se inflama, ni genera gases tóxicos"
+    - title: "Reacondicionamiento de galpones"
+      description: "Proyección a escala y alta velocidad. Evita la condensación y el goteo por humedad en sectores industriales y comerciales."
       video:
-        thumbnail: "/images/benefits/b2.webp"
-        video_path: "/videos/fuego.mp4"
+        thumbnail: "/images/benefits/trabajo4.webp"
+        video_path: "/videos/trabajo4.mp4"
 
-    - title: "Doble aislación"
-      description: "Aislamiento termoacústico en una sola aplicación"
+    - title: "Cobertura térmica uniforme"
+      description: "El sistema proyectado se adapta a cualquier morfología, adhiriéndose perfectamente a maderas, ladrillos o metales. Un proceso rápido, seguro y limpio."
       video:
-        thumbnail: "/images/benefits/b3.webp"
-        video_path: "/videos/aislacion.mp4"
+        thumbnail: "/images/benefits/trabajo5.webp"
+        video_path: "/videos/trabajo5.mp4"
 
-    - title: "Evita condensación"
-      description: "Es higrófuga, absorbe y cede la humedad al ambiente logrando regular la condensación, 100% antihongos."
+    - title: "Celulosa con protección anti-hongos y plagas"
+      description: "Aislación termoacústica con propiedades higrófugas. Su tratamiento natural con sales de bórax repele roedores, insectos y previene la formación de moho."
       video:
-        thumbnail: "/images/benefits/b4.webp"
-        video_path: "/videos/condensacion.mp4"
-
-    - title: "Rápida instalación"
-      description: "Trabajo de 200 mt2 por día y por máquina en la construcción"
-      video:
-        thumbnail: "/images/benefits/b5.webp"
-        video_path: "/videos/instalacion.mp4"
-
-    - title: "Evita plagas"
-      description: "Gracias al borax añadido, repele ratones y plagas en general"
-      video:
-        thumbnail: "/images/benefits/b6.webp"
-        video_path: "/videos/plaga.mp4"
+        thumbnail: "/images/benefits/trabajo6.webp"
+        video_path: "/videos/trabajo6.mp4"
 
 
 graph:

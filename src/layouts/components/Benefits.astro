@@ -1,33 +1,34 @@
 ---
-const { items } = Astro.props; // Recibe el prop `items`
+const { items } = Astro.props; // Recibe el prop `items` desde Sanity / Markdown
 import Videos from "@/layouts/components/Videos.astro";
 import Card from "@/layouts/components/Card.astro";
-import { Image } from "astro:assets";
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-container">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-container">
   {
-    items.map((post: any) => (
+    items && items.map((post: any) => (
       <Card
-        image={post.image}
+        image=""
         noShadow={true}
-        className="border border-border reveal reveal-up"
+        className="border border-border reveal reveal-up rounded-2xl transition-shadow duration-300 bg-white"
       >
         {post.video && (
-          <div class="mb-3">
+          <div class="mb-5 md:mb-6 rounded-xl overflow-hidden shadow-sm">
             <Videos
               src={post.video.thumbnail}
               height={370}
               width={700}
               title={post.title}
               video_path={post.video.video_path}
-              video_width="w-[700px]"
-              video_height="h-[370px]"
+              video_width="w-full"
+              video_height="h-[250px] md:h-[280px]"
             />
           </div>
         )}
-        <h3 class="text-lg font-bold text-dark mb-1">{post.title}</h3>
-        <p class="text-sm text-text leading-relaxed">{post.description}</p>
+        <div class="px-2 pb-2">
+          <h3 class="text-xl md:text-2xl font-bold text-dark mb-3 tracking-tight">{post.title}</h3>
+          <p class="text-base text-text/80 leading-relaxed font-medium">{post.description}</p>
+        </div>
       </Card>
     ))
   }
