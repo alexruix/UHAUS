@@ -1,16 +1,5 @@
 @layer components {
-  /* navbar toggler */
-  input#nav-toggle:checked ~ label#show-button {
-    @apply hidden;
-  }
-
-  input#nav-toggle:checked ~ label#hide-button {
-    @apply flex lg:hidden;
-  }
-
-  input#nav-toggle:checked ~ #nav-menu {
-    @apply block lg:flex;
-  }
+  /* navbar toggler handled by JS */
 
   .header {
     @apply sticky top-0 z-50  bg-white py-6 transition-all duration-300 ;
@@ -61,6 +50,6 @@
   }
 
   .nav-dropdown-link {
-    @apply min-w-[150px] py-1 text-sm font-medium text-dark transition hover:text-primary;
+    @apply min-w-[150px] py-3 text-sm font-medium text-dark transition hover:text-primary;
   }
 }

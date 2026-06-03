@@ -250,6 +250,6 @@ const { title, meta_title, description, image, noindex, canonical } =
 
       requestAnimationFrame(raf)
     </script>
-    <VisualEditing enabled={visualEditingEnabled} zIndex={1000} />
+    {visualEditingEnabled && <VisualEditing enabled={visualEditingEnabled} zIndex={1000} />}
   </body>
 </html>
