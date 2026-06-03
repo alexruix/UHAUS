@@ -10,7 +10,7 @@ const homepageSchema = z.object({
         label: z.string(),
         icon: z.string().optional(),
         enable: z.boolean(),
-      })
+      }),
     ),
     content: z.string().optional(),
   }),
@@ -20,7 +20,7 @@ const homepageSchema = z.object({
       subtitle: z.string(),
       icon: z.string(),
       image: z.string(),
-    })
+    }),
   ),
   about_us: z.object({
     title: z.string(),
@@ -35,7 +35,7 @@ const homepageSchema = z.object({
         image: z.string(),
         title: z.string(),
         content: z.string(),
-      })
+      }),
     ),
   }),
   choice_us: z.object({
@@ -45,7 +45,7 @@ const homepageSchema = z.object({
       z.object({
         organization: z.string(),
         content: z.string(),
-      })
+      }),
     ),
   }),
   benefits: z.object({
@@ -58,7 +58,7 @@ const homepageSchema = z.object({
           thumbnail: z.string(),
           video_path: z.string(),
         }),
-      })
+      }),
     ),
   }),
   graph: z.object({
@@ -78,13 +78,13 @@ const homepageSchema = z.object({
             enable: z.boolean(),
           })
           .optional(),
-      })
+      }),
     ),
     future: z.array(
       z.object({
         title: z.string(),
         content: z.string(),
-      })
+      }),
     ),
   }),
   application_types: z.object({
@@ -94,7 +94,7 @@ const homepageSchema = z.object({
         title: z.string(),
         image: z.string(),
         content: z.string(),
-      })
+      }),
     ),
   }),
   cta: z.object({
@@ -105,7 +105,7 @@ const homepageSchema = z.object({
         label: z.string(),
         icon: z.string(),
         enable: z.boolean(),
-      })
+      }),
     ),
   }),
   title: z.string().optional(),
@@ -125,10 +125,13 @@ const settingsSchema = z.object({
     logo_width: z.string(),
     logo_height: z.string(),
     logo_text: z.string(),
-    whatsapp: z.object({
-      number: z.string(),
-      message: z.string().optional().nullable(),
-    }).optional().nullable(),
+    whatsapp: z
+      .object({
+        number: z.string(),
+        message: z.string().optional().nullable(),
+      })
+      .optional()
+      .nullable(),
   }),
   params: z.object({
     footer_description: z.string(),
@@ -146,7 +149,6 @@ const settingsSchema = z.object({
   }),
   social: z.record(z.string()).optional(),
 });
-
 
 // Export collections
 export const collections = {

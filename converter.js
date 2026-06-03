@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import sharp from "sharp";
 
-const inputDir = "./public/images/icons";   // Carpeta donde están tus imágenes
+const inputDir = "./public/images/icons"; // Carpeta donde están tus imágenes
 const outputDir = "./public/images/icons"; // Carpeta destino optimizadas
 
 // Asegúrate que exista la carpeta de salida

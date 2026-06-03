@@ -2,38 +2,32 @@
 const { source, className } = Astro.props;
 
 import {
-  IoCall,
-  IoGlobeOutline,
-  IoLocation,
-  IoLogoBehance,
-  IoLogoBitbucket,
-  IoLogoCodepen,
-  IoLogoDiscord,
-  IoLogoDribbble,
-  IoLogoFacebook,
-  IoLogoFoursquare,
-  IoLogoGithub,
-  IoLogoGitlab,
-  IoLogoInstagram,
-  IoLogoLinkedin,
-  IoLogoMastodon,
-  IoLogoMedium,
-  IoLogoPinterest,
-  IoLogoReddit,
-  IoLogoRss,
-  IoLogoSkype,
-  IoLogoSlack,
-  IoLogoSnapchat,
-  IoLogoSoundcloud,
-  IoLogoTiktok,
-  IoLogoTumblr,
-  IoLogoTwitter,
-  IoLogoVimeo,
-  IoLogoVk,
-  IoLogoWhatsapp,
-  IoLogoYoutube,
-  IoMail,
-} from "react-icons/io5";
+  Phone,
+  Globe,
+  MapPin,
+  BehanceLogo,
+  CodepenLogo,
+  DiscordLogo,
+  DribbbleLogo,
+  FacebookLogo,
+  GithubLogo,
+  GitlabLogo,
+  InstagramLogo,
+  LinkedinLogo,
+  MediumLogo,
+  PinterestLogo,
+  RedditLogo,
+  Rss,
+  SkypeLogo,
+  SlackLogo,
+  SnapchatLogo,
+  SoundcloudLogo,
+  TiktokLogo,
+  TwitterLogo,
+  WhatsappLogo,
+  YoutubeLogo,
+  EnvelopeSimple,
+} from "@phosphor-icons/react";
 
 const {
   facebook,
@@ -80,7 +74,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoFacebook />
+          <FacebookLogo weight="fill" />
         </a>
       </li>
     )
@@ -94,7 +88,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoTwitter />
+          <TwitterLogo weight="fill" />
         </a>
       </li>
     )
@@ -108,7 +102,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoMastodon />
+          <Globe weight="fill" />
         </a>
       </li>
     )
@@ -122,7 +116,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoInstagram />
+          <InstagramLogo weight="fill" />
         </a>
       </li>
     )
@@ -136,7 +130,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoYoutube />
+          <YoutubeLogo weight="fill" />
         </a>
       </li>
     )
@@ -150,7 +144,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoLinkedin />
+          <LinkedinLogo weight="fill" />
         </a>
       </li>
     )
@@ -164,7 +158,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoGithub />
+          <GithubLogo weight="fill" />
         </a>
       </li>
     )
@@ -178,7 +172,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoGitlab />
+          <GitlabLogo weight="fill" />
         </a>
       </li>
     )
@@ -192,7 +186,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoDiscord />
+          <DiscordLogo weight="fill" />
         </a>
       </li>
     )
@@ -206,7 +200,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoSlack />
+          <SlackLogo weight="fill" />
         </a>
       </li>
     )
@@ -220,7 +214,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoMedium />
+          <MediumLogo weight="fill" />
         </a>
       </li>
     )
@@ -234,7 +228,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoCodepen />
+          <CodepenLogo weight="fill" />
         </a>
       </li>
     )
@@ -248,7 +242,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoBitbucket />
+          <Globe weight="fill" />
         </a>
       </li>
     )
@@ -262,7 +256,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoDribbble />
+          <DribbbleLogo weight="fill" />
         </a>
       </li>
     )
@@ -276,7 +270,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoBehance />
+          <BehanceLogo weight="fill" />
         </a>
       </li>
     )
@@ -290,7 +284,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoPinterest />
+          <PinterestLogo weight="fill" />
         </a>
       </li>
     )
@@ -304,7 +298,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoSoundcloud />
+          <SoundcloudLogo weight="fill" />
         </a>
       </li>
     )
@@ -318,7 +312,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoTumblr />
+          <Globe weight="fill" />
         </a>
       </li>
     )
@@ -332,7 +326,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoReddit />
+          <RedditLogo weight="fill" />
         </a>
       </li>
     )
@@ -346,7 +340,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoVk />
+          <Globe weight="fill" />
         </a>
       </li>
     )
@@ -360,7 +354,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoWhatsapp />
+          <WhatsappLogo weight="fill" />
         </a>
       </li>
     )
@@ -374,7 +368,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoSnapchat />
+          <SnapchatLogo weight="fill" />
         </a>
       </li>
     )
@@ -388,7 +382,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoVimeo />
+          <Globe weight="fill" />
         </a>
       </li>
     )
@@ -402,7 +396,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoTiktok />
+          <TiktokLogo weight="fill" />
         </a>
       </li>
     )
@@ -416,7 +410,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoFoursquare />
+          <Globe weight="fill" />
         </a>
       </li>
     )
@@ -430,7 +424,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoSkype />
+          <SkypeLogo weight="fill" />
         </a>
       </li>
     )
@@ -444,7 +438,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoGlobeOutline />
+          <Globe weight="fill" />
         </a>
       </li>
     )
@@ -458,7 +452,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoRss />
+          <Rss weight="fill" />
         </a>
       </li>
     )
@@ -467,7 +461,7 @@ const {
     email && (
       <li class="inline-block">
         <a aria-label="email" href={`mailto:${email}`}>
-          <IoMail />
+          <EnvelopeSimple weight="fill" />
         </a>
       </li>
     )
@@ -476,7 +470,7 @@ const {
     phone && (
       <li class="inline-block">
         <a aria-label="telephone" href={`tel:${phone}`}>
-          <IoCall />
+          <Phone weight="fill" />
         </a>
       </li>
     )
@@ -490,7 +484,7 @@ const {
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLocation />
+          <MapPin weight="fill" />
         </a>
       </li>
     )

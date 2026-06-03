@@ -335,16 +335,7 @@
       }
     }
   }
-  /* pagination style */
-  .reviews-carousel {
-    .swiper-pagination-bullet {
-      @apply h-3.5 w-3.5 bg-[#8d8d8d];
 
-      &-active {
-        @apply bg-primary;
-      }
-    }
-  }
 
   /* services */
   .services {
@@ -590,14 +581,6 @@
 
   .auth-banner {
     @apply relative;
-
-    .swiper-pagination-bullet {
-      @apply h-[15px] w-[15px] border-2 border-white bg-transparent;
-
-      &-active {
-        @apply bg-white;
-      }
-    }
   }
 
   .faqs {
@@ -650,11 +633,7 @@
     }
   }
 
-  .auth-banner-carousel {
-    .swiper-slide {
-      width: 100% !important;
-    }
-  }
+
 }
 
 

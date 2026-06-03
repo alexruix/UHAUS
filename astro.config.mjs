@@ -4,8 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import AutoImport from "astro-auto-import";
 import { defineConfig } from "astro/config";
-import remarkCollapse from "remark-collapse";
-import remarkToc from "remark-toc";
+
 import config from "./src/config/config.json";
 import sanity from "@sanity/astro";
 import { loadEnv } from "vite";
@@ -25,7 +24,7 @@ export default defineConfig({
       apiVersion: "2024-05-23",
       stega: {
         studioUrl: env.PUBLIC_SANITY_STUDIO_URL || "http://localhost:3333",
-      }
+      },
     }),
     react(),
     sitemap(),
@@ -52,10 +51,6 @@ export default defineConfig({
   },
 
   markdown: {
-    remarkPlugins: [
-      remarkToc,
-      [remarkCollapse, { test: "Table of contents" }],
-    ],
     shikiConfig: { theme: "one-dark-pro", wrap: true },
     extendDefaultPlugins: true,
   },
